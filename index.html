@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apartmani Petrović Semče</title>
+<style>
+
+/* JEZIČKI PREKIDAČ */
+.lang-btn{background:transparent;border:2px solid #ccb083;color:#ccb083;padding:7px 16px;border-radius:25px;font-weight:700;font-size:.95rem;cursor:pointer;transition:all .3s ease;margin-left:10px}
+.lang-btn:hover{background:#ccb083;color:#0d3d2b}
+
+/* BOJE: #ccb083 (žućkasto) | #7c7b33 (zelenkasto) | #0d3d2b (tamnozelena tekst) */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background-color:#ccb083;color:#0d3d2b;scroll-behavior:smooth}
+
+/* HEADER */
+.site-header{background:#0d3d2b;padding:12px 30px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px;position:sticky;top:0;z-index:1000}
+.main-logo{width:90px;height:auto;border-radius:50%}
+.site-header nav{display:flex;flex-wrap:wrap;gap:5px}
+.site-header nav a{color:#ccb083;text-decoration:none;padding:8px 18px;border-radius:25px;font-weight:600;font-size:1rem;transition:all .3s ease}
+.site-header nav a:hover{background:#7c7b33;color:white}
+
+/* HERO */
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh - 120px);background:#ccb083;padding:25px 0}
+.hero-image-side{background-size:cover;background-position:center;background-image:url('Hero%20leti.jpg');border-radius:40px;margin-left:30px;margin-right:15px;box-shadow:0 8px 25px rgba(13,61,43,.35);min-height:420px}
+.hero-image-side.winter{background-image:url('Hero%20zimi.jpg')}
+.hero-content-side{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:40px 35px}
+h1{font-size:2.2rem;margin-bottom:15px;color:#0d3d2b}
+.slogan{font-size:1.15rem;margin-bottom:35px;line-height:1.6;max-width:460px}
+.phone-links{display:flex;gap:15px;justify-content:center;flex-wrap:wrap;margin-bottom:30px}
+.phone-btn{background:#0d3d2b;color:#ccb083;padding:10px 20px;border-radius:50px;text-decoration:none;font-weight:bold;font-size:1.1rem;transition:all .3s ease}
+.phone-btn:hover{background:#7c7b33;color:white;transform:translateY(-3px)}
+.qr-buttons-row{display:flex;align-items:center;gap:35px}
+.qr-block{display:flex;flex-direction:column;align-items:center}
+.qr-code{width:140px;height:140px;background:white;padding:10px;border-radius:25px;box-shadow:0 4px 15px rgba(13,61,43,.25)}
+.qr-caption{margin-top:12px;font-size:1rem;font-weight:600}
+.booking-social-wrapper{display:flex;flex-direction:column;gap:12px;align-items:stretch}
+.booking-btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;background:#003580;color:white;padding:12px 25px;border-radius:50px;text-decoration:none;font-size:1.1rem;font-weight:bold;transition:all .3s ease}
+.booking-btn:hover{background:#002866;transform:translateX(-4px)}
+.booking-icon{width:28px;height:28px}
+.social-btn{padding:11px 25px;border-radius:50px;text-decoration:none;font-weight:bold;transition:all .3s ease;display:inline-flex;align-items:center;justify-content:center;gap:8px;color:white;font-size:1rem}
+.social-btn.fb{background:#1877f2}
+.social-btn.ig{background:linear-gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)}
+.social-btn:hover{transform:translateX(-4px)}
+
+/* SECTION 1 */
+.section-1{background:#ccb083;padding:70px 40px 80px 40px;scroll-margin-top:100px}
+.intro-block{display:grid;grid-template-columns:1.35fr .65fr;gap:45px;max-width:1080px;margin:0 auto 70px auto;align-items:center}
+.section-title{font-size:2rem;margin-bottom:25px;font-weight:700}
+.section-intro{font-size:1.1rem;line-height:1.8;text-align:left}
+.map-container{width:100%;max-width:330px;margin-left:auto;border-radius:20px;overflow:hidden;box-shadow:0 6px 20px rgba(13,61,43,.25);background:white}
+.map-container iframe{width:100%;height:290px;border:none;display:block}
+.carousel-container{position:relative;max-width:850px;margin:0 auto 70px auto;overflow:hidden;border-radius:25px;box-shadow:0 8px 30px rgba(13,61,43,.3)}
+.carousel-slides{display:flex;transition:transform .5s ease-in-out}
+.carousel-slide{min-width:100%;aspect-ratio:16/10;position:relative}
+.carousel-slide img{width:100%;height:100%;object-fit:cover;display:block}
+.carousel-nav{position:absolute;top:50%;transform:translateY(-50%);width:50px;height:50px;background:rgba(13,61,43,.8);border:none;border-radius:50%;color:white;font-size:24px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s ease;z-index:10}
+.carousel-nav:hover{background:rgba(13,61,43,1);transform:translateY(-50%) scale(1.1)}
+.carousel-prev{left:20px}.carousel-next{right:20px}
+.carousel-indicators{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);display:flex;gap:10px;z-index:10}
+.indicator{width:12px;height:12px;border-radius:50%;background:rgba(255,255,255,.5);cursor:pointer;transition:all .3s ease;border:2px solid white}
+.indicator.active{background:white;transform:scale(1.2)}
+.capacity-block{max-width:1280px;margin:0 auto}
+.capacity-title{font-size:1.8rem;text-align:center;margin-bottom:40px;font-weight:700}
+.capacity-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+.capacity-card{background:rgba(255,255,255,.6);border-radius:20px;padding:30px 25px;box-shadow:0 4px 15px rgba(13,61,43,.15);transition:transform .3s ease}
+.capacity-card:hover{transform:translateY(-5px)}
+.capacity-card h3{font-size:1.2rem;margin-bottom:15px;color:#7c7b33;font-weight:700}
+.capacity-card p{font-size:1rem;line-height:1.7}
+
+/* SECTION 2: SADRŽAJ */
+.section-2{background:#7c7b33;padding:70px 40px 80px 40px;scroll-margin-top:100px}
+.sadrazaj-title{font-size:2rem;text-align:center;margin-bottom:50px;color:#ccb083;font-weight:700}
+.sadrazaj-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:20px;max-width:1400px;margin:0 auto}
+.amenity-box{background:rgba(255,255,255,.9);border-radius:20px;padding:25px 15px;text-align:center;box-shadow:0 4px 15px rgba(13,61,43,.2);transition:transform .3s ease;display:flex;flex-direction:column;align-items:center}
+.amenity-box:hover{transform:translateY(-5px)}
+.amenity-icon{width:52px;height:52px;color:#0d3d2b;margin-bottom:15px}
+.amenity-box p{font-size:.95rem;line-height:1.5;font-weight:600}
+.pets-box{background:rgba(255,255,255,.9);border-radius:20px;padding:18px 35px;box-shadow:0 4px 15px rgba(13,61,43,.2);display:flex;align-items:center;justify-content:center;gap:15px;max-width:520px;margin:40px auto 0 auto;transition:transform .3s ease}
+.pets-box:hover{transform:translateY(-5px)}
+.pets-box .amenity-icon{width:44px;height:44px;margin-bottom:0}
+.pets-box p{font-size:1rem;font-weight:600}
+
+/* SECTION 3: AKTIVNOSTI */
+.section-3{background:#ccb083;padding:70px 40px 80px 40px;scroll-margin-top:100px}
+.aktivnosti-title{font-size:2rem;text-align:center;margin-bottom:50px;font-weight:700}
+.aktivnosti-carousel{position:relative;max-width:950px;margin:0 auto;overflow:hidden;border-radius:25px;box-shadow:0 8px 30px rgba(13,61,43,.3);background:white}
+.aktivnosti-slides{display:flex;transition:transform .5s ease-in-out}
+.aktivnosti-slide{min-width:100%;display:flex;flex-direction:column}
+.aktivnosti-slide img{width:100%;height:400px;object-fit:cover;display:block}
+.aktivnosti-slide-content{background:linear-gradient(to bottom,rgba(13,61,43,.85),rgba(13,61,43,1));padding:18px 40px;text-align:center}
+.aktivnosti-slide-content h3{font-size:1.8rem;color:#ccb083;font-weight:700}
+.aktivnosti-nav{position:absolute;top:35%;transform:translateY(-50%);width:55px;height:55px;background:rgba(13,61,43,.9);border:3px solid #ccb083;border-radius:50%;color:white;font-size:26px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s ease;z-index:10}
+.aktivnosti-nav:hover{background:rgba(13,61,43,1);transform:translateY(-50%) scale(1.15)}
+.aktivnosti-prev{left:25px}.aktivnosti-next{right:25px}
+.aktivnosti-indicators{position:absolute;bottom:110px;left:50%;transform:translateX(-50%);display:flex;gap:12px;z-index:10}
+.aktivnosti-dot{width:14px;height:14px;border-radius:50%;background:rgba(255,255,255,.4);cursor:pointer;transition:all .3s ease;border:2px solid #ccb083}
+.aktivnosti-dot.active{background:#ccb083;transform:scale(1.3)}
+
+/* SECTION 4: UTISCI */
+.section-4{background:#7c7b33;padding:70px 40px 80px 40px;scroll-margin-top:100px}
+.utisci-title{font-size:2rem;text-align:center;margin-bottom:60px;color:#ccb083;font-weight:700}
+.widget-block{max-width:900px;margin:0 auto 70px auto}
+.widget-block h3{font-size:1.4rem;text-align:center;margin-bottom:25px;color:#0d3d2b;font-weight:700}
+.mediji-title{font-size:1.8rem;text-align:center;margin:80px 0 30px 0;color:#ccb083;font-weight:700}
+.mediji-sub{text-align:center;font-size:1.05rem;font-style:italic;color:#ccb083;margin:-35px 0 30px 0;opacity:.9}
+.video-wrapper{position:relative;width:100%;max-width:950px;margin:0 auto;aspect-ratio:16/9;border-radius:20px;overflow:hidden;box-shadow:0 8px 30px rgba(13,61,43,.3);cursor:pointer}
+.video-wrapper{cursor:pointer}
+.video-wrapper img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover}
+.play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:82px;height:58px;border:none;border-radius:14px;background:rgba(13,61,43,.88);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s ease}
+.play-btn:hover{background:#0d3d2b;transform:translate(-50%,-50%) scale(1.08)}
+.play-btn::after{content:'';border-style:solid;border-width:14px 0 14px 24px;border-color:transparent transparent transparent #ccb083;margin-left:5px}
+.video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
+@media (max-width:950px){.section-4{padding:50px 20px 60px 20px}.mediji-title{margin:60px 0 40px 0}}
+
+/* SECTION 5: CENE */
+.section-5{background:#ccb083;padding:70px 40px 80px 40px;scroll-margin-top:100px}
+.cene-title{font-size:2rem;text-align:center;margin-bottom:50px;font-weight:700}
+.cene-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;max-width:1000px;margin:0 auto;align-items:start}
+.cene-column{display:flex;flex-direction:column;gap:30px}
+.cene-column .cene-card{flex:1;padding:25px 20px;display:flex;flex-direction:column;justify-content:center}
+.cene-card{background:rgba(255,255,255,.75);border-radius:25px;padding:35px 30px;box-shadow:0 6px 20px rgba(13,61,43,.18)}
+.cene-card h3{font-size:1.4rem;margin-bottom:25px;color:#7c7b33;text-align:center;font-weight:700}
+.cene-card.winter h3{color:#0d3d2b}
+.cene-row{display:flex;justify-content:space-between;align-items:baseline;gap:15px;padding:12px 0;border-bottom:1px dashed rgba(13,61,43,.25)}
+.cene-row:last-of-type{border-bottom:none}
+.cene-row span:first-child{font-size:1rem;line-height:1.4}
+.cene-row .price{white-space:nowrap;font-size:1.15rem;font-weight:700;color:#0d3d2b}
+.dogovor-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;max-width:1000px;margin:30px auto 0 auto}
+.dogovor-box{background:rgba(13,61,43,.08);border:2px solid rgba(13,61,43,.25);border-radius:25px;padding:25px 30px;display:flex;align-items:center;justify-content:center;gap:15px;text-align:center}
+.dogovor-box svg{width:42px;height:42px;color:#0d3d2b;flex-shrink:0}
+.dogovor-box p{font-size:1.05rem;font-weight:600;line-height:1.5}
+@media (max-width:950px){.section-5{padding:50px 20px 60px 20px}.cene-grid,.dogovor-grid{grid-template-columns:1fr}}
+
+/* SECTION 6: KONTAKT */
+.section-6{background:#7c7b33;padding:70px 40px 90px 40px;scroll-margin-top:100px}
+.kontakt-title{font-size:2rem;text-align:center;margin-bottom:60px;color:#ccb083;font-weight:700}
+.kontakt-list{display:flex;flex-direction:column;align-items:center;gap:16px;max-width:400px;margin:0 auto}
+.phone-row{display:flex;align-items:center;justify-content:space-between;gap:15px;width:100%;background:#0d3d2b;border-radius:50px;padding:10px 20px;transition:all .3s ease}
+.phone-row:hover{background:#123f2c}
+.phone-left{display:flex;flex-direction:column;line-height:1.3}
+.phone-row .ime{color:#ccb083;font-weight:700;font-size:1.05rem}
+.phone-row .tel-link{color:white;font-weight:600;font-size:1.05rem;white-space:nowrap;text-decoration:none}
+.phone-right{display:flex;align-items:center;gap:10px}
+.msg-icon{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;text-decoration:none;transition:all .3s ease}
+.msg-icon.viber{background:#7360f2}
+.msg-icon.whatsapp{background:#25d366}
+.msg-icon:hover{transform:scale(1.12)}
+.msg-icon svg{width:20px;height:20px;fill:white}.divider{width:60px;height:3px;background:rgba(204,176,131,.5);border-radius:2px;margin:14px 0}
+.selo-btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;background:#3d6b35;color:white;padding:12px 25px;border-radius:50px;text-decoration:none;font-size:1.1rem;font-weight:bold;transition:all .3s ease;width:100%}
+.selo-btn:hover{background:#2e5228;transform:translateY(-3px)}
+.kontakt-list .booking-btn{width:100%}
+.dm-caption{font-size:1.15rem;font-weight:700;color:#0d3d2b;text-align:center}
+.kontakt-social{display:flex;gap:15px;justify-content:center;margin-top:25px}
+.kontakt-social .social-btn{padding:11px 30px}
+@media (max-width:950px){.section-6{padding:50px 20px 70px 20px}.kontakt-list{max-width:100%}}
+
+/* FOOTER */
+footer{background:#0d3d2b;color:#ccb083;padding:45px 40px;text-align:center}
+.footer-text{max-width:750px;margin:0 auto 25px auto;font-size:1rem;line-height:1.7}
+.footer-contact{display:flex;flex-direction:column;gap:12px;margin-bottom:25px;font-size:1.05rem}
+.footer-contact a{color:#ccb083;text-decoration:none;font-weight:600}
+.footer-contact a:hover{color:white}
+.copyright{font-size:.95rem;opacity:.85;border-top:1px solid rgba(204,176,131,.25);padding-top:20px;margin-top:20px}
+@media (max-width:950px){footer{padding:35px 20px}.footer-text{font-size:.95rem;line-height:1.6}}
+
+}
+
+/* PLACEHOLDER SEKCIJE */
+.placeholder-section{min-height:400px;display:flex;justify-content:center;align-items:center;font-size:1.5rem;font-weight:bold;letter-spacing:1px;scroll-margin-top:100px}
+.placeholder-section.bg-yellow{background:#ccb083}
+.placeholder-section.bg-green{background:#7c7b33}
+
+/* RESPONSIVE */
+@media (max-width:1200px){.sadrazaj-grid{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:950px){
+.site-header{flex-direction:column;padding:12px 15px}
+.hero{grid-template-columns:1fr}
+.hero-image-side{margin:0 20px 20px 20px;min-height:260px}
+.qr-buttons-row{flex-direction:column;gap:20px}
+h1{font-size:1.8rem}.slogan{font-size:1.05rem}
+.section-1,.section-2,.section-3{padding:50px 20px 60px 20px}
+.intro-block{grid-template-columns:1fr;gap:30px;margin-bottom:50px}
+.map-container{max-width:100%;margin:0 auto}
+.map-container iframe{height:250px}
+.capacity-grid{grid-template-columns:1fr}
+.carousel-container{max-width:100%;margin-bottom:50px}
+.carousel-nav{width:40px;height:40px;font-size:20px}
+.sadrazaj-grid{grid-template-columns:repeat(2,1fr);gap:15px}
+.amenity-box{padding:20px 12px}
+.amenity-icon{width:40px;height:40px;margin-bottom:10px}
+.amenity-box p{font-size:.85rem}
+.aktivnosti-slide img{height:280px}
+.aktivnosti-slide-content{padding:14px 20px}
+.aktivnosti-slide-content h3{font-size:1.4rem}
+.aktivnosti-nav{width:45px;height:45px;font-size:22px}
+.aktivnosti-indicators{bottom:80px}
+}
+</style>
+</head>
+<body>
+
+<!-- ====== HEADER ====== -->
+<header class="site-header">
+    <img src="logo.png" alt="Apartmani Petrović Semče - logo" class="main-logo">
+    <nav>
+        <a href="#section-1">O nama</a>
+        <a href="#section-2">Sadržaj</a>
+        <a href="#section-3">Aktivnosti</a>
+        <a href="#section-4">Utisci</a>
+        <a href="#section-5">Cene</a>
+        <a href="#section-6">Kontakt</a>
+    </nav>
+    <button id="langBtn" class="lang-btn" onclick="toggleLang()">EN</button>
+</header>
+
+<!-- ====== HERO ====== -->
+<section class="hero">
+    <div class="hero-image-side" id="seasonal-hero"></div>
+    <div class="hero-content-side">
+        <h1>Apartmani Petrović Semče</h1>
+        <p class="slogan">Sve pogodnosti modernog smeštaja + čist vazduh, mir i tišina, i najlepši pogled jugoistočne Srbije.</p>
+        <div class="phone-links">
+            <a href="tel:+381649346911" class="phone-btn">📞 +381 64 934 6911</a>
+            <a href="tel:+381612205602" class="phone-btn">📞 +381 61 220 5602</a>
+        </div>
+        <div class="qr-buttons-row">
+            <div class="qr-block">
+                <img src="qr-code.png" alt="QR kod" class="qr-code">
+                <span class="qr-caption">Skeniraj QR kod i saznaj više!</span>
+            </div>
+            <div class="booking-social-wrapper">
+                <a href="https://www.booking.com/hotel/rs/apartmani-petrovic-semce-semce12.en-gb.html" target="_blank" rel="noopener" class="booking-btn">
+                    <svg class="booking-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="24" fill="#ffffff"/><text x="24" y="30" font-size="24" font-weight="bold" text-anchor="middle" fill="#003580" font-family="Arial,sans-serif">B</text></svg>
+                    Booking.com
+                </a>
+                <a href="https://www.facebook.com/people/Apartmani-Petrovi%C4%87-Sem%C4%8De/100083496813255/" target="_blank" rel="noopener" class="social-btn fb">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    Facebook
+                </a>
+                <a href="https://www.instagram.com/apartmani_petrovic_semce/" target="_blank" rel="noopener" class="social-btn ig">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    Instagram
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ====== SECTION 1 ====== -->
+<section class="section-1" id="section-1">
+    <div class="intro-block">
+        <div class="intro-text">
+            <h2 class="section-title">O nama</h2>
+            <p class="section-intro">Apartmani Petrović Semče su porodično gazdinstvo na 550 m nadmorske visine, lako dostupno iz pravca Niša (40 km) i Leskovca (33 km), i pruža pogled na neke od najlepših pejzaža Suve planine. Idealna lokacija za tim-bildinge, porodične proslave, početnu tačku avanture u prirodi, ili jednostavno — odmor.</p>
+        </div>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1504390.423940648!2d20.6631392!3d42.57094955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47550da8dff9fe9b%3A0xe07985142e90278f!2sApartmani%20Petrovi%C4%87%20SEM%C4%8CE!5e0!3m2!1sen!2s!4v1792348220859!5m2!1sen!2s" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+    </div>
+
+    <div class="carousel-container">
+        <div class="carousel-slides">
+            <div class="carousel-slide"><img src="exterier-1.jpg" alt="Najlepsi pogled Jugoistocne Srbije"></div>
+            <div class="carousel-slide"><img src="soba-1.jpg" alt="Prostrana spavaca soba udoban smestaj"></div>
+            <div class="carousel-slide"><img src="bazen.png" alt="Bazen u dvoristu"></div>
+            <div class="carousel-slide"><img src="soba-2.jpg" alt="Spavaća soba u pomoćnom objektu"></div>
+            <div class="carousel-slide"><img src="dvoriste.jpg" alt="Dvoriste, ljuljaska"></div>
+            <div class="carousel-slide"><img src="soba-3.jpg" alt="Trokrevetna soba"></div>
+            <div class="carousel-slide"><img src="terasa-zalazak.jpg" alt="Terasa, zalazak sunca"></div>
+            <div class="carousel-slide"><img src="soba-4.jpg" alt="Uredan smestaj"></div>
+            <div class="carousel-slide"><img src="exterier-2.jpg" alt="Prolece na Suvoj planini"></div>
+            
+        </div>
+        <button class="carousel-nav carousel-prev" onclick="moveSlide(-1)">❮</button>
+        <button class="carousel-nav carousel-next" onclick="moveSlide(1)">❯</button>
+        <div class="carousel-indicators"></div>
+    </div>
+
+    <div class="capacity-block">
+        <h2 class="capacity-title">Kapaciteti</h2>
+        <div class="capacity-grid">
+            <div class="capacity-card">
+                <h3>Glavni apartman</h3>
+                <p>2 spavaće sobe, prostrana dnevna soba i trpezarija sa dodatnim smeštajnim kapacitetima, 1 kupatilo, 1 potpuno opremljena kuhinja.</p>
+            </div>
+            <div class="capacity-card">
+                <h3>Pomoćni objekat</h3>
+                <p>2 dvokrevetne sobe, 1 trokrevetna soba, 1 kupatilo, 1 letnja kuhinja.</p>
+            </div>
+            <div class="capacity-card">
+                <h3>Trem i dvorište</h3>
+                <p>Prostrano dvorište s nameštajem namenjenim za veća okupljanja ili proslave.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ====== SECTION 2: SADRŽAJ ====== -->
+<section class="section-2" id="section-2">
+    <h2 class="sadrazaj-title">Sadržaj</h2>
+    <div class="sadrazaj-grid">
+        <div class="amenity-box">
+            <svg class="amenity-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v5.5l4.8 1.6 3-4"/><path d="M5.5 7.5l4 2.5-1.5 4.8-4.5.5"/><path d="M9.7 19.5l2.9-4 3.6 1.2"/><path d="M6.6 17.8l-.9 3.7M17.7 20.5l-3.5-1.8M20.6 11.9l-3.8-.8"/></svg>
+            <p>Prostrano dvorište (3000 m²), idealno za sportske aktivnosti</p>
+        </div>
+        <div class="amenity-box">
+            <svg class="amenity-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="3"/><path d="M9.5 17.5v-11h3.8a3 3 0 0 1 0 6H9.5"/></svg>
+            <p>Besplatan parking (do 8 putničkih automobila)</p>
+        </div>
+        <div class="amenity-box">
+            <svg class="amenity-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 9a15 15 0 0 1 19 0"/><path d="M5.5 12.5a10.5 10.5 0 0 1 13 0"/><path d="M8.5 16a6 6 0 0 1 7 0"/><circle cx="12" cy="19.5" r="1.3" fill="currentColor" stroke="none"/></svg>
+            <p>Besplatan WiFi</p>
+        </div>
+        <div class="amenity-box">
+            <svg class="amenity-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 16.5c1.5-1.2 3-1.2 4.5 0s3 1.2 4.5 0 3-1.2 4.5 0 3 1.2 4.5 0"/><path d="M2.5 20.5c1.5-1.2 3-1.2 4.5 0s3 1.2 4.5 0 3-1.2 4.5 0 3 1.2 4.5 0"/><path d="M7.5 4.5 10 10l-4-2.5 1.5-3zM16.5 4.5 14 10l4-2.5-1.5-3z"/><path d="M10 10l2-4.5 2 4.5"/></svg>
+            <p>Bazen 5 × 2,5 m</p>
+        </div>
+        <div class="amenity-box">
+            <svg class="amenity-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="3" rx="1.5"/><path d="M3.5 12c0 4.5 4 7.5 8.5 7.5s8.5-3 8.5-7.5"/><path d="M12 3c-1.8 0-3.5 1.2-4.5 3M12 3c1.8 0 3.5 1.2 4.5 3"/><path d="M9 6.5l-1.5 2M15 6.5l1.5 2"/></svg>
+            <p>Roštilj i tanjirača</p>
+        </div>
+        <div class="amenity-box">
+            <svg class="amenity-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6h12l-1.5 2h-9L6 6z"/><path d="M6 8v5a6 6 0 0 0 12 0V8"/><path d="M8 5.5C8 4.5 10 3 10 3M16 5.5C16 4.5 14 3 14 3"/><path d="M9.5 17.5 8 21M14.5 17.5 16 21M12 18.5V21"/></svg>
+            <p>Kotlić</p>
+        </div>
+        <div class="amenity-box">
+            <svg class="amenity-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5v6"/><path d="M12 2.5 5 8.5h14L12 2.5z"/><path d="M5 8.5v2c0 .5.4 1 1 1h12c.6 0 1-.5 1-1v-2"/><path d="M7 13v9M17 13v9M5 13v3M19 13v3"/></svg>
+            <p>Ljuljaške, ležaljke, suncobrani i baštenski nameštaj</p>
+        </div>
+        <div class="amenity-box">
+            <svg class="amenity-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="12" cy="13" r="4.5"/><path d="M12 9c1 1.5 1 3.5 0 4M7 6h.01M10 6h.01"/></svg>
+            <p>2 mašine za veš</p>
+        </div>
+        <div class="amenity-box">
+            <svg class="amenity-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M4 8h16"/><path d="M9 4.5h.01M12 4.5h.01"/><path d="M8.5 16.5h7M9 16.5c0-2 .5-3.5 3-3.5s3 1.5 3 3.5"/><path d="M12 9v4"/></svg>
+            <p>2 mašine za pranje suđa</p>
+        </div>
+        <div class="amenity-box">
+            <svg class="amenity-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="9" cy="7.5" r="1.6"/><circle cx="15" cy="7.5" r="1.6"/><rect x="6.5" y="11.5" width="11" height="7" rx="1"/><path d="M6.5 13h11M6.5 15.5h11"/></svg>
+            <p>2 šporeta s rernom</p>
+        </div>
+        <div class="amenity-box">
+            <svg class="amenity-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2.5" width="14" height="19" rx="2"/><path d="M5 9.5h14"/><path d="M16.5 5v1.5M16.5 12.5v2"/><path d="M10 5.5v2.5M8.8 6.2l2.4 1.1M11.2 6.2 8.8 7.3"/></svg>
+            <p>Više frižidera</p>
+        </div>
+        <div class="amenity-box">
+            <svg class="amenity-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8.5 20h7"/><path d="M12 17v3"/><path d="M7 8.5h6"/></svg>
+            <p>Više TV aparata, ravan ekran</p>
+        </div>
+    </div>
+
+    <div class="pets-box">
+        <svg class="amenity-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="4.5" cy="9" rx="2" ry="2.6"/><ellipse cx="19.5" cy="9" rx="2" ry="2.6"/><ellipse cx="9" cy="5" rx="2" ry="2.6" transform="rotate(-15 9 5)"/><ellipse cx="15" cy="5" rx="2" ry="2.6" transform="rotate(15 15 5)"/><path d="M12 11c3 0 5.5 2.5 5.5 5 0 1.7-1.3 3-3 3-.9 0-1.7-.4-2.5-.4s-1.6.4-2.5.4c-1.7 0-3-1.3-3-3 0-2.5 2.5-5 5.5-5z"/><circle cx="10.2" cy="14.5" r=".7" fill="currentColor" stroke="none"/><circle cx="13.8" cy="14.5" r=".7" fill="currentColor" stroke="none"/></svg>
+        <p>Boravak ljubimaca po dogovoru (pozovite nas)</p>
+    </div>
+</section>
+
+<!-- ====== SECTION 3: AKTIVNOSTI ====== -->
+<section class="section-3" id="section-3">
+    <h2 class="aktivnosti-title">Ideje za obilaske i aktivnosti:</h2>
+
+    <div class="aktivnosti-carousel">
+        <div class="aktivnosti-slides">
+            <div class="aktivnosti-slide">
+                <img src="chill and grill.jpg" alt="Beg iz grada">
+                <div class="aktivnosti-slide-content"><h3>Chill &amp; Grill</h3></div>
+            </div>
+        <div class="aktivnosti-slide">
+                <img src="Timske aktivnosti i proslave.jpg" alt="Tim bilding i proslave organizacija dogadjaja">
+                <div class="aktivnosti-slide-content"><h3>Tim bilding i proslave</h3></div>
+            </div>
+            <div class="aktivnosti-slide">
+                <img src="Avanture u prirodi.jpg" alt="Avanture Suva planina">
+                <div class="aktivnosti-slide-content"><h3>Avanture u prirodi</h3></div>
+            </div>
+            <div class="aktivnosti-slide">
+                <img src="bicikl.jpg" alt="Mountain bike kroserica kvad dzip">
+                <div class="aktivnosti-slide-content"><h3>Na biciklu ili motoru, kvadom ili džipom</h3></div>
+            </div>
+            <div class="aktivnosti-slide">
+                <img src="Uspon.jpg" alt="Planinarenje Usponi Suva planina">
+                <div class="aktivnosti-slide-content"><h3>Planinarski usponi</h3></div>
+            </div>
+            <div class="aktivnosti-slide">
+                <img src="Kultura.jpg" alt="Okolina nisa okolina leskovca znamenitosti">
+                <div class="aktivnosti-slide-content"><h3>Istorija i kultura</h3></div>
+            </div>
+        </div>
+        <button class="aktivnosti-nav aktivnosti-prev" onclick="moveActSlide(-1)">❮</button>
+        <button class="aktivnosti-nav aktivnosti-next" onclick="moveActSlide(1)">❯</button>
+        <div class="aktivnosti-indicators"></div>
+    </div>
+</section>
+
+<!-- ====== SECTION 4: UTISCI ====== -->
+<section class="section-4" id="section-4">
+    <h2 class="utisci-title">Utisci</h2>
+
+    <!-- Booking.com Reviews -->
+    <div class="widget-block">
+        <h3>Utisci sa Booking.com</h3>
+    <!-- Elfsight Booking.com Reviews | Untitled Booking.com Reviews -->
+<script src="https://elfsightcdn.com/platform.js" async></script>
+<div class="elfsight-app-8819893a-7b33-49aa-a97d-602bbce3a7a9" data-elfsight-app-lazy></div>
+    </div>
+
+    <!-- Google Reviews -->
+    <div class="widget-block">
+        <h3>Utisci sa Google-a</h3>
+        <!-- Elfsight Google Reviews -->
+        <script src="https://elfsightcdn.com/platform.js" async></script>
+        <div class="elfsight-app-ff16fe18-f598-48d5-bdf1-4351254b27ac" data-elfsight-app-lazy></div>
+    </div>
+
+    <!-- Pod-sekcija: U medijima -->
+    <h2 class="mediji-title">U medijima</h2>
+    <p class="mediji-sub">("Lepše od Pariza", AgroTV)</p>
+    <div class="video-wrapper" id="ytFacade" onclick="loadYT()">
+            <!-- YouTube video (thumbnail + play button) -->
+        <div class="video-wrapper" id="ytFacade" onclick="loadYT()">
+            <img src="https://img.youtube.com/vi/Oy4tCBl-C-0/maxresdefault.jpg" alt="Video o Apartmanima Petrović Semče">
+            <button class="play-btn" aria-label="Pusti video"></button>
+        </div>
+
+        </section>
+
+<!-- ====== SECTION 5: CENE ====== -->
+<section class="section-5" id="section-5">
+    <h2 class="cene-title">Cene</h2>
+
+        <div class="cene-grid">
+        <!-- LETNJE CENE -->
+        <div class="cene-card">
+            <h3>☀️ Letnje cene</h3>
+            <div class="cene-row">
+                <span>Zakup apartmana<br>(do 4 odrasle osobe)</span>
+                <span class="price">40 EUR/noćenje</span>
+            </div>
+            <div class="cene-row">
+                <span>Zakup apartmana<br>(4 ili više odraslih)</span>
+                <span class="price">50 EUR/noćenje</span>
+            </div>
+            <div class="cene-row">
+                <span>Zakup 2-krevetne sobe</span>
+                <span class="price">20 EUR/noćenje</span>
+            </div>
+            <div class="cene-row">
+                <span>Zakup 3-krevetne sobe</span>
+                <span class="price">25 EUR/noćenje</span>
+            </div>
+        </div>
+
+        <!-- ZIMSKE + PRAZNIČNE -->
+        <div class="cene-column">
+            <div class="cene-card winter">
+                <h3>❄️ Zimske cene</h3>
+                <div class="cene-row">
+                    <span>Zakup apartmana<br>(bez obzira na broj gostiju)</span>
+                    <span class="price">50 EUR/noćenje</span>
+                </div>
+            </div>
+
+            <div class="cene-card winter">
+                <h3>🎉 Praznične cene</h3>
+                <div class="cene-row">
+                    <span>Proslave Nove godine, Božića i 1. maja</span>
+                    <span class="price">po dogovoru</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+            <div class="dogovor-grid">
+        <!-- POPUST — ceo prvi red -->
+        <div class="dogovor-box" style="grid-column:1/-1;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M19 5 5 19"/><circle cx="7.5" cy="7.5" r="2.5"/><circle cx="16.5" cy="16.5" r="2.5"/></svg>
+            <p>Imamo popuste za boravke duže od 3 dana ili za rezervacije između utorka i četvrtka (osim u vreme gorenavedenih praznika).</p>
+        </div>
+
+        <div class="dogovor-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M3 21V8l7-5 7 5v13"/><path d="M21 21H3"/><path d="M9 21v-6h4v6"/><path d="M15 12h.01M15 8h.01"/></svg>
+            <p>Zakup celokupnog objekta i dvorišta: <strong>po dogovoru</strong></p>
+        </div>
+
+        <div class="dogovor-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12.2" cy="4.8" r="1.9"/>
+                <path d="M10.3 3.9h3.8"/>
+                <path d="M12.2 6.7V12"/>
+                <path d="M12.2 8.3 9.4 11.2"/>
+                <path d="M12.2 8.3 16.9 11.2"/>
+                <path d="M12.2 12 14.4 15.4 15.8 20.8"/>
+                <path d="M12.2 12 10 15.6 8.6 20.8"/>
+                <path d="M16.6 7.8 17.8 20.8"/>
+            </svg>
+            <p>Vođenje na neki od lokaliteta: <strong>po dogovoru</strong></p>
+        </div>
+    </div>
+
+</section>
+
+<!-- ====== SECTION 6: KONTAKT ====== -->
+<section class="section-6" id="section-6">
+    <h2 class="kontakt-title">Kontakt</h2>
+
+    <div class="kontakt-list">
+
+                <!-- TELEFONI SA IMENIMA -->
+        <div class="phone-row">
+            <div class="phone-left">
+                <span class="ime">Miloš</span>
+                <a class="tel-link" href="tel:+381649346911">📞 +381 64 934 6911</a>
+            </div>
+            <div class="phone-right">
+                <a class="msg-icon viber" href="viber://chat?number=%2B381649346911" aria-label="Viber Miloš" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24"><path d="M11.4.8C6.5 1.2 4.4 3 3.7 7.7c-.2 1.5-.3 5.5 0 7 .6 3.6 2.4 5.4 5.8 5.9 1 .1 6.8.1 7.9 0 3.2-.4 5-2 5.6-5.2.2-1.2.2-6.6 0-7.7-.4-2.4-1.4-3.9-3.2-4.8C18.2.9 17 .8 12.5.8h-1.1zM8.2 4.5c.3-.1.6-.1.7.1.2.3 1.6 2.8 1.6 3 0 .2-.1.4-.3.6l-.6.7c-.2.2-.2.3-.1.5.5 1.2 2.4 3.1 3.6 3.6.2.1.4.1.5-.1l.7-.7c.2-.2.4-.2.6-.1.3.1 2.9 1.5 3 1.7.2.3 0 1-.4 1.5-.6.7-1.6 1.1-2.7 1-.9-.1-2.6-.8-4.2-1.7-2-1.1-3.6-2.7-4.7-4.6-.6-1-.9-2.1-.9-2.8 0-.8.3-1.6.9-2 .3-.3 1-.6 1.3-.6v-.3zM15.3 7.5c.4.2.4.6.1.9-.3.3-.7.2-.9-.1-.1-.2 0-.6.2-.7.2-.1.4-.1.6-.1zm.5-1.4c.9.2 1.6.9 1.7 1.8.1.6 0 1-.1 1.2-.1.4-.6.5-.9.3-.2-.2-.3-.5-.2-1 0-.5-.3-1-.8-1.1-.4-.1-.8-.1-1-.2-.3-.1-.4-.6-.2-.9.1-.2.3-.2.5-.2.3 0 .7 0 1 .1z"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <div class="phone-row">
+            <div class="phone-left">
+                <span class="ime">Miodrag</span>
+                <a class="tel-link" href="tel:+381612205602">📞 +381 61 220 5602</a>
+            </div>
+            <div class="phone-right">
+                <a class="msg-icon viber" href="viber://chat?number=%2B381612205602" aria-label="Viber Miodrag" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24"><path d="M11.4.8C6.5 1.2 4.4 3 3.7 7.7c-.2 1.5-.3 5.5 0 7 .6 3.6 2.4 5.4 5.8 5.9 1 .1 6.8.1 7.9 0 3.2-.4 5-2 5.6-5.2.2-1.2.2-6.6 0-7.7-.4-2.4-1.4-3.9-3.2-4.8C18.2.9 17 .8 12.5.8h-1.1zM8.2 4.5c.3-.1.6-.1.7.1.2.3 1.6 2.8 1.6 3 0 .2-.1.4-.3.6l-.6.7c-.2.2-.2.3-.1.5.5 1.2 2.4 3.1 3.6 3.6.2.1.4.1.5-.1l.7-.7c.2-.2.4-.2.6-.1.3.1 2.9 1.5 3 1.7.2.3 0 1-.4 1.5-.6.7-1.6 1.1-2.7 1-.9-.1-2.6-.8-4.2-1.7-2-1.1-3.6-2.7-4.7-4.6-.6-1-.9-2.1-.9-2.8 0-.8.3-1.6.9-2 .3-.3 1-.6 1.3-.6v-.3zM15.3 7.5c.4.2.4.6.1.9-.3.3-.7.2-.9-.1-.1-.2 0-.6.2-.7.2-.1.4-.1.6-.1zm.5-1.4c.9.2 1.6.9 1.7 1.8.1.6 0 1-.1 1.2-.1.4-.6.5-.9.3-.2-.2-.3-.5-.2-1 0-.5-.3-1-.8-1.1-.4-.1-.8-.1-1-.2-.3-.1-.4-.6-.2-.9.1-.2.3-.2.5-.2.3 0 .7 0 1 .1z"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <div class="phone-row">
+            <div class="phone-left">
+                <span class="ime">Aleksandar</span>
+                <a class="tel-link" href="tel:+381658196260">📞 +381 65 819 6260</a>
+            </div>
+            <div class="phone-right">
+                <a class="msg-icon viber" href="viber://chat?number=%2B381658196260" aria-label="Viber Aleksandar" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24"><path d="M11.4.8C6.5 1.2 4.4 3 3.7 7.7c-.2 1.5-.3 5.5 0 7 .6 3.6 2.4 5.4 5.8 5.9 1 .1 6.8.1 7.9 0 3.2-.4 5-2 5.6-5.2.2-1.2.2-6.6 0-7.7-.4-2.4-1.4-3.9-3.2-4.8C18.2.9 17 .8 12.5.8h-1.1zM8.2 4.5c.3-.1.6-.1.7.1.2.3 1.6 2.8 1.6 3 0 .2-.1.4-.3.6l-.6.7c-.2.2-.2.3-.1.5.5 1.2 2.4 3.1 3.6 3.6.2.1.4.1.5-.1l.7-.7c.2-.2.4-.2.6-.1.3.1 2.9 1.5 3 1.7.2.3 0 1-.4 1.5-.6.7-1.6 1.1-2.7 1-.9-.1-2.6-.8-4.2-1.7-2-1.1-3.6-2.7-4.7-4.6-.6-1-.9-2.1-.9-2.8 0-.8.3-1.6.9-2 .3-.3 1-.6 1.3-.6v-.3zM15.3 7.5c.4.2.4.6.1.9-.3.3-.7.2-.9-.1-.1-.2 0-.6.2-.7.2-.1.4-.1.6-.1zm.5-1.4c.9.2 1.6.9 1.7 1.8.1.6 0 1-.1 1.2-.1.4-.6.5-.9.3-.2-.2-.3-.5-.2-1 0-.5-.3-1-.8-1.1-.4-.1-.8-.1-1-.2-.3-.1-.4-.6-.2-.9.1-.2.3-.2.5-.2.3 0 .7 0 1 .1z"/></svg>
+                </a>
+                <a class="msg-icon whatsapp" href="https://wa.me/381658196260" aria-label="WhatsApp Aleksandar" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.2-1.3A10 10 0 1 0 12 2zm5.6 14.2c-.2.7-1.2 1.3-1.7 1.4-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.8-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.4.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.1.2-.1.3-.3.5l-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.3.7-.2.3.1 1.8.9 2.1 1 .3.2.5.2.6.4.1.1.1.7-.1 1.4z"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- REZERVACIJE -->
+        <a href="https://www.booking.com/hotel/rs/apartmani-petrovic-semce-semce12.en-gb.html" target="_blank" rel="noopener" class="booking-btn">
+            <svg class="booking-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="24" fill="#ffffff"/><text x="24" y="30" font-size="24" font-weight="bold" text-anchor="middle" fill="#003580" font-family="Arial,sans-serif">B</text></svg>
+            Booking.com
+        </a>
+        <a href="https://selo.rs/o/apartmani-petrovic-semce-suva-planina" target="_blank" rel="noopener" class="selo-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M3 21V10l9-6 9 6v11"/><path d="M9 21v-8h6v8"/></svg>
+            Selo.rs
+        </a>
+
+        <div class="divider"></div>
+
+        <!-- DIREKTNE PORUKE -->
+        <p class="dm-caption">Moguća rezervacija preko direktnih poruka:</p>
+    </div>
+
+    <div class="kontakt-social">
+        <a href="https://www.facebook.com/people/Apartmani-Petrovi%C4%87-Sem%C4%8De/100083496813255/" target="_blank" rel="noopener" class="social-btn fb">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            Facebook
+        </a>
+        <a href="https://www.instagram.com/apartmani_petrovic_semce/" target="_blank" rel="noopener" class="social-btn ig">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></3svg>
+            Instagram
+        </a>
+    </div>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer>
+    <p class="footer-text">
+        Apartmani Petrović Semče su porodično gazdinstvo. Ponosni smo na svoje zaplanjsko poreklo, a seoskim turizmom se bavimo od 2022. Radimo na ostvarenju potencijala našeg rodnog kraja na održiv način, bez narušavanja njegovog integriteta i svega onog što ga čini posebnim.
+    </p>
+
+    <div class="footer-contact">
+        <a href="tel:+381649346911">📞 Miloš: +381 64 934 6911</a>
+        <a href="mailto:apartmanipetrovicsuvaplanina@gmail.com">✉️ apartmanipetrovicsuvaplanina@gmail.com</a>
+    </div>
+
+    <p class="copyright">© 2026 Apartmani Petrović Semče. Sva prava zadržana.</p>
+</footer>
+
+<script>
+/* ===== DVOJEZIČNOST (SR / EN) ===== */
+function normKey(s){return String(s).replace(/\uFE0F/g,'').replace(/\s+/g,' ').trim();}
+
+var SR_EN_RAW={
+// HERO
+"Sve pogodnosti modernog smeštaja + čist vazduh, mir i tišina, i najlepši pogled jugoistočne Srbije.":"All the comforts of modern accommodation, but with fresh air, peace and quiet, and the most beautiful views in south-eastern Serbia.",
+
+// SECTION 1 - O Nama
+"Apartmani Petrović Semče su porodično gazdinstvo na 550 m nadmorske visine, lako dostupno iz pravca Niša (40 km) i Leskovca (33 km), i pruža pogled na neke od najlepših pejzaža Suve planine. Idealna lokacija za tim-bildinge, porodične proslave, početnu tačku avanture u prirodi, ili jednostavno — odmor.":"Apartmani Petrović Semče is a family-run estate at 550 m altitude, easily accessible from Niš (40 km) and Leskovac (33 km), offering views of some of the most stunning landscapes of Suva Planina. Perfect for team-building events, family celebrations, an starting point of your adventure, or simply a relaxing getaway.",
+"O nama":"About Us",
+"Kapaciteti":"Accommodation",
+"Glavni apartman":"Main Building",
+"2 spavaće sobe, prostrana dnevna soba i trpezarija sa dodatnim smeštajnim kapacitetima, 1 kupatilo, 1 potpuno opremljena kuhinja.":"2 bedrooms, spacious living room and dining area with extra sleeping space, 1 bathroom, 1 fully equipped kitchen.",
+"Pomoćni objekat":"Annex Building",
+"2 dvokrevetne sobe, 1 trokrevetna sobe, 1 kupatilo, 1 letnja kuhinja.":"2 twin rooms, 1 triple room, 1 bathroom, 1 outdoor kitchen.",
+"Trem i dvorište":"Porch and courtyard",
+"Prostrano dvorište s nameštajem namenjenim za veća okupljanja ili proslave.":"Spacious courtyard with furniture suitable for larger gatherings or celebrations.",
+
+// SECTION 2 - SADRŽAJ
+"Prostrano dvorište (3000 m²), idealno za sportske aktivnosti":"Large courtyard (3,000 m²), perfect for sports activities",
+"Besplatan parking (do 8 putničkih automobila)":"Free parking (up to 8 cars)",
+"Besplatan WiFi":"Free WiFi",
+"Bazen 5 × 2,5 m":"Pool 5 × 2.5 m",
+"Roštilj i tanjirača":"BBQ and Griddle",
+"Kotlić":"Cauldron (kotlić)",
+"Ljuljaške, ležaljke, suncobrani i baštenski nameštaj":"Swings, sun loungers, umbrellas and garden furniture",
+"2 mašine za veš":"2 Washing Machines",
+"2 mašine za pranje suđa":"2 Dishwashers",
+"2 šporeta s rernom":"2 Cooktops with Oven",
+"Više frižidera":"Multiple Refrigerators",
+"Više TV aparata, ravan ekran":"Multiple Flat-Screen TVs",
+"Boravak ljubimaca po dogovoru (pozovite nas)":"Pets welcome upon agreement (please call us first)",
+
+// SECTION 3 - AKTIVNOSTI
+"Ideje za obilaske i aktivnosti:":"Ideas for Trips and Activities:",
+"Chill & Grill":"Chill & Grill",
+"Avanture u prirodi":"Nature is calling",
+"Na biciklu ili motoru, kvadom ili džipom":"By bike or motorbike, quad or jeep",
+"Planinarski usponi":"Mountain hikes",
+"Istorija i kultura":"History and Culture",
+
+// SECTION 4 - UTISCI
+"Utisci sa Google-a":"Reviews on Google",
+"Utisci sa Booking.com":"Reviews on Booking.com",
+"U medijima":"Featured in Media",
+
+// SECTION 5 - CENE
+"☀️ Letnje cene":"☀️ Summer Prices",
+"❄️ Zimske cene":"❄️ Winter Prices",
+"🎉 Praznične cene":"🎉 Holiday Prices",
+"(bez obzira na broj gostiju)":"regardless of guest count",
+"Zakup apartmana":"Apartment Rental",
+"(do 4 odrasle osobe)":"(up to 4 adults)",
+"(4 ili više odraslih)":"(4 or more adults)",
+"Zakup 2-krevetne sobe":"2-Bedroom Room Rental",
+"Zakup 3-krevetne sobe":"3-Bedroom Room Rental",
+"40 EUR/noćenje":"€40 per night",
+"50 EUR/noćenje":"€50 per night",
+"20 EUR/noćenje":"€20 per night",
+"25 EUR/noćenje":"€25 per night",
+"Imamo popuste za boravke duže od 3 dana ili za rezervacije između utorka i četvrtka (osim u vreme gorenavedenih praznika).":"We offer discounts for stays longer than 3 days, or for bookings between Tuesday and Thursday (except during the aforementioned holidays).",
+"Proslave Nove godine, Božića i 1. maja":"New Year, Christmas, and May 1st celebrations",
+"Zakup celokupnog objekta i dvorišta:":"Full Property and Courtyard Rental:",
+"Vođenje na neki od lokaliteta:":"Guided Tours to Local Sites:",
+"po dogovoru":"upon agreement",
+
+// SECTION 6 - KONTAKT
+"Kontakt":"Contact",
+"Miloš":"Miloš",
+"Miodrag":"Miodrag",
+"Aleksandar":"Aleksandar",
+"Moguća rezervacija preko direktnih poruka:":"Reservations also possible via direct messages:",
+
+// FOOTER
+"Apartmani Petrović Semče su porodično gazdinstvo. Ponosni smo na svoje zaplanjsko poreklo, a seoskim turizmom se bavimo od 2022. Radimo na ostvarenju potencijala našeg rodnog kraja na održiv način, bez narušavanja njegovog integriteta i svega onog što ga čini posebnim.":"Apartmani Petrović Semče is a family-run estate in the Zaplanje region. We are proud of our heritage and have been involved in rural tourism since 2022. We strive to realise the potential of our home sustainably, without compromising its integrity or the qualities that make it special.",
+"© 2026 Apartmani Petrović Semče. Sva prava zadržana.":"© 2026 Apartmani Petrović Semče. All rights reserved."
+};
+
+var SR_EN={};
+for(var k in SR_EN_RAW){SR_EN[normKey(k)]=SR_EN_RAW[k];}
+
+SR_EN[normKey("Skeniraj QR kod i saznaj više!")]="Scan the QR code to learn more!";
+SR_EN[normKey("Sadržaj")]="Amenities";
+SR_EN[normKey("Aktivnosti")]="Activities";
+SR_EN[normKey("Utisci")]="Guest Reviews";
+SR_EN[normKey("Cene")]="Prices";
+SR_EN[normKey("Tim bilding i proslave")]="Team building & celebrations";
+
+var langPairs=[];
+var langReady=false;
+
+function collectLang(){
+  langPairs=[];
+  var w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{
+    acceptNode:function(n){
+      var p=n.parentElement;
+      if(!p) return NodeFilter.FILTER_REJECT;
+      if(p.tagName==='SCRIPT'||p.tagName==='STYLE'||p.tagName==='NOSCRIPT') return NodeFilter.FILTER_REJECT;
+      if(p.closest&&p.closest('#langBtn')) return NodeFilter.FILTER_REJECT;
+      return SR_EN[normKey(n.nodeValue)]?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT;
+    }
+  });
+  var n;
+  while((n=w.nextNode())){langPairs.push({node:n,sr:n.nodeValue,key:normKey(n.nodeValue)});}
+  langReady=true;
+}
+
+function setLang(lang){
+  try{
+    if(!langReady) collectLang();
+    langPairs.forEach(function(it){
+      var raw=it.node.nodeValue;
+      var lead=(raw.match(/^\s*/)||[''])[0];
+      var trail=(raw.match(/\s*$/)||[''])[0];
+      var val=(lang==='en')?(SR_EN[it.key]||it.key):it.key;
+      it.node.nodeValue=lead+val+trail;
+    });
+    document.documentElement.lang=(lang==='en')?'en':'sr';
+    var b=document.getElementById('langBtn');
+    if(b) b.textContent=(lang==='en')?'SR':'EN';
+    try{localStorage.setItem('aps_lang',lang);}catch(e){}
+  }catch(e){console.error('Lang switch error:',e);}
+}
+
+function toggleLang(){
+  setLang(document.documentElement.lang==='en'?'sr':'en');
+}
+
+function initLang(){
+  collectLang();
+  var saved=null;
+  try{saved=localStorage.getItem('aps_lang');}catch(e){}
+  if(saved==='en') setLang('en');
+}
+
+if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',initLang);}else{initLang();}
+
+/* SEZONSKI HERO */
+(function(){
+    var m = new Date().getMonth()+1;
+    if(m<3||m>10) document.getElementById('seasonal-hero').classList.add('winter');
+})();
+
+/* GALERIJA CAROUSEL (Section 1) */
+var slideIndex=0;
+var slidesWrap=document.querySelector('.carousel-slides');
+var slides=document.querySelectorAll('.carousel-slide');
+var indWrap=document.querySelector('.carousel-indicators');
+slides.forEach(function(_,i){
+    var d=document.createElement('div');
+    d.className='indicator'+(i===0?' active':'');
+    d.onclick=function(){slideIndex=i;upd();};
+    indWrap.appendChild(d);
+});
+var indicators=document.querySelectorAll('.indicator');
+function upd(){
+    slidesWrap.style.transform='translateX(-'+slideIndex*100+'%)';
+    indicators.forEach(function(el,i){el.classList.toggle('active',i===slideIndex);});
+}
+function moveSlide(dir){
+    slideIndex+=dir;
+    if(slideIndex>=slides.length)slideIndex=0;
+    if(slideIndex<0)slideIndex=slides.length-1;
+    upd();
+}
+var auto=setInterval(function(){moveSlide(1);},5000);
+document.querySelector('.carousel-container').addEventListener('mouseenter',function(){clearInterval(auto);});
+document.querySelector('.carousel-container').addEventListener('mouseleave',function(){auto=setInterval(function(){moveSlide(1);},5000);});
+var tsX=0,teX=0;
+document.querySelector('.carousel-container').addEventListener('touchstart',function(e){tsX=e.changedTouches[0].screenX;});
+document.querySelector('.carousel-container').addEventListener('touchend',function(e){
+    teX=e.changedTouches[0].screenX;
+    if(tsX-teX>50)moveSlide(1);else if(teX-tsX>50)moveSlide(-1);
+});
+
+/* AKTIVNOSTI CAROUSEL (Section 3) */
+var actIndex=0;
+var actWrap=document.querySelector('.aktivnosti-slides');
+var actSlides=document.querySelectorAll('.aktivnosti-slide');
+var actIndWrap=document.querySelector('.aktivnosti-indicators');
+actSlides.forEach(function(_,i){
+    var d=document.createElement('div');
+    d.className='aktivnosti-dot'+(i===0?' active':'');
+    d.onclick=function(){actIndex=i;updAct();};
+    actIndWrap.appendChild(d);
+});
+var actDots=document.querySelectorAll('.aktivnosti-dot');
+function updAct(){
+    actWrap.style.transform='translateX(-'+actIndex*100+'%)';
+    actDots.forEach(function(el,i){el.classList.toggle('active',i===actIndex);});
+}
+function moveActSlide(dir){
+    actIndex+=dir;
+    if(actIndex>=actSlides.length)actIndex=0;
+    if(actIndex<0)actIndex=actSlides.length-1;
+    updAct();
+}
+var actAuto=setInterval(function(){moveActSlide(1);},6000);
+document.querySelector('.aktivnosti-carousel').addEventListener('mouseenter',function(){clearInterval(actAuto);});
+document.querySelector('.aktivnosti-carousel').addEventListener('mouseleave',function(){actAuto=setInterval(function(){moveActSlide(1);},6000);});
+var atsX=0,ateX=0;
+document.querySelector('.aktivnosti-carousel').addEventListener('touchstart',function(e){atsX=e.changedTouches[0].screenX;});
+document.querySelector('.aktivnosti-carousel').addEventListener('touchend',function(e){
+    ateX=e.changedTouches[0].screenX;
+    if(atsX-ateX>50)moveActSlide(1);else if(ateX-atsX>50)moveActSlide(-1);
+});
+
+/* YOUTUBE FACADE */
+function loadYT(){
+    document.getElementById('ytFacade').innerHTML =
+      '<iframe src="https://www.youtube.com/embed/Oy4tCBl-C-0?start=166&autoplay=1&rel=0" ' +
+      'title="YouTube video player" ' +
+      'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ' +
+      'referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+}
+</script>
+</body>
+</html>
