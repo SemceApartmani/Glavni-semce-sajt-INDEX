@@ -270,6 +270,31 @@ footer{background:#0d3d2b;color:#ccb083;padding:45px 40px;text-align:center}
 .pets-box .amenity-icon{width:44px;height:44px;margin-bottom:0}
 .pets-box p{font-size:1rem;font-weight:600}
 
+/* ===== FIX: horizontalni overflow ===== */
+html,body{overflow-x:hidden;max-width:100%}
+
+/* Video (mp4) — nativna širina videa može biti 1920px+ */
+.galerija-video{max-width:100%}
+.galerija-video video{max-width:100%;height:auto;display:block;margin:0 auto}
+
+/* Facebook iframe — fiksna širina može probiti ekran */
+.galerija-fb-video{max-width:267px;margin:0 auto;padding:0 10px;box-sizing:border-box}
+
+/* Telefonski redovi — dugački brojevi sa nowrap mogu probiti uzak ekran */
+.phone-row{max-width:100%}
+.tel-link{white-space:normal;word-break:keep-all}
+
+/* Carousel kontejneri — osigurač */
+.aktivnosti-carousel,.gal-carousel,.galerija-carousel{max-width:100%}
+
+/* Hero slika sa scale transformom */
+.hero-image-side{max-width:100%}
+
+/* ===== FIX: samoprilagodljivi gridovi (ne zavise od @media) ===== */
+.sadrazaj-grid,.sadrzaj-grid{grid-template-columns:repeat(auto-fit,minmax(150px,1fr)) !important}
+.zasto-grid{grid-template-columns:repeat(auto-fit,minmax(260px,1fr)) !important}
+.kapaciteti-grid,.capacity-grid{grid-template-columns:repeat(auto-fit,minmax(260px,1fr)) !important}
+
 </style>
 </head>
 <body>
