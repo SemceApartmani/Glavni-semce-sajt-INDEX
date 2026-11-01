@@ -141,28 +141,48 @@ footer{background:#0d3d2b;color:#ccb083;padding:45px 40px;text-align:center}
 .footer-text{max-width:750px;margin:0 auto 25px auto;font-size:1rem;line-height:1.7}
 .copyright{font-size:.95rem;opacity:.85;border-top:1px solid rgba(204,176,131,.25);padding-top:20px;margin-top:20px}
 
-/* RESPONSIVE */
-@media (max-width:1200px){.sadrzaj-grid{grid-template-columns:repeat(3,1fr)}}
+/* ===== RESPONSIVE (kompletna zamena) ===== */
+@media (max-width:1200px){
+.sadrazaj-grid,.sadrzaj-grid{grid-template-columns:repeat(3,1fr)}
+}
+
 @media (max-width:950px){
+/* HEADER */
 .site-header{flex-direction:column;padding:12px 15px}
 .main-logo{width:75px}
+.dropdown-menu{position:static;transform:none;opacity:1;visibility:visible;background:transparent;border:none;box-shadow:none;padding:0;min-width:0}
+.dropdown-menu a{color:#7c7b33;font-size:.95rem;padding:8px 18px}
+
+/* HERO */
 .hero{grid-template-columns:1fr}
 .hero-image-side{margin:0 20px 20px 20px;min-height:260px}
-h1{font-size:1.8rem}.slogan{font-size:1.05rem}
-.section-1,.section-2,.section-3{padding:50px 20px 60px 20px}
-.zasto-grid,.kapaciteti-grid{grid-template-columns:1fr}
+.hero-content-side h1{font-size:1.8rem}
+.hero-content-side .slogan{font-size:1.05rem}
+.hero-contact{max-width:100%}
+
+/* ZASTO MI */
+.zasto-grid{grid-template-columns:1fr}
+
+/* AKTIVNOSTI */
 .aktivnosti-slide img{height:280px}
 .aktivnosti-slide-content{padding:14px 20px}
 .aktivnosti-slide-content h3{font-size:1.4rem}
-.sadrzaj-grid{grid-template-columns:1fr}
-.dropdown-menu{position:static;transform:none;opacity:1;visibility:visible;background:transparent;border:none;box-shadow:none;padding:0;min-width:0;order:3}
-.dropdown-menu a{color:#7c7b33;font-size:.95rem;padding:8px 18px}
-.capacity-grid{grid-template-columns:1fr}
+.aktivnosti-slide-content p{font-size:.95rem}
+.aktivnosti-indicators{top:235px}
+.aktivnosti-nav{width:45px;height:45px;font-size:22px}
+
+/* KAPACITETI */
+.kapaciteti-grid,.capacity-grid{grid-template-columns:1fr}
+
+/* SADRZAJ */
 .sadrazaj-grid,.sadrzaj-grid{grid-template-columns:repeat(2,1fr);gap:15px}
 .amenity-box{padding:20px 12px}
 .amenity-icon{width:40px;height:40px;margin-bottom:10px}
 .amenity-box p{font-size:.85rem}
-.aktivnosti-indicators{top:235px}
+.pets-box{padding:15px 20px}
+
+/* KONTAKT */
+.kontakt-list{max-width:100%}
 }
 
 /* GALLERY ALIASES */
