@@ -23,165 +23,249 @@
 {"@context":"https://schema.org","@type":"Service","name":"Tim bilding i proslave – Apartmani Petrović Semče","serviceType":"Organizacija tim bildinga i proslava van grada","provider":{"@type":"LocalBusiness","name":"Apartmani Petrović Semče","telephone":"+381649346911","address":{"@type":"PostalAddress","streetAddress":"Miloša Obilića 16","addressLocality":"selo Semče","addressRegion":"Gadžin Han","postalCode":"18245","addressCountry":"RS"},"url":"https://apartmanisuvaplanina.com/"},"areaServed":[{"@type":"City","name":"Niš"},{"@type":"City","name":"Leskovac"},{"@type":"Country","name":"Srbija"}],"url":"https://apartmanisuvaplanina.com/tim-bilding.html"}
 </script>
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #ccb083; color: #0d3d2b; scroll-behavior: smooth; }
 
-.site-header { background: #0d3d2b; padding: 12px 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; position: sticky; top: 0; z-index: 1000; }
-.main-logo { width: 90px; height: auto; border-radius: 50%; }
-.site-header nav { display: flex; flex-wrap: wrap; gap: 5px; }
-.site-header nav a { color: #ccb083; text-decoration: none; padding: 8px 18px; border-radius: 25px; font-weight: 600; font-size: 1rem; transition: all .3s ease; }
-.site-header nav a:hover { background: #7c7b33; color: white; }
-.lang-btn { background: transparent; border: 2px solid #ccb083; color: #ccb083; padding: 7px 16px; border-radius: 25px; font-weight: 700; font-size: .95rem; cursor: pointer; transition: all .3s ease; margin-left: 10px; }
-.lang-btn:hover { background: #ccb083; color: #0d3d2b; }
+/* JEZIČKI PREKIDAČ */
+.lang-btn{background:transparent;border:2px solid #ccb083;color:#ccb083;padding:7px 16px;border-radius:25px;font-weight:700;font-size:.95rem;cursor:pointer;transition:all .3s ease;margin-left:10px}
+.lang-btn:hover{background:#ccb083;color:#0d3d2b}
 
-.page-hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 70vh; background: #ccb083; padding: 25px 0; }
-.hero-image-side { position: relative; overflow: hidden; border-radius: 40px; margin-left: 30px; margin-right: 15px; box-shadow: 0 8px 25px rgba(13,61,43,.35); min-height: 420px; }
-.hero-photo { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
-.hero-content-side { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 40px 35px; }
-h1 { font-size: 2.2rem; margin-bottom: 15px; color: #0d3d2b; }
-.hero-message { font-size: 1.15rem; margin-bottom: 35px; line-height: 1.6; max-width: 460px; }
-.hero-contact { display: flex; flex-direction: column; align-items: stretch; gap: 16px; width: 100%; max-width: 400px; margin: 5px auto 0 auto; text-align: left; }
-.cta-btn { background: #0d3d2b; color: #ccb083; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1rem; transition: all .3s ease; }
-.cta-btn:hover { background: #7c7b33; color: white; transform: translateY(-3px); }
+/* BOJE */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background-color:#ccb083;color:#0d3d2b;scroll-behavior:smooth}
 
-.section-zasto { background: #7c7b33; padding: 70px 40px 80px 40px; scroll-margin-top: 100px; }
-.zasto-title { font-size: 2rem; text-align: center; margin-bottom: 50px; color: #ccb083; font-weight: 700; }
-.zasto-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; max-width: 1200px; margin: 0 auto; }
-.zasto-card { background: rgba(255,255,255,.9); border-radius: 20px; padding: 30px 25px; box-shadow: 0 4px 15px rgba(13,61,43,.2); transition: transform .3s ease; text-align: center; }
-.zasto-card:hover { transform: translateY(-5px); }
-.zasto-card h3 { font-size: 1.2rem; margin-bottom: 15px; color: #7c7b33; font-weight: 700; }
-.zasto-card p { font-size: 1rem; line-height: 1.7; }
+/* HEADER */
+.site-header{background:#0d3d2b;padding:12px 30px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px;position:sticky;top:0;z-index:1000}
+.main-logo{width:90px;height:auto;border-radius:50%;cursor:pointer}
+.site-header nav{display:flex;flex-wrap:wrap;gap:5px;align-items:center}
+.site-header nav a{color:#ccb083;text-decoration:none;padding:8px 18px;border-radius:25px;font-weight:600;font-size:1rem;transition:all .3s ease}
+.site-header nav a:hover{background:#7c7b33;color:white}
 
-.section-aktivnosti { background: #ccb083; padding: 70px 40px 80px 40px; scroll-margin-top: 100px; }
-.aktivnosti-title { font-size: 2rem; text-align: center; margin-bottom: 50px; font-weight: 700; }
-.aktivnosti-carousel { position: relative; max-width: 950px; margin: 0 auto; overflow: hidden; border-radius: 25px; box-shadow: 0 8px 30px rgba(13,61,43,.3); background: white; }
-.aktivnosti-slides { display: flex; transition: transform .5s ease-in-out; }
-.aktivnosti-slide { min-width: 100%; display: flex; flex-direction: column; }
-.aktivnosti-slide img { width: 100%; height: 400px; object-fit: cover; display: block; }
-.aktivnosti-slide-content { flex: 1; display: flex; flex-direction: column; justify-content: center; background: linear-gradient(to bottom, rgba(13,61,43,.85), rgba(13,61,43,1)); padding: 18px 40px; text-align: center; }
-.aktivnosti-slide-content h3 { font-size: 1.8rem; color: #ccb083; font-weight: 700; }
-.aktivnosti-slide-content p { font-size: 1.05rem; color: #e8ddc7; line-height: 1.6; margin-top: 8px; max-width: 700px; margin-left: auto; margin-right: auto; }
-.aktivnosti-nav { position: absolute; top: 35%; transform: translateY(-50%); width: 55px; height: 55px; background: rgba(13,61,43,.9); border: 3px solid #ccb083; border-radius: 50%; color: white; font-size: 26px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all .3s ease; z-index: 10; }
-.aktivnosti-nav:hover { background: rgba(13,61,43,1); transform: translateY(-50%) scale(1.15); }
-.aktivnosti-prev { left: 25px; }
-.aktivnosti-next { right: 25px; }
-.aktivnosti-indicators { position: absolute; bottom: 110px; left: 50%; transform: translateX(-50%); display: flex; gap: 12px; z-index: 10; }
-.aktivnosti-dot { width: 14px; height: 14px; border-radius: 50%; background: rgba(255,255,255,.4); cursor: pointer; transition: all .3s ease; border: 2px solid #ccb083; }
-.aktivnosti-dot.active { background: #ccb083; transform: scale(1.3); }
+/* DROPDOWN MENI */
+.nav-dropdown{position:relative;display:flex;align-items:center}
+.nav-dropdown > a::after{content:"▾";font-size:.8em;line-height:1;display:inline-block;vertical-align:middle;margin-left:6px}
+.dropdown-menu{position:absolute;top:calc(100% + 8px);left:50%;transform:translate(-50%,8px);background:#0d3d2b;border:2px solid #7c7b33;border-radius:15px;padding:8px;min-width:230px;display:flex;flex-direction:column;gap:2px;opacity:0;visibility:hidden;transition:opacity .25s ease,transform .25s ease,visibility .25s;z-index:1001;box-shadow:0 8px 25px rgba(0,0,0,.4)}
+.nav-dropdown:hover .dropdown-menu,.nav-dropdown:focus-within .dropdown-menu{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.dropdown-menu a{white-space:nowrap;text-align:center}
 
-.section-galerije { background: #7c7b33; padding: 70px 40px 80px 40px; scroll-margin-top: 100px; }
-.galerije-title { font-size: 2rem; text-align: center; margin-bottom: 60px; color: #ccb083; font-weight: 700; }
-.galerija-block { max-width: 950px; margin: 0 auto 70px auto; }
-.galerija-block:last-child { margin-bottom: 0; }
-.galerija-subtitle { font-size: 1.4rem; text-align: center; margin-bottom: 25px; color: #ccb083; font-weight: 700; }
-.gal-carousel { position: relative; overflow: hidden; border-radius: 25px; box-shadow: 0 8px 30px rgba(13,61,43,.3); background: white; }
-.gal-slides { display: flex; transition: transform .5s ease-in-out; }
-.gal-slide { min-width: 100%; position: relative; }
-.gal-slide img { width: 100%; height: 480px; object-fit: cover; display: block; }
-.gal-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 55px; height: 55px; background: rgba(13,61,43,.9); border: 3px solid #ccb083; border-radius: 50%; color: white; font-size: 26px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all .3s ease; z-index: 10; }
-.gal-nav:hover { background: rgba(13,61,43,1); transform: translateY(-50%) scale(1.15); }
-.gal-prev { left: 25px; }
-.gal-next { right: 25px; }
-.gal-indicators { position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%); display: flex; gap: 12px; z-index: 10; }
-.gal-dot { width: 14px; height: 14px; border-radius: 50%; background: rgba(255,255,255,.4); cursor: pointer; transition: all .3s ease; border: 2px solid #ccb083; }
-.gal-dot.active { background: #ccb083; transform: scale(1.3); }
-.galerija-video { display: flex; justify-content: center; margin-top: 25px; }
-.galerija-video video { width: 100%; max-width: 640px; border-radius: 20px; box-shadow: 0 8px 30px rgba(13,61,43,.3); }
-.galerija-fb-video { display: flex; justify-content: center; margin-top: 25px; }
+/* HERO */
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh - 120px);background:#ccb083;padding:25px 0}
+.hero-image-side{position:relative;overflow:hidden;border-radius:40px;margin-left:30px;margin-right:15px;box-shadow:0 8px 25px rgba(13,61,43,.35);min-height:420px}
+.hero-photo{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;object-position:center 70%;transform:scale(1.11);transform-origin:top}
+.hero-content-side{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:40px 35px}
+.hero-content-side h1{font-size:2.2rem;margin-bottom:15px;color:#0d3d2b}
+.hero-content-side .slogan{font-size:1.15rem;margin-bottom:35px;line-height:1.6;max-width:460px}
+.hero-contact{display:flex;flex-direction:column;align-items:stretch;gap:16px;width:100%;max-width:400px;margin:5px auto 0 auto;text-align:left}
+.phone-row{display:flex;align-items:center;justify-content:space-between;gap:15px;width:100%;background:#0d3d2b;border-radius:50px;padding:10px 20px;transition:all .3s ease}
+.phone-row:hover{background:#123f2c}
+.phone-left{display:flex;flex-direction:column;line-height:1.3}
+.phone-row .ime{color:#ccb083;font-weight:700;font-size:1.05rem}
+.phone-row .tel-link{color:white;font-weight:600;font-size:1.05rem;white-space:nowrap;text-decoration:none}
+.phone-right{display:flex;align-items:center;gap:10px}
+.msg-icon{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;text-decoration:none;transition:all .3s ease}
+.msg-icon.viber{background:#7360f2}
+.msg-icon.whatsapp{background:#25d366}
+.msg-icon:hover{transform:scale(1.12)}
+.msg-icon svg{width:20px;height:20px;fill:white}
 
-.section-kapaciteti { background: #ccb083; padding: 70px 40px 80px 40px; scroll-margin-top: 100px; }
-.kapaciteti-title { font-size: 2rem; text-align: center; margin-bottom: 40px; font-weight: 700; }
-.capacity-block { max-width: 1280px; margin: 0 auto; }
-.capacity-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
-.capacity-card { background: rgba(255,255,255,.6); border-radius: 20px; padding: 30px 25px; box-shadow: 0 4px 15px rgba(13,61,43,.15); transition: transform .3s ease; }
-.capacity-card:hover { transform: translateY(-5px); }
-.capacity-card h3 { font-size: 1.2rem; margin-bottom: 15px; color: #7c7b33; font-weight: 700; }
-.capacity-card p { font-size: 1rem; line-height: 1.7; }
-.sadrzaj-subtitle { font-size: 1.8rem; text-align: center; margin: 70px 0 40px 0; font-weight: 700; }
-.sadrazaj-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 20px; max-width: 1400px; margin: 0 auto; }
-.amenity-box { background: rgba(255,255,255,.9); border-radius: 20px; padding: 25px 15px; text-align: center; box-shadow: 0 4px 15px rgba(13,61,43,.2); transition: transform .3s ease; display: flex; flex-direction: column; align-items: center; }
-.amenity-box:hover { transform: translateY(-5px); }
-.amenity-icon { width: 52px; height: 52px; color: #0d3d2b; margin-bottom: 15px; }
-.amenity-box p { font-size: .95rem; line-height: 1.5; font-weight: 600; }
-.pets-box { background: rgba(255,255,255,.9); border-radius: 20px; padding: 18px 35px; box-shadow: 0 4px 15px rgba(13,61,43,.2); display: flex; align-items: center; justify-content: center; gap: 15px; max-width: 520px; margin: 40px auto 0 auto; transition: transform .3s ease; }
-.pets-box:hover { transform: translateY(-5px); }
-.pets-box .amenity-icon { width: 44px; height: 44px; margin-bottom: 0; }
-.pets-box p { font-size: 1rem; font-weight: 600; }
+/* ZASTO MI */
+.zasto-mi{background:#0d3d2b;padding:70px 40px 80px 40px;scroll-margin-top:100px}
+.zasto-title{font-size:2rem;text-align:center;margin-bottom:50px;color:#ccb083;font-weight:700}
+.zasto-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;max-width:1200px;margin:0 auto}
+.zasto-card{background:rgba(255,255,255,.9);border-radius:20px;padding:30px 25px;box-shadow:0 4px 15px rgba(13,61,43,.15);transition:transform .3s ease}
+.zasto-card:hover{transform:translateY(-5px)}
+.zasto-card h3{font-size:1.3rem;margin-bottom:15px;color:#7c7b33;font-weight:700}
+.zasto-card p{font-size:1.05rem;line-height:1.7}
 
-.section-cena { background: #7c7b33; padding: 70px 40px 80px 40px; scroll-margin-top: 100px; }
-.cena-title { font-size: 2rem; text-align: center; margin-bottom: 60px; color: #ccb083; font-weight: 700; }
-.cena-poruka { font-size: 1.6rem; font-weight: 700; text-align: center; color: #0d3d2b; line-height: 1.6; max-width: 800px; margin: 0 auto; background: rgba(255,255,255,.75); border-radius: 25px; padding: 35px 40px; box-shadow: 0 6px 20px rgba(13,61,43,.18); }
+/* AKTIVNOSTI */
+.aktivnosti{background:#ccb083;padding:70px 40px 80px 40px;scroll-margin-top:100px}
+.aktivnosti-title{font-size:2rem;text-align:center;margin-bottom:50px;font-weight:700}
+.aktivnosti-carousel{position:relative;max-width:950px;margin:0 auto;overflow:hidden;border-radius:25px;box-shadow:0 8px 30px rgba(13,61,43,.3);background:white}
+.aktivnosti-slides{display:flex;transition:transform .5s ease-in-out}
+.aktivnosti-slide{min-width:100%;display:flex;flex-direction:column}
+.aktivnosti-slide img{width:100%;height:400px;object-fit:cover;display:block}
+.aktivnosti-slide-content{flex:1;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(to bottom,rgba(13,61,43,.85),rgba(13,61,43,1));padding:18px 40px;text-align:center}
+.aktivnosti-slide-content h3{font-size:1.8rem;color:#ccb083;font-weight:700;margin-bottom:12px}
+.aktivnosti-slide-content p{font-size:1.1rem;line-height:1.6;color:white;max-width:600px;margin:0 auto}
+.aktivnosti-nav{position:absolute;top:35%;transform:translateY(-50%);width:55px;height:55px;background:rgba(13,61,43,.9);border:3px solid #ccb083;border-radius:50%;color:white;font-size:26px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s ease;z-index:10}
+.aktivnosti-nav:hover{background:rgba(13,61,43,1);transform:translateY(-50%) scale(1.15)}
+.aktivnosti-prev{left:25px}.aktivnosti-next{right:25px}
+.aktivnosti-indicators{position:absolute;top:352px;left:50%;transform:translateX(-50%);display:flex;gap:12px;z-index:10}
+.aktivnosti-dot{width:14px;height:14px;border-radius:50%;background:rgba(255,255,255,.4);cursor:pointer;transition:all .3s ease;border:2px solid #ccb083}
+.aktivnosti-dot.active{background:#ccb083;transform:scale(1.3)}
 
-.section-kontakt { background: #ccb083; padding: 70px 40px 90px 40px; scroll-margin-top: 100px; }
-.kontakt-title { font-size: 2rem; text-align: center; margin-bottom: 60px; color: #0d3d2b; font-weight: 700; }
-.kontakt-list { display: flex; flex-direction: column; align-items: center; gap: 16px; max-width: 400px; margin: 0 auto; }
-.phone-row { display: flex; align-items: center; justify-content: space-between; gap: 15px; width: 100%; background: #0d3d2b; border-radius: 50px; padding: 10px 20px; transition: all .3s ease; }
-.phone-row:hover { background: #123f2c; }
-.phone-left { display: flex; flex-direction: column; line-height: 1.3; }
-.phone-row .ime { color: #ccb083; font-weight: 700; font-size: 1.05rem; }
-.phone-row .tel-link { color: white; font-weight: 600; font-size: 1.05rem; white-space: nowrap; text-decoration: none; }
-.phone-right { display: flex; align-items: center; gap: 10px; }
-.msg-icon { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; text-decoration: none; transition: all .3s ease; }
-.msg-icon.viber { background: #7360f2; }
-.msg-icon.whatsapp { background: #25d366; }
-.msg-icon:hover { transform: scale(1.12); }
-.msg-icon svg { width: 20px; height: 20px; fill: white; }
-.kontakt-podnaslov { font-size: 1.6rem; text-align: center; margin: 55px 0 30px 0; color: #ccb083; font-weight: 700; }
-.kontakt-social { display: flex; gap: 15px; justify-content: center; margin-top: 25px; flex-wrap: wrap; }
-.social-btn { padding: 11px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; transition: all .3s ease; display: inline-flex; align-items: center; justify-content: center; gap: 8px; color: white; font-size: 1rem; }
-.social-btn.fb { background: #1877f2; }
-.social-btn.ig { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
-.social-btn:hover { transform: translateY(-3px); }
-.kontakt-napomena { font-size: .95rem; text-align: center; color: #e8ddc7; line-height: 1.6; max-width: 620px; margin: 35px auto 0 auto; }
-.kontakt-napomena strong { font-weight: 700; }
-.back-home { margin-top: 25px; }
-.back-home a { display: inline-block; background: #0d3d2b; color: #ccb083; padding: 10px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; transition: all .3s ease; }
-.back-home a:hover { background: #0d3d2b; color: #ccb083; }
+/* GALERIJE */
+.galerije{background:#7c7b33;padding:70px 40px 80px 40px;scroll-margin-top:100px}
+.gal-title{font-size:2rem;text-align:center;margin-bottom:50px;color:#ccb083;font-weight:700}
+.gal-block{max-width:1000px;margin:0 auto 70px auto}
+.gal-block h3{font-size:1.4rem;text-align:center;margin-bottom:30px;color:#0d3d2b;font-weight:700}
+.gal-carousel{position:relative;overflow:hidden;border-radius:25px;box-shadow:0 8px 30px rgba(13,61,43,.3);background:white}
+.gal-slides{display:flex;transition:transform .5s ease-in-out}
+.gal-slide{min-width:100%;aspect-ratio:16/10;position:relative}
+.gal-slide img{width:100%;height:100%;object-fit:cover;display:block}
+.gal-nav{position:absolute;top:50%;transform:translateY(-50%);width:50px;height:50px;background:rgba(13,61,43,.8);border:none;border-radius:50%;color:white;font-size:24px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s ease;z-index:10}
+.gal-nav:hover{background:rgba(13,61,43,1);transform:translateY(-50%) scale(1.1)}
+.gal-prev{left:20px}.galerija-next{right:20px}
+.gal-indicators{position:absolute;bottom:15px;left:50%;transform:translateX(-50%);display:flex;gap:10px;z-index:10}
+.gal-dot{width:12px;height:12px;border-radius:50%;background:rgba(255,255,255,.5);cursor:pointer;transition:all .3s ease;border:2px solid white}
+.gal-dot.active{background:white;transform:scale(1.2)}
 
-footer { background: #0d3d2b; color: #ccb083; padding: 45px 40px; text-align: center; }
-.footer-contact { display: flex; flex-direction: column; gap: 12px; margin-bottom: 25px; font-size: 1.05rem; }
-.footer-contact a { color: #ccb083; text-decoration: none; font-weight: 600; }
-.footer-contact a:hover { color: white; }
-.copyright { font-size: .95rem; opacity: .85; border-top: 1px solid rgba(204,176,131,.25); padding-top: 20px; margin-top: 20px; }
+/* KAPACITETI */
+.kapaciteti{background:#0d3d2b;padding:70px 40px 80px 40px;scroll-margin-top:100px}
+.kapaciteti-title{font-size:2rem;text-align:center;margin-bottom:50px;color:#ccb083;font-weight:700}
+.kapaciteti-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;max-width:1280px;margin:0 auto}
+.kapaciteti-card{background:rgba(255,255,255,.9);border-radius:20px;padding:30px 25px;box-shadow:0 4px 15px rgba(255,255,255,.1);transition:transform .3s ease}
+.kapaciteti-card:hover{transform:translateY(-5px)}
+.kapaciteti-card h3{font-size:1.3rem;margin-bottom:15px;color:#ccb083;font-weight:700}
+.kapaciteti-card p{font-size:1.05rem;line-height:1.7}
+.sadrzaj-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:1400px;margin:50px auto 0 auto}
+.amenity-box{background:rgba(255,255,255,.9);border-radius:20px;padding:25px 15px;text-align:center;box-shadow:0 4px 15px rgba(255,255,255,.1);transition:transform .3s ease;display:flex;flex-direction:column;align-items:center}
+.amenity-box:hover{transform:translateY(-5px)}
+.sadrzaj-icon{width:52px;height:52px;color:#0d3d2b;margin-bottom:15px}
+.amenity-box p{font-size:.95rem;line-height:1.5;font-weight:600}
 
-@media (max-width: 1200px) { .sadrazaj-grid { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 950px) {
-  .site-header { flex-direction: column; padding: 12px 15px; }
-  .page-hero { grid-template-columns: 1fr; }
-  .hero-image-side { margin: 0 20px 20px 20px; min-height: 260px; }
-  h1 { font-size: 1.8rem; }
-  .section-zasto, .section-aktivnosti, .section-galerije, .section-kapaciteti, .section-cena, .section-kontakt { padding: 50px 20px 60px 20px; }
-  .zasto-grid { grid-template-columns: 1fr; }
-  .aktivnosti-slide img { height: 280px; }
-  .aktivnosti-slide-content { padding: 14px 20px; }
-  .aktivnosti-slide-content h3 { font-size: 1.4rem; }
-  .aktivnosti-slide-content p { font-size: .95rem; }
-  .aktivnosti-nav { width: 45px; height: 45px; font-size: 22px; }
-  .aktivnosti-indicators { bottom: 80px; }
-  .galerija-subtitle { font-size: 1.2rem; }
-  .gal-slide img { height: 280px; }
-  .gal-nav { width: 45px; height: 45px; font-size: 22px; }
-  .galerija-block { margin-bottom: 50px; }
-  .galerija-fb-video iframe { max-width: 100%; }
-  .capacity-grid { grid-template-columns: 1fr; }
-  .sadrazaj-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
-  .amenity-box { padding: 20px 12px; }
-  .amenity-icon { width: 40px; height: 40px; margin-bottom: 10px; }
-  .amenity-box p { font-size: .85rem; }
-  .cena-poruka { font-size: 1.25rem; padding: 25px 20px; }
-  .kontakt-list { max-width: 100%; }
-  .kontakt-napomena { padding: 0 10px; }
+/* CENA */
+.cena{background:#7c7b33;padding:70px 40px 80px 40px;scroll-margin-top:100px}
+.cena-title{font-size:2rem;text-align:center;margin-bottom:50px;color:#ccb083;font-weight:700}
+.cena-box{background:rgba(255,255,255,.75);border-radius:25px;padding:35px 30px;box-shadow:0 6px 20px rgba(0,0,0,.15);text-align:center;max-width:800px;margin:0 auto}
+.cena-box h3{font-size:1.5rem;margin-bottom:25px;color:#ccb083;font-weight:700}
+.cena-box p{font-size:1.1rem;line-height:1.6}
+
+/* KONTAKT */
+.kontakt{background:#0d3d2b;padding:70px 40px 90px 40px;scroll-margin-top:100px}
+.kontakt-title{font-size:2rem;text-align:center;margin-bottom:60px;color:#ccb083;font-weight:700}
+.kontakt-list{display:flex;flex-direction:column;align-items:center;gap:16px;max-width:400px;margin:0 auto}
+.contact-note{text-align:center;font-size:1.05rem;line-height:1.6;margin:30px 0;color:white;max-width:550px}
+.back-home{display:inline-block;color:#ccb083;font-size:1.15rem;font-weight:700;text-decoration:underline;margin-top:30px}
+
+/* FOOTER */
+footer{background:#0d3d2b;color:#ccb083;padding:45px 40px;text-align:center}
+.footer-text{max-width:750px;margin:0 auto 25px auto;font-size:1rem;line-height:1.7}
+.copyright{font-size:.95rem;opacity:.85;border-top:1px solid rgba(204,176,131,.25);padding-top:20px;margin-top:20px}
+
+/* RESPONSIVE */
+@media (max-width:1200px){.sadrazaj-grid,.sadrzaj-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:950px){
+.site-header{flex-direction:column;padding:12px 15px}
+.main-logo{width:75px}
+.hero{grid-template-columns:1fr}
+.hero-image-side{margin:0 20px 20px 20px;min-height:260px}
+h1{font-size:1.8rem}.slogan{font-size:1.05rem}
+.section-1,.section-2,.section-3{padding:50px 20px 60px 20px}
+.zasto-grid,.kapaciteti-grid{grid-template-columns:1fr}
+.aktivnosti-slide img{height:280px}
+.aktivnosti-slide-content{padding:14px 20px}
+.aktivnosti-slide-content h3{font-size:1.4rem}
+.sadrzaj-grid{grid-template-columns:1fr}
+.dropdown-menu{position:static;transform:none;opacity:1;visibility:visible;background:transparent;border:none;box-shadow:none;padding:0;min-width:0;order:3}
+.dropdown-menu a{color:#7c7b33;font-size:.95rem;padding:8px 18px}
+.capacity-grid{grid-template-columns:1fr}
+.sadrazaj-grid,.sadrzaj-grid{grid-template-columns:repeat(2,1fr);gap:15px}
+.amenity-box{padding:20px 12px}
+.amenity-icon{width:40px;height:40px;margin-bottom:10px}
+.amenity-box p{font-size:.85rem}
+.aktivnosti-indicators{top:235px}
 }
+
+/* GALLERY ALIASES */
+.gal-carousel{position:relative;overflow:hidden;border-radius:25px;box-shadow:0 8px 30px rgba(13,61,43,.3);background:white}
+.gal-slides{display:flex;transition:transform .5s ease-in-out}
+.gal-slide{min-width:100%;aspect-ratio:16/10;position:relative}
+.gal-slide img{width:100%;height:100%;object-fit:cover;display:block}
+.gal-nav{position:absolute;top:50%;transform:translateY(-50%);width:50px;height:50px;background:rgba(13,61,43,.8);border:none;border-radius:50%;color:white;font-size:24px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s ease;z-index:10}
+.gal-nav:hover{background:rgba(13,61,43,1);transform:translateY(-50%) scale(1.1)}
+.gal-prev{left:20px}.gal-next{right:20px}
+.gal-indicators{position:absolute;bottom:15px;left:50%;transform:translateX(-50%);display:flex;gap:10px;z-index:10}
+.gal-dot{width:12px;height:12px;border-radius:50%;background:rgba(255,255,255,.5);cursor:pointer;transition:all .3s ease;border:2px solid white}
+.gal-dot.active{background:white;transform:scale(1.2)}
+
+/* ===== PATCH: klase koje fale ===== */
+
+/* Galerije (gal-* verzije) */
+.gal-carousel{position:relative;overflow:hidden;border-radius:25px;box-shadow:0 8px 30px rgba(13,61,43,.3);background:white}
+.gal-slides{display:flex;transition:transform .5s ease-in-out}
+.gal-slide{min-width:100%;aspect-ratio:16/10;position:relative}
+.gal-slide img{width:100%;height:100%;object-fit:cover;display:block}
+.gal-nav{position:absolute;top:50%;transform:translateY(-50%);width:50px;height:50px;background:rgba(13,61,43,.8);border:none;border-radius:50%;color:white;font-size:24px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s ease;z-index:10}
+.gal-nav:hover{background:rgba(13,61,43,1);transform:translateY(-50%) scale(1.1)}
+.gal-prev{left:20px}.gal-next{right:20px}
+.gal-indicators{position:absolute;bottom:15px;left:50%;transform:translateX(-50%);display:flex;gap:10px;z-index:10}
+.gal-dot{width:12px;height:12px;border-radius:50%;background:rgba(255,255,255,.5);cursor:pointer;transition:all .3s ease;border:2px solid white}
+.gal-dot.active{background:white;transform:scale(1.2)}
+.galerija-subtitle{font-size:1.4rem;text-align:center;margin-bottom:30px;color:#0d3d2b;font-weight:700}
+.galerija-video{max-width:800px;margin:30px auto;background:#0d3d2b;border-radius:25px;padding:20px;text-align:center}
+.galerija-video video{max-width:100%;border-radius:15px}
+.galerija-fb-video{text-align:center;margin:30px auto;display:block}
+.galerija-fb-video iframe{border-radius:15px}
+
+/* Sadržaj/Amenities alias */
+.sadrzaj-box{background:rgba(255,255,255,.9);border-radius:20px;padding:25px 15px;text-align:center;box-shadow:0 4px 15px rgba(255,255,255,.1);transition:transform .3s ease;display:flex;flex-direction:column;align-items:center}
+.sadrzaj-box:hover{transform:translateY(-5px)}
+.sadrzaj-icon{width:52px;height:52px;color:#0d3d2b;margin-bottom:15px}
+.sadrzaj-box p{font-size:.95rem;line-height:1.5;font-weight:600}
+.sadrzaj-subtitle{font-size:1.5rem;text-align:center;margin:50px 0 30px 0;color:#ccb083;font-weight:700}
+
+/* Pets box */
+.pets-box{background:rgba(255,255,255,.9);border-radius:20px;padding:18px 35px;box-shadow:0 4px 15px rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;gap:15px;max-width:520px;margin:40px auto 0 auto;transition:transform .3s ease}
+.pets-box:hover{transform:translateY(-5px)}
+.pets-box .amenity-icon{width:44px;height:44px;margin-bottom:0}
+.pets-box p{font-size:1rem;font-weight:600}
+
+/* Cena/Kontakt dodaci */
+.cena-poruka{text-align:center;font-size:1.1rem;line-height:1.6;max-width:700px;margin:0 auto 40px auto;color:white}
+.kontakt-podnaslov{font-size:1.5rem;text-align:center;margin:40px 0 30px 0;color:#ccb083;font-weight:700}
+.contact-note{text-align:center;font-size:1.05rem;line-height:1.6;margin:30px auto;color:white;max-width:550px}
+.kontakt-napomena{text-align:center;font-size:1.05rem;line-height:1.6;margin:30px auto;color:white;max-width:550px}
+.kontakt-social{display:flex;gap:15px;justify-content:center;margin-top:25px}
+.social-btn{padding:11px 30px;border-radius:50px;text-decoration:none;font-weight:bold;transition:all .3s ease;display:inline-flex;align-items:center;justify-content:center;gap:8px;color:white;font-size:1rem}
+.social-btn.fb{background:#1877f2}
+.social-btn.ig{background:linear-gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)}
+.social-btn:hover{transform:translateX(-4px)}
+.back-home a{color:#ccb083;font-size:1.15rem;font-weight:700;text-decoration:underline}
+.back-home a:hover{color:white}
+
+/* Footer */
+.footer-contact{display:flex;flex-direction:column;gap:12px;margin-bottom:25px;font-size:1.05rem}
+.footer-contact a{color:#ccb083;text-decoration:none;font-weight:600}
+.footer-contact a:hover{color:white}
+
+/* ===== PATCH: capacity + amenity klase ===== */
+
+/* Kapaciteti kartice (HTML koristi capacity-*) */
+.capacity-block{max-width:1280px;margin:0 auto}
+.capacity-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.capacity-card{background:rgba(255,255,255,.9);border-radius:20px;padding:30px 25px;box-shadow:0 4px 15px rgba(0,0,0,.25);transition:transform .3s ease}
+.capacity-card:hover{transform:translateY(-5px)}
+.capacity-card h3{font-size:1.3rem;margin-bottom:15px;color:#ccb083;font-weight:700}
+.capacity-card p{font-size:1.05rem;line-height:1.7}
+
+/* Amenity kartice (HTML koristi amenity-*) */
+.sadrazaj-grid,.sadrzaj-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:1400px;margin:50px auto 0 auto}
+.amenity-box{background:rgba(255,255,255,.9);border-radius:20px;padding:25px 15px;text-align:center;box-shadow:0 4px 15px rgba(0,0,0,.25);transition:transform .3s ease;display:flex;flex-direction:column;align-items:center}
+.amenity-box:hover{transform:translateY(-5px)}
+.amenity-icon{width:52px;height:52px;color:#0d3d2b;margin-bottom:15px}
+.amenity-box p{font-size:.95rem;line-height:1.5;font-weight:600}
+
+/* Pets box */
+.pets-box{background:rgba(255,255,255,.9);border-radius:20px;padding:18px 35px;box-shadow:0 4px 15px rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center;gap:15px;max-width:520px;margin:40px auto 0 auto;transition:transform .3s ease}
+.pets-box:hover{transform:translateY(-5px)}
+.pets-box .amenity-icon{width:44px;height:44px;margin-bottom:0}
+.pets-box p{font-size:1rem;font-weight:600}
+
 </style>
 </head>
 <body>
 
+<!-- ====== HEADER ====== -->
 <header class="site-header">
     <a href="index.html"><img src="logo.png" alt="Apartmani Petrović Semče - logo" class="main-logo"></a>
     <nav>
         <a href="index.html#section-1">O nama</a>
         <a href="index.html#section-2">Sadržaj</a>
-        <a href="index.html#section-3">Aktivnosti</a>
+        <div class="nav-dropdown">
+            <a href="index.html#section-3">Aktivnosti</a>
+            <div class="dropdown-menu">
+                <a href="tim-bilding.html">Tim bilding i proslave</a>
+            </div>
+        </div>
         <a href="index.html#section-4">Utisci</a>
         <a href="index.html#section-5">Cene</a>
         <a href="index.html#section-6">Kontakt</a>
@@ -189,13 +273,13 @@ footer { background: #0d3d2b; color: #ccb083; padding: 45px 40px; text-align: ce
     <button id="langBtn" class="lang-btn" onclick="toggleLang()">EN</button>
 </header>
 
-<section class="page-hero">
+<section class="hero">
     <div class="hero-image-side">
         <img src="Tim Bilding Hero.jpg" class="hero-photo" alt="Tim bilding i proslave na Suvoj planini – Apartmani Petrović Semče" fetchpriority="high">
     </div>
     <div class="hero-content-side">
     <h1>Tim bilding i proslave van grada</h1>
-    <p class="hero-message">Tražite povoljan prostor za proslavu na otvorenom, tim bilding ili korporativni offsite događaj, okupljanje svog kluba, obuku u prirodi, ili idilični prostor za photoshoot ili snimanje videa?<br><br>Apartmani Petrović su pravo mesto za Vas!</p>
+    <p class="slogan">Tražite povoljan prostor za proslavu na otvorenom, tim bilding ili korporativni offsite događaj, okupljanje svog kluba, obuku u prirodi, ili idilični prostor za photoshoot ili snimanje videa?<br><br>Apartmani Petrović su pravo mesto za Vas!</p>
     <div class="hero-contact">
         <div class="phone-row">
             <div class="phone-left">
@@ -212,7 +296,7 @@ footer { background: #0d3d2b; color: #ccb083; padding: 45px 40px; text-align: ce
 </div>
 </section>
 
-<section class="section-zasto" id="zasto">
+<section class="zasto-mi" id="zasto">
     <h2 class="zasto-title">Zašto mi?</h2>
     <div class="zasto-grid">
         <div class="zasto-card">
@@ -230,7 +314,7 @@ footer { background: #0d3d2b; color: #ccb083; padding: 45px 40px; text-align: ce
     </div>
 </section>
 
-<section class="section-aktivnosti" id="aktivnosti">
+<section class="aktivnosti" id="aktivnosti">
     <h2 class="aktivnosti-title">Aktivnosti za vaš tim</h2>
     <div class="aktivnosti-carousel">
         <div class="aktivnosti-slides">
@@ -252,9 +336,9 @@ footer { background: #0d3d2b; color: #ccb083; padding: 45px 40px; text-align: ce
     </div>
 </section>
 
-<section class="section-galerije" id="galerije">
-    <h2 class="galerije-title">Galerije</h2>
-    <div class="galerija-block">
+<section class="galerije" id="galerije">
+    <h2 class="gal-title">Galerije</h2>
+    <div class="gal-block">
         <h3 class="galerija-subtitle">Tim bilding kompanije Hansa Flex iz Niša, 2024 i 2025</h3>
         <div class="gal-carousel">
             <div class="gal-slides">
@@ -269,7 +353,7 @@ footer { background: #0d3d2b; color: #ccb083; padding: 45px 40px; text-align: ce
             <div class="gal-indicators"></div>
         </div>
     </div>
-    <div class="galerija-block">
+    <div class="gal-block">
         <h3 class="galerija-subtitle">Organizovani uspon na Golemo Stražište i ručak, jun 2025</h3>
         <div class="gal-carousel">
             <div class="gal-slides">
@@ -284,7 +368,7 @@ footer { background: #0d3d2b; color: #ccb083; padding: 45px 40px; text-align: ce
             <div class="gal-indicators"></div>
         </div>
     </div>
-    <div class="galerija-block">
+    <div class="gal-block">
         <h3 class="galerija-subtitle">Proslava Nove 2025</h3>
         <div class="gal-carousel">
             <div class="gal-slides">
@@ -298,7 +382,7 @@ footer { background: #0d3d2b; color: #ccb083; padding: 45px 40px; text-align: ce
         </div>
         <div class="galerija-video"><video controls preload="metadata" src="Leskovcani igraju bolja verzija.mp4">Vaš pregledač ne podržava reprodukciju videa.</video></div>
     </div>
-    <div class="galerija-block">
+    <div class="gal-block">
         <h3 class="galerija-subtitle">Planinarsko društvo Vidlič, Pirot</h3>
         <div class="gal-carousel">
             <div class="gal-slides">
@@ -311,13 +395,12 @@ footer { background: #0d3d2b; color: #ccb083; padding: 45px 40px; text-align: ce
             <div class="gal-indicators"></div>
         </div>
     </div>
-    <div class="galerija-block">
+    <div class="gal-block">
         <h3 class="galerija-subtitle">Proslava 50. rođendana</h3>
         <div class="galerija-fb-video"><iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F806667158403794%2F&show_text=true&width=267&t=6" width="267" height="591" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true" title="Video – proslava 50. rođendana"></iframe></div>
-    </div>
 </section>
 
-<section class="section-kapaciteti" id="kapaciteti">
+<section class="kapaciteti" id="kapaciteti">
     <h2 class="kapaciteti-title">Kapaciteti</h2>
     <div class="capacity-block">
         <div class="capacity-grid">
@@ -327,7 +410,7 @@ footer { background: #0d3d2b; color: #ccb083; padding: 45px 40px; text-align: ce
         </div>
     </div>
     <h3 class="sadrzaj-subtitle">Sadržaj</h3>
-    <div class="sadrazaj-grid">
+    <div class="sadrzaj-grid">
         <div class="amenity-box"><svg class="amenity-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v5.5l4.8 1.6 3-4"/><path d="M5.5 7.5l4 2.5-1.5 4.8-4.5.5"/><path d="M9.7 19.5l2.9-4 3.6 1.2"/><path d="M6.6 17.8l-.9 3.7M17.7 20.5l-3.5-1.8M20.6 11.9l-3.8-.8"/></svg><p>Prostrano dvorište (3000 m²), idealno za sportske aktivnosti</p></div>
         <div class="amenity-box"><svg class="amenity-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="3"/><path d="M9.5 17.5v-11h3.8a3 3 0 0 1 0 6H9.5"/></svg><p>Besplatan parking (do 8 putničkih automobila)</p></div>
         <div class="amenity-box"><svg class="amenity-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 9a15 15 0 0 1 19 0"/><path d="M5.5 12.5a10.5 10.5 0 0 1 13 0"/><path d="M8.5 16a6 6 0 0 1 7 0"/><circle cx="12" cy="19.5" r="1.3" fill="currentColor" stroke="none"/></svg><p>Besplatan WiFi</p></div>
@@ -344,7 +427,7 @@ footer { background: #0d3d2b; color: #ccb083; padding: 45px 40px; text-align: ce
     <div class="pets-box"><svg class="amenity-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="4.5" cy="9" rx="2" ry="2.6"/><ellipse cx="19.5" cy="9" rx="2" ry="2.6"/><ellipse cx="9" cy="5" rx="2" ry="2.6" transform="rotate(-15 9 5)"/><ellipse cx="15" cy="5" rx="2" ry="2.6" transform="rotate(15 15 5)"/><path d="M12 11c3 0 5.5 2.5 5.5 5 0 1.7-1.3 3-3 3-.9 0-1.7-.4-2.5-.4s-1.6.4-2.5.4c-1.7 0-3-1.3-3-3 0-2.5 2.5-5 5.5-5z"/><circle cx="10.2" cy="14.5" r=".7" fill="currentColor" stroke="none"/><circle cx="13.8" cy="14.5" r=".7" fill="currentColor" stroke="none"/></svg><p>Boravak ljubimaca po dogovoru (pozovite nas)</p></div>
 </section>
 
-<section class="section-cena" id="cena">
+<section class="cena" id="cena">
     <h2 class="cena-title">Cena</h2>
     <p class="cena-poruka">Cena zavisi od broja učesnika i dužine trajanja događaja. Kontaktirajte nas i dogovorićemo se!</p>
 
@@ -431,6 +514,7 @@ var SR_EN_RAW={
 "Utisci":"Guest Reviews",
 "Cene":"Prices",
 "Kontakt":"Contact",
+"Tim bilding i proslave":"Team building & celebrations",
 
 // HERO
 "Tim bilding i proslave van grada":"Team building and celebrations outside the city",

@@ -88,6 +88,13 @@ body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background-color:#c
 .site-header nav a{color:#ccb083;text-decoration:none;padding:8px 18px;border-radius:25px;font-weight:600;font-size:1rem;transition:all .3s ease}
 .site-header nav a:hover{background:#7c7b33;color:white}
 
+/* DROPDOWN MENI */
+.nav-dropdown{position:relative;display:flex;align-items:center}
+.nav-dropdown > a::after{content:"▾";font-size:.8em;line-height:1;display:inline-block;vertical-align:middle;margin-left:6px}
+.dropdown-menu{position:absolute;top:calc(100% + 8px);left:50%;transform:translate(-50%,8px);background:#0d3d2b;border:2px solid #7c7b33;border-radius:15px;padding:8px;min-width:230px;display:flex;flex-direction:column;gap:2px;opacity:0;visibility:hidden;transition:opacity .25s ease,transform .25s ease,visibility .25s;z-index:1001;box-shadow:0 8px 25px rgba(0,0,0,.4)}
+.nav-dropdown:hover .dropdown-menu,.nav-dropdown:focus-within .dropdown-menu{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.dropdown-menu a{white-space:nowrap;text-align:center}
+
 /* HERO */
 .hero{display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh - 120px);background:#ccb083;padding:25px 0}
 .hero-image-side{position:relative;overflow:hidden;border-radius:40px;margin-left:30px;margin-right:15px;box-shadow:0 8px 25px rgba(13,61,43,.35);min-height:420px}
@@ -277,11 +284,20 @@ h1{font-size:1.8rem}.slogan{font-size:1.05rem}
     <nav>
         <a href="#section-1">O nama</a>
         <a href="#section-2">Sadržaj</a>
+        <nav>
+    <a href="#section-1">O nama</a>
+    <a href="#section-2">Sadržaj</a>
+    <div class="nav-dropdown">
         <a href="#section-3">Aktivnosti</a>
-        <a href="#section-4">Utisci</a>
-        <a href="#section-5">Cene</a>
-        <a href="#section-6">Kontakt</a>
+        <div class="dropdown-menu">
+            <a href="tim-bilding.html">Tim bilding i proslave</a>
+        </div>
+    </div>
+    <a href="#section-4">Utisci</a>
+    <a href="#section-5">Cene</a>
+    <a href="#section-6">Kontakt</a>
     </nav>
+        
     <button id="langBtn" class="lang-btn" onclick="toggleLang()">EN</button>
 </header>
 
