@@ -291,9 +291,17 @@ body{overflow-x:hidden}
 .hero-image-side{max-width:100%}
 
 /* ===== FIX: samoprilagodljivi gridovi (ne zavise od @media) ===== */
-.sadrazaj-grid,.sadrzaj-grid{grid-template-columns:repeat(auto-fit,minmax(150px,1fr)) !important}
+.sadrazaj-grid,.sadrzaj-grid{grid-template-columns:repeat(4,1fr) !important}
 .zasto-grid{grid-template-columns:repeat(auto-fit,minmax(260px,1fr)) !important}
 .kapaciteti-grid,.capacity-grid{grid-template-columns:repeat(auto-fit,minmax(260px,1fr)) !important}
+
+/* ===== GRID KOLONÉ — RESPONSIVE ===== */
+@media (max-width:1200px){
+.sadrazaj-grid,.sadrzaj-grid{grid-template-columns:repeat(3,1fr) !important}
+}
+@media (max-width:950px){
+.sadrazaj-grid,.sadrzaj-grid{grid-template-columns:repeat(2,1fr) !important}
+}
 
 </style>
 </head>
