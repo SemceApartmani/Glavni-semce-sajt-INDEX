@@ -176,8 +176,8 @@ h1{font-size:2.2rem;margin-bottom:15px;color:#0d3d2b}
 .aktivnosti-dot.active{background:#ccb083;transform:scale(1.3)}
 
 /* SECTION 4: UTISCI */
-.section-4{background:#7c7b33;padding:70px 40px 80px 40px;scroll-margin-top:100px}
-.utisci-title{font-size:2rem;text-align:center;margin-bottom:60px;color:#ccb083;font-weight:700}
+.section-4{background:#ccb083;padding:70px 40px 80px 40px;scroll-margin-top:100px}
+.utisci-title{font-size:2rem;text-align:center;margin-bottom:60px;color:#0d3d2b;font-weight:700}
 .widget-block{max-width:900px;margin:0 auto 70px auto}
 .widget-block h3{font-size:1.4rem;text-align:center;margin-bottom:25px;color:#0d3d2b;font-weight:700}
 .mediji-title{font-size:1.8rem;text-align:center;margin:80px 0 30px 0;color:#ccb083;font-weight:700}
@@ -268,12 +268,31 @@ h1{font-size:1.8rem}.slogan{font-size:1.05rem}
 .amenity-box{padding:20px 12px}
 .amenity-icon{width:40px;height:40px;margin-bottom:10px}
 .amenity-box p{font-size:.85rem}
-.aktivnosti-slide img{height:280px}
-.aktivnosti-slide-content{padding:14px 20px}
-.aktivnosti-slide-content h3{font-size:1.4rem}
-.aktivnosti-nav{width:45px;height:45px;font-size:22px}
-.aktivnosti-indicators{bottom:80px}
+.alternating-grid{gap:30px}
+.alt-row{grid-template-columns:1fr}
+.alt-row.alt-left .alt-content,.alt-row.alt-right .alt-image{order:1}
+.alt-row.alt-left .alt-image,.alt-row.alt-right .alt-content{order:2}
+.alt-image img{height:250px}
+.dropdown-menu{position:static;transform:none;opacity:1;visibility:visible;background:transparent;border:none;box-shadow:none;padding:0;min-width:0}
+.dropdown-menu a{color:#7c7b33;font-size:.95rem;padding:8px 18px}
 }
+
+/* ===== AKTIVNOSTI - ALTERNATING LIST ===== */
+.section-aktivnosti{background:#7c7b33;padding:70px 40px 80px 40px;scroll-margin-top:100px}
+.aktivnosti-title{font-size:2rem;text-align:center;margin-bottom:60px;color:#ccb083;font-weight:700}
+.alternating-grid{max-width:1080px;margin:0 auto;display:flex;flex-direction:column;gap:60px}
+.alt-row{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.alt-row.alt-left .alt-content{order:1}
+.alt-row.alt-left .alt-image{order:2}
+.alt-row.alt-right .alt-image{order:1}
+.alt-row.alt-right .alt-content{order:2}
+.alt-content h3{font-size:1.6rem;margin-bottom:20px;color:#ccb083;font-weight:700}
+.alt-content p{font-size:1.05rem;line-height:1.7;color:white;margin-bottom:20px}
+.alt-link{display:inline-block;color:#ccb083;font-size:1.1rem;font-weight:700;text-decoration:underline}
+.alt-link:hover{color:white}
+.alt-image{border-radius:25px;overflow:hidden;box-shadow:0 8px 25px rgba(13,61,43,.35);min-height:300px}
+.alt-image img{width:100%;height:350px;object-fit:cover;display:block}
+
 </style>
 </head>
 <body>
@@ -344,7 +363,7 @@ h1{font-size:1.8rem}.slogan{font-size:1.05rem}
     <div class="intro-block">
         <div class="intro-text">
             <h2 class="section-title">O nama</h2>
-            <p class="section-intro">Apartmani Petrović Semče su porodično gazdinstvo na 550 m nadmorske visine, lako dostupno iz pravca Niša (40 km) i Leskovca (33 km), i pruža pogled na neke od najlepših pejzaža Suve planine. Idealna lokacija za tim-bildinge, porodične proslave, početnu tačku avanture u prirodi, ili jednostavno — odmor.</p>
+            <p class="section-intro">Apartmani Petrović Semče se nalaze na 550 m nadmorske visine i 3000+ m² površine, i lako su dostupni iz pravca Niša (40 km) i Leskovca (33 km). Pružaju pogled na neke od najlepših pejzaža Suve planine. Idealna lokacija za tim-bildinge, porodične proslave, početnu tačku avanture u prirodi, ili jednostavno — odmor.</p>
         </div>
         <div class="map-container">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1504390.423940648!2d20.6631392!3d42.57094955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47550da8dff9fe9b%3A0xe07985142e90278f!2sApartmani%20Petrovi%C4%87%20SEM%C4%8CE!5e0!3m2!1sen!2s!4v1792348220859!5m2!1sen!2s" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
@@ -362,7 +381,6 @@ h1{font-size:1.8rem}.slogan{font-size:1.05rem}
             <div class="carousel-slide"><img src="terasa-zalazak.jpg" alt="Terasa, zalazak sunca" loading="lazy"></div>
             <div class="carousel-slide"><img src="soba-4.jpg" alt="Uredan smestaj" loading="lazy"></div>
             <div class="carousel-slide"><img src="exterier-2.jpg" alt="Prolece na Suvoj planini" loading="lazy"></div>
-          
         </div>
         <button class="carousel-nav carousel-prev" onclick="moveSlide(-1)">❮</button>
         <button class="carousel-nav carousel-next" onclick="moveSlide(1)">❯</button>
@@ -370,22 +388,23 @@ h1{font-size:1.8rem}.slogan{font-size:1.05rem}
     </div>
 
     <div class="capacity-block">
-        <h2 class="capacity-title">Kapaciteti</h2>
-        <div class="capacity-grid">
-            <div class="capacity-card">
-                <h3>Glavni apartman</h3>
-                <p>2 spavaće sobe, prostrana dnevna soba i trpezarija sa dodatnim smeštajnim kapacitetima, 1 kupatilo, 1 potpuno opremljena kuhinja.</p>
-            </div>
-            <div class="capacity-card">
-                <h3>Pomoćni objekat</h3>
-                <p>2 dvokrevetne sobe, 1 trokrevetna soba, 1 kupatilo, 1 letnja kuhinja.</p>
-            </div>
-            <div class="capacity-card">
-                <h3>Trem i dvorište</h3>
-                <p>Prostrano dvorište s nameštajem namenjenim za veća okupljanja ili proslave.</p>
-            </div>
+    <h2 class="capacity-title">Kapaciteti</h2>
+    <div class="capacity-grid">
+        <div class="capacity-card">
+            <h3>Glavni apartman</h3>
+            <p>2 spavaće sobe,<br>prostrana dnevna soba,<br>trpezarija sa dodatnim smeštajnim kapacitetima<br>1 kupatilo<br>1 potpuno opremljena kuhinja<br><br>Savremena funkcionalnost usred seoske idile.</p>
         </div>
+        <div class="capacity-card">
+            <h3>Trem i dvorište</h3>
+            <p>3000 m² dvorišta<br>50 sedećih mesta za veća okupljanja ili proslave<br>Zaštita od sunca i kiše<br>Kompletna priprema za spremanje i skladištenje hrane i pića<br><br>    Savršeno za porodice s decom, proslave, firme, obuke, photoshoot i snimanje videa.</p>
+        </div>
+        <div class="capacity-card">
+            <h3>Pomoćni apartmani</h3>
+            <p>2 dvokrevetne sobe<br>1 trokrevetna soba<br>1 kupatilo<br>1 letnja kuhinja<br><br>Povoljan smeštaj za parove i manje grupe, idealan za vrele letnje dane.</p>
+        </div>     
     </div>
+</div>    
+
 </section>
 
 <!-- ====== SECTION 2: SADRŽAJ ====== -->
@@ -448,44 +467,7 @@ h1{font-size:1.8rem}.slogan{font-size:1.05rem}
     </div>
 </section>
 
-<!-- ====== SECTION 3: AKTIVNOSTI ====== -->
-<section class="section-3" id="section-3">
-    <h2 class="aktivnosti-title">Ideje za obilaske i aktivnosti:</h2>
-
-    <div class="aktivnosti-carousel">
-        <div class="aktivnosti-slides">
-            <div class="aktivnosti-slide">
-                <img src="Timske aktivnosti i proslave.jpg" alt="Tim bilding i proslave organizacija dogadjaja" loading="lazy">
-                <div class="aktivnosti-slide-content"><h3>Tim bilding i proslave</h3><a href="tim-bilding.html" class="slide-link">Saznaj više →</a></div>
-            </div>
-            <div class="aktivnosti-slide">
-                <img src="chill and grill.jpg" alt="Beg iz grada" loading="lazy">
-                <div class="aktivnosti-slide-content"><h3>Chill &amp; Grill</h3></div>
-            </div>
-            <div class="aktivnosti-slide">
-                <img src="Avanture u prirodi.jpg" alt="Avanture u prirodi Suve planine" loading="lazy">
-                <div class="aktivnosti-slide-content"><h3>Avanture u prirodi</h3></div>
-            </div>
-            <div class="aktivnosti-slide">
-                <img src="bicikl.jpg" alt="Biciklom, krosericom, kvadom ili džipom po Suvoj planini" loading="lazy">
-                <div class="aktivnosti-slide-content"><h3>Na biciklu ili motoru, kvadom ili džipom</h3></div>
-            </div>
-            <div class="aktivnosti-slide">
-                <img src="Uspon.jpg" alt="Planinarenje i usponi na Suvoj planini" loading="lazy">
-                <div class="aktivnosti-slide-content"><h3>Planinarski usponi</h3></div>
-            </div>
-            <div class="aktivnosti-slide">
-                <img src="Kultura.jpg" alt="Istorija i kultura – znamenitosti okoline Niša i Leskovca" loading="lazy">
-                <div class="aktivnosti-slide-content"><h3>Istorija i kultura</h3></div>
-            </div>
-        </div>
-        <button class="aktivnosti-nav aktivnosti-prev" onclick="moveActSlide(-1)">❮</button>
-        <button class="aktivnosti-nav aktivnosti-next" onclick="moveActSlide(1)">❯</button>
-        <div class="aktivnosti-indicators"></div>
-    </div>
-</section>
-
-<!-- ====== SECTION 4: UTISCI ====== -->
+<!-- ====== SECTION 3: UTISCI ====== -->
 <section class="section-4" id="section-4">
     <h2 class="utisci-title">Utisci</h2>
 
@@ -529,6 +511,81 @@ h1{font-size:1.8rem}.slogan{font-size:1.05rem}
     </div>
 
         </section>
+
+<!-- ====== SECTION 4: IDEJE ZA OBILASKE ====== -->
+<section class="section-aktivnosti" id="section-4">
+    <h2 class="aktivnosti-title">Ideje za obilaske i aktivnosti:</h2>
+
+    <div class="alternating-grid">
+        <!-- Tim bilding - tekst LEVO, slika DESNO -->
+        <div class="alt-row alt-left">
+            <div class="alt-content">
+                <h3>Tim bilding i proslave</h3>
+                <p>Opremljeni smo za sve vrste okupljanja na otvorenom.</p>
+                <a href="tim-bilding.html" class="alt-link">Saznaj više →</a>
+            </div>
+            <div class="alt-image">
+                <img src="Timske aktivnosti i proslave.jpg" alt="Tim bilding i proslave – organizacija događaja" loading="lazy">
+            </div>
+        </div>
+
+        <!-- Chill and Grill - slika LEVO, tekst DESNO -->
+        <div class="alt-row alt-right">
+            <div class="alt-image">
+                <img src="Kulinarstvo.jpg" alt="Chill and grill – roštiljanje na svežem vazduhu" loading="lazy">
+            </div>
+            <div class="alt-content">
+                <h3>Chill and Grill</h3>
+                <p>Beg iz grada, kafa u vrtu, i roštiljanje na svežem vazduhu.</p>
+            </div>
+        </div>
+
+        <!-- Avanture u prirodi - tekst LEVO, slika DESNO -->
+        <div class="alt-row alt-left">
+            <div class="alt-content">
+                <h3>Avanture u prirodi</h3>
+                <p>Misteriozne kamene formacije, uređena izletišta, i prijateljski nastrojeni slobodni konji: Suva planina ima sve!</p>
+            </div>
+            <div class="alt-image">
+                <img src="Avanture u prirodi.jpg" alt="Avanture u prirodi Suve planine" loading="lazy">
+            </div>
+        </div>
+
+        <!-- Na biciklu - slika LEVO, tekst DESNO -->
+        <div class="alt-row alt-right">
+            <div class="alt-image">
+                <img src="bicikl.jpg" alt="Biciklom, krosericom, kvadom ili džipom po Suvoj planini" loading="lazy">
+            </div>
+            <div class="alt-content">
+                <h3>Na biciklu ili motoru, kvadom ili džipom</h3>
+                <p>Staza Suva planina prati greben Suve planine duž 28 km, sa atraktivnim lokacijama za odmor i fotografisanje.</p>
+            </div>
+        </div>
+
+        <!-- Planinarski usponi - tekst LEVO, slika DESNO -->
+        <div class="alt-row alt-left">
+            <div class="alt-content">
+                <h3>Planinarski usponi</h3>
+                <p>Tri Kamena (1000 m), Litica (1683 m) i Golemo Stražište (1704 m) prave su poslastice za strastvene planinare.</p>
+            </div>
+            <div class="alt-image">
+                <img src="Uspon.jpg" alt="Planinarenje i usponi na Suvoj planini" loading="lazy">
+            </div>
+        </div>
+
+        <!-- Istorija i kultura - slika LEVO, tekst DESNO -->
+        <div class="alt-row alt-right">
+            <div class="alt-image">
+                <img src="Kultura.jpg" alt="Istorija i kultura – znamenitosti okoline Niša i Leskovca" loading="lazy">
+            </div>
+            <div class="alt-content">
+                <h3>Istorija i kultura</h3>
+                <p>Tragom patrijarha Arsenija IV Čarnojevića i heroja Prvog Sv. rata.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 <!-- ====== SECTION 5: CENE ====== -->
 <section class="section-5" id="section-5">
@@ -704,15 +761,11 @@ var SR_EN_RAW={
 "Sve pogodnosti modernog smeštaja + čist vazduh, mir i tišina, i najlepši pogled jugoistočne Srbije.":"All the comforts of modern accommodation, but with fresh air, peace and quiet, and the most beautiful views in south-eastern Serbia.",
 
 // SECTION 1 - O Nama
-"Apartmani Petrović Semče su porodično gazdinstvo na 550 m nadmorske visine, lako dostupno iz pravca Niša (40 km) i Leskovca (33 km), i pruža pogled na neke od najlepših pejzaža Suve planine. Idealna lokacija za tim-bildinge, porodične proslave, početnu tačku avanture u prirodi, ili jednostavno — odmor.":"Apartmani Petrović Semče is a family-run estate at 550 m altitude, easily accessible from Niš (40 km) and Leskovac (33 km), offering views of some of the most stunning landscapes of Suva Planina. Perfect for team-building events, family celebrations, a starting point of your mountain adventure, or simply a relaxing getaway.",
 "O nama":"About Us",
 "Kapaciteti":"Accommodation",
 "Glavni apartman":"Main Building",
-"2 spavaće sobe, prostrana dnevna soba i trpezarija sa dodatnim smeštajnim kapacitetima, 1 kupatilo, 1 potpuno opremljena kuhinja.":"2 bedrooms, spacious living room and dining area with extra sleeping space, 1 bathroom, 1 fully equipped kitchen.",
-"Pomoćni objekat":"Annex Building",
 "2 dvokrevetne sobe, 1 trokrevetna sobe, 1 kupatilo, 1 letnja kuhinja.":"2 twin rooms, 1 triple room, 1 bathroom, 1 outdoor kitchen.",
 "Trem i dvorište":"Porch and courtyard",
-"Prostrano dvorište s nameštajem namenjenim za veća okupljanja ili proslave.":"Spacious courtyard with furniture suitable for larger gatherings or celebrations.",
 
 // SECTION 2 - SADRŽAJ
 "Prostrano dvorište (3000 m²), idealno za sportske aktivnosti":"Large courtyard (3,000 m²), perfect for sports activities",
@@ -781,10 +834,45 @@ SR_EN[normKey("Aktivnosti")]="Activities";
 SR_EN[normKey("Utisci")]="Guest Reviews";
 SR_EN[normKey("Cene")]="Prices";
 SR_EN[normKey("Tim bilding i proslave")]="Team building & celebrations";
-SR_EN[normKey("2 dvokrevetne sobe, 1 trokrevetna soba, 1 kupatilo, 1 letnja kuhinja.")]="2 twin rooms, 1 triple room, 1 bathroom, 1 outdoor kitchen.";
 SR_EN[normKey("2 mašine za veš i 2 mašine za pranje suđa")]="2 washing machines and 2 dishwashers";
 SR_EN[normKey("Baštenske klupe i stolovi za do 50 ljudi")]="Garden benches and tables for up to 50 people";
 SR_EN[normKey("Saznaj više →")]="Learn more →";
+
+/* ===== NOVI TEKSTOVI (izmene novembra 2026) ===== */
+
+/* O nama - novi tekst */
+SR_EN[normKey("Apartmani Petrović Semče se nalaze na 550 m nadmorske visine i 3000+ m² površine, i lako su dostupni iz pravca Niša (40 km) i Leskovca (33 km). Pružaju pogled na neke od najlepših pejzaža Suve planine. Idealna lokacija za tim-bildinge, porodične proslave, početnu tačku avanture u prirodi, ili jednostavno — odmor.")]="Apartmani Petrović Semče is located at 550 m above sea level on a 3,000+ m² estate, easily accessible from Niš (40 km) and Leskovac (33 km). It offers views of some of the most beautiful landscapes of Suva Planina. An ideal location for team-building events, family celebrations, a starting point for outdoor adventures, or simply — a relaxing getaway.";
+
+/* Kapaciteti - Glavni apartman (po liniji, zbog <br>) */
+SR_EN[normKey("2 spavaće sobe,")]="2 bedrooms,";
+SR_EN[normKey("prostrana dnevna soba,")]="a spacious living room,";
+SR_EN[normKey("trpezarija sa dodatnim smeštajnim kapacitetima")]="a dining area with extra sleeping capacity";
+SR_EN[normKey("1 kupatilo")]="1 bathroom";
+SR_EN[normKey("1 potpuno opremljena kuhinja")]="1 fully equipped kitchen";
+SR_EN[normKey("Savremena funkcionalnost usred seoske idile.")]="Modern functionality in the heart of a pastoral idyllic setting.";
+
+/* Kapaciteti - Pomoćni apartmani */
+SR_EN[normKey("Pomoćni apartmani")]="Annex Apartments";
+SR_EN[normKey("2 dvokrevetne sobe")]="2 twin rooms";
+SR_EN[normKey("1 trokrevetna soba")]="1 triple room";
+SR_EN[normKey("1 letnja kuhinja")]="1 outdoor summer kitchen";
+SR_EN[normKey("Povoljan smeštaj za parove i manje grupe, idealan za vrele letnje dane.")]="Affordable accommodation for couples and smaller groups, ideal for hot summer days.";
+
+/* Kapaciteti - Trem i dvorište */
+SR_EN[normKey("3000 m² dvorišta")]="3,000 m² of an open courtyard";
+SR_EN[normKey("50 sedećih mesta za veća okupljanja ili proslave")]="50 seats for larger gatherings or celebrations";
+SR_EN[normKey("Zaštita od sunca i kiše")]="Protection from sun and rain";
+SR_EN[normKey("Kompletna priprema za spremanje i skladištenje hrane i pića")]="Complete equipment for preparing and storing food and drinks";
+SR_EN[normKey("Savršeno za porodice s decom, proslave, firme, obuke, photoshoot i snimanje videa.")]="Perfect for families with children, celebrations, companies, trainings, photoshoots and video shoots.";
+
+/* Ideje za obilaske - opisi */
+SR_EN[normKey("Opremljeni smo za sve vrste okupljanja na otvorenom.")]="We are equipped for all kinds of outdoor gatherings.";
+SR_EN[normKey("Chill and Grill")]="Chill & Grill";
+SR_EN[normKey("Beg iz grada, kafa u vrtu, i roštiljanje na svežem vazduhu.")]="An escape from the city, coffee in the garden, and barbecuing in the fresh air.";
+SR_EN[normKey("Misteriozne kamene formacije, uređena izletišta, i prijateljski nastrojeni slobodni konji: Suva planina ima sve!")]="Mysterious rock formations, well-maintained picnic spots, and friendly free-roaming horses: Suva Planina has it all!";
+SR_EN[normKey("Staza Suva planina prati greben Suve planine duž 28 km, sa atraktivnim lokacijama za odmor i fotografisanje.")]="The Suva Planina trail follows the ridge of Suva Planina for 28 km, with attractive spots for resting and photography.";
+SR_EN[normKey("Tri Kamena (1000 m), Litica (1683 m) i Golemo Stražište (1704 m) prave su poslastice za strastvene planinare.")]="Tri Kamena (1000 m), Litica (1683 m) and Golemo Stražište (1704 m) are real treats for passionate hikers.";
+SR_EN[normKey("Tragom patrijarha Arsenija IV Čarnojevića i heroja Prvog Sv. rata.")]="Following the trail of Patriarch Arsenije IV Čarnojević and the heroes of the First World War.";
 
 var langPairs=[];
 var langReady=false;
