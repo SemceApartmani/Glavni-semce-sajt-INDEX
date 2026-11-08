@@ -67,9 +67,21 @@
   }],
   "sameAs": [
     "https://www.instagram.com/apartmani_petrovic_semce/",
-    "https://www.facebook.com/people/Apartmani-Petrovi%C4%87-Sem%C4%8De/100083496813255/"
+    "https://www.facebook.com/people/Apartmani-Petrovi%C4%8-Sem%C4%8De/100083496813255/"
   ]
 }
+</script>
+
+<script>
+function toggleNav(){
+    document.getElementById('mainNav').classList.toggle('nav-open');
+}
+/* zatvori meni kad se klikne bilo koji link u njemu */
+document.querySelectorAll('#mainNav a').forEach(function(a){
+    a.addEventListener('click',function(){
+        document.getElementById('mainNav').classList.remove('nav-open');
+    });
+});
 </script>
 <style>
 
@@ -293,33 +305,67 @@ h1{font-size:1.8rem}.slogan{font-size:1.05rem}
 .alt-image{border-radius:25px;overflow:hidden;box-shadow:0 8px 25px rgba(13,61,43,.35);min-height:300px}
 .alt-image img{width:100%;height:350px;object-fit:cover;display:block}
 
+/* ===== HAMBURGER MENI (mobilni) ===== */
+.nav-toggle{display:none;background:transparent;border:2px solid #ccb083;color:#ccb083;font-size:1.5rem;line-height:1;border-radius:12px;padding:7px 14px;cursor:pointer}
+.nav-toggle:hover{background:#7c7b33;color:white}
+
+@media (max-width:950px){
+    .nav-toggle{display:block}
+    /* header ostaje u jednom redu: logo | dugmad */
+    .site-header{flex-direction:row !important;flex-wrap:nowrap;padding:10px 15px;gap:10px}
+    .main-logo{width:60px}
+    /* meni kao spuštajuća ploča ispod headera */
+    .site-header nav{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:#0d3d2b;box-shadow:0 12px 25px rgba(0,0,0,.4);max-height:0;overflow:hidden;padding:0 15px;transition:max-height .3s ease,padding .3s ease}
+    .site-header nav.nav-open{max-height:75vh;overflow-y:auto;padding:8px 15px 15px 15px}
+    .site-header nav a{padding:13px 18px;border-bottom:1px solid rgba(204,176,131,.15);border-radius:0}
+    .site-header nav a:hover{background:#7c7b33;border-radius:8px}
+    /* dropdown linkovi se prikazuju odmah, bez hovera */
+    .nav-dropdown{flex-direction:column;align-items:stretch}
+    .dropdown-menu{position:static;opacity:1;visibility:visible;transform:none;background:transparent;border:none;box-shadow:none;padding:0;min-width:0}
+    .dropdown-menu a{color:#ccb083;font-size:.95rem;padding:10px 18px 10px 34px;border-bottom:none}
+}
+
+@media (max-width:950px){
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu{
+        position:static;
+        opacity:1;
+        visibility:visible;
+        transform:none;
+        background:transparent;
+        border:none;
+        box-shadow:none;
+        padding:0;
+        min-width:0;
+    }
+}
+
 </style>
 </head>
 <body>
 
 <!-- ====== HEADER ====== -->
 <header class="site-header">
-    <img src="logo.png" alt="Apartmani Petrović Semče - logo" class="main-logo">
-    <nav>
+    <a href="index.html"><img src="logo.png" alt="Apartmani Petrović Semče - logo" class="main-logo"></a>
+
+    <button class="nav-toggle" aria-label="Meni" onclick="toggleNav()">☰</button>
+
+    <nav id="mainNav">
         <a href="#section-1">O nama</a>
         <a href="#section-2">Sadržaj</a>
-        <nav>
-    <a href="#section-1">O nama</a>
-    <a href="#section-2">Sadržaj</a>
-    <div class="nav-dropdown">
-        <a href="#section-3">Aktivnosti</a>
-        <div class="dropdown-menu">
-            <a href="tim-bilding.html">Tim bilding i proslave</a>
+        <div class="nav-dropdown">
+            <a href="#section-3">Aktivnosti</a>
+            <div class="dropdown-menu">
+                <a href="tim-bilding.html">Tim bilding i proslave</a>
+            </div>
         </div>
-    </div>
-    <a href="#section-4">Utisci</a>
-    <a href="#section-5">Cene</a>
-    <a href="#section-6">Kontakt</a>
+        <a href="#section-4">Utisci</a>
+        <a href="#section-5">Cene</a>
+        <a href="#section-6">Kontakt</a>
     </nav>
-        
+
     <button id="langBtn" class="lang-btn" onclick="toggleLang()">EN</button>
 </header>
-
 <!-- ====== HERO ====== -->
 <section class="hero">
     <div class="hero-image-side">
@@ -366,7 +412,7 @@ h1{font-size:1.8rem}.slogan{font-size:1.05rem}
             <p class="section-intro">Apartmani Petrović Semče se nalaze na 550 m nadmorske visine i 3000+ m² površine, i lako su dostupni iz pravca Niša (40 km) i Leskovca (33 km). Pružaju pogled na neke od najlepših pejzaža Suve planine. Idealna lokacija za tim-bildinge, porodične proslave, početnu tačku avanture u prirodi, ili jednostavno — odmor.</p>
         </div>
         <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1504390.423940648!2d20.6631392!3d42.57094955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47550da8dff9fe9b%3A0xe07985142e90278f!2sApartmani%20Petrovi%C4%87%20SEM%C4%8CE!5e0!3m2!1sen!2s!4v1792348220859!5m2!1sen!2s" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d200000!2d22.181605!3d43.10947!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47550da8dff9fe9b%3A0xe07985142e90278f!2sApartmani%20Petrovi%C4%87%20SEM%C4%8CE!5e0!3m2!1sen!2srs!4v1792348220859!5m2!1sen!2srs"></iframe>
         </div>
     </div>
 
@@ -513,7 +559,7 @@ h1{font-size:1.8rem}.slogan{font-size:1.05rem}
         </section>
 
 <!-- ====== SECTION 4: IDEJE ZA OBILASKE ====== -->
-<section class="section-aktivnosti" id="section-4">
+<section class="section-aktivnosti" id="section-3">
     <h2 class="aktivnosti-title">Ideje za obilaske i aktivnosti:</h2>
 
     <div class="alternating-grid">
@@ -961,37 +1007,6 @@ document.querySelector('.carousel-container').addEventListener('touchend',functi
     if(tsX-teX>50)moveSlide(1);else if(teX-tsX>50)moveSlide(-1);
 });
 
-/* AKTIVNOSTI CAROUSEL (Section 3) */
-var actIndex=0;
-var actWrap=document.querySelector('.aktivnosti-slides');
-var actSlides=document.querySelectorAll('.aktivnosti-slide');
-var actIndWrap=document.querySelector('.aktivnosti-indicators');
-actSlides.forEach(function(_,i){
-    var d=document.createElement('div');
-    d.className='aktivnosti-dot'+(i===0?' active':'');
-    d.onclick=function(){actIndex=i;updAct();};
-    actIndWrap.appendChild(d);
-});
-var actDots=document.querySelectorAll('.aktivnosti-dot');
-function updAct(){
-    actWrap.style.transform='translateX(-'+actIndex*100+'%)';
-    actDots.forEach(function(el,i){el.classList.toggle('active',i===actIndex);});
-}
-function moveActSlide(dir){
-    actIndex+=dir;
-    if(actIndex>=actSlides.length)actIndex=0;
-    if(actIndex<0)actIndex=actSlides.length-1;
-    updAct();
-}
-var actAuto=setInterval(function(){moveActSlide(1);},6000);
-document.querySelector('.aktivnosti-carousel').addEventListener('mouseenter',function(){clearInterval(actAuto);});
-document.querySelector('.aktivnosti-carousel').addEventListener('mouseleave',function(){actAuto=setInterval(function(){moveActSlide(1);},6000);});
-var atsX=0,ateX=0;
-document.querySelector('.aktivnosti-carousel').addEventListener('touchstart',function(e){atsX=e.changedTouches[0].screenX;});
-document.querySelector('.aktivnosti-carousel').addEventListener('touchend',function(e){
-    ateX=e.changedTouches[0].screenX;
-    if(atsX-ateX>50)moveActSlide(1);else if(ateX-atsX>50)moveActSlide(-1);
-});
 
 /* YOUTUBE FACADE */
 function loadYT(){
