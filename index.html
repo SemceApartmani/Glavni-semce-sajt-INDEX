@@ -86,7 +86,7 @@ document.querySelectorAll('#mainNav a').forEach(function(a){
 <style>
 
 /* JEZIČKI PREKIDAČ */
-.lang-btn{background:transparent;border:2px solid #ccb083;color:#ccb083;padding:7px 16px;border-radius:25px;font-weight:700;font-size:.95rem;cursor:pointer;transition:all .3s ease;margin-left:10px}
+.lang-btn{background:transparent;border:2px solid #ccb083;color:#ccb083;padding:7px 16px;height:40px;border-radius:25px;font-weight:700;font-size:.95rem;cursor:pointer;transition:all .3s ease;margin-left:10px}
 .lang-btn:hover{background:#ccb083;color:#0d3d2b}
 
 /* BOJE: #ccb083 (žućkasto) | #73724f (zelenkasto) | #0d3d2b (tamnozelena tekst) */
@@ -151,14 +151,18 @@ h1{font-size:2.2rem;margin-bottom:15px;color:#0d3d2b}
 .capacity-block{max-width:1080px;margin:0 auto}
 .capacity-title{font-size:1.8rem;text-align:center;margin-bottom:40px;font-weight:700}
 .capacity-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
-.capacity-card{background:rgba(255,255,255,.6);border-radius:20px;padding:30px 25px;box-shadow:0 4px 15px rgba(13,61,43,.15);transition:transform .3s ease}
+.capacity-card{background:rgba(255,255,255,.6);border-radius:20px;padding:30px 25px;box-shadow:0 4px 15px rgba(13,61,43,.15);transition:transform .3s ease;display:flex;flex-direction:column}
 .capacity-card:hover{transform:translateY(-5px)}
 .capacity-card h3{font-size:1.2rem;margin-bottom:15px;color:#73724f;font-weight:700}
 .capacity-card p{font-size:1rem;line-height:1.7}
+.capacity-card ul{list-style:none;margin:0 0 15px 0;padding:0;display:flex;flex-direction:column;gap:6px;flex:1}
+.capacity-card ul li{font-size:1rem;line-height:1.7;padding-left:22px;position:relative}
+.capacity-card ul li::before{content:"•";position:absolute;left:8px;color:#73724f;font-weight:700}
+.capacity-card ul + p{margin-top:0;min-height:5.1em}
 
 /* SECTION 2: SADRŽAJ */
 .section-2{background:#73724f;padding:70px 40px 80px 40px;scroll-margin-top:100px}
-.sadrazaj-title{font-size:2rem;text-align:center;margin-bottom:50px;color:#ccb083;font-weight:700}
+.sadrazaj-title{font-size:2rem;text-align:center;margin-bottom:50px;color:#ffffff;font-weight:700}
 .sadrazaj-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:20px;max-width:1080px;margin:0 auto}
 .amenity-box{background:rgba(255,255,255,.9);border-radius:20px;padding:25px 15px;text-align:center;box-shadow:0 4px 15px rgba(13,61,43,.2);transition:transform .3s ease;display:flex;flex-direction:column;align-items:center}
 .amenity-box:hover{transform:translateY(-5px)}
@@ -208,7 +212,7 @@ h1{font-size:2.2rem;margin-bottom:15px;color:#0d3d2b}
 /* SECTION 5: CENE */
 .section-5{background:#ccb083;padding:70px 40px 80px 40px;scroll-margin-top:100px}
 .cene-title{font-size:2rem;text-align:center;margin-bottom:50px;font-weight:700}
-.cene-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;max-width:1000px;margin:0 auto;align-items:start}
+.cene-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;max-width:1000px;margin:0 auto;align-items:stretch}
 .cene-column{display:flex;flex-direction:column;gap:30px}
 .cene-column .cene-card{flex:1;padding:25px 20px;display:flex;flex-direction:column;justify-content:center}
 .cene-card{background:rgba(255,255,255,.75);border-radius:25px;padding:35px 30px;box-shadow:0 6px 20px rgba(13,61,43,.18)}
@@ -226,7 +230,7 @@ h1{font-size:2.2rem;margin-bottom:15px;color:#0d3d2b}
 
 /* SECTION 6: KONTAKT */
 .section-6{background:#73724f;padding:70px 40px 90px 40px;scroll-margin-top:100px}
-.kontakt-title{font-size:2rem;text-align:center;margin-bottom:60px;color:#ccb083;font-weight:700}
+.kontakt-title{font-size:2rem;text-align:center;margin-bottom:60px;color:#ffffff;font-weight:700}
 .kontakt-list{display:flex;flex-direction:column;align-items:center;gap:16px;max-width:400px;margin:0 auto}
 .phone-row{display:flex;align-items:center;justify-content:space-between;gap:15px;width:100%;background:#0d3d2b;border-radius:50px;padding:10px 20px;transition:all .3s ease}
 .phone-row:hover{background:#123f2c}
@@ -280,37 +284,40 @@ h1{font-size:1.8rem}.slogan{font-size:1.05rem}
 .amenity-box{padding:20px 12px}
 .amenity-icon{width:40px;height:40px;margin-bottom:10px}
 .amenity-box p{font-size:.85rem}
-.alternating-grid{gap:30px}
-.alt-row{grid-template-columns:1fr}
-.alt-row.alt-left .alt-content,.alt-row.alt-right .alt-image{order:1}
-.alt-row.alt-left .alt-image,.alt-row.alt-right .alt-content{order:2}
-.alt-image img{height:250px}
 .dropdown-menu{position:static;transform:none;opacity:1;visibility:visible;background:transparent;border:none;box-shadow:none;padding:0;min-width:0}
 .dropdown-menu a{color:#73724f;font-size:.95rem;padding:8px 18px}
 }
 
-/* ===== AKTIVNOSTI - ALTERNATING LIST ===== */
+/* ===== AKTIVNOSTI - EXPAND LISTA (harmonika) ===== */
 .section-aktivnosti{background:#73724f;padding:70px 40px 80px 40px;scroll-margin-top:100px}
-.aktivnosti-title{font-size:2rem;text-align:center;margin-bottom:60px;color:#ccb083;font-weight:700}
-.alternating-grid{max-width:1080px;margin:0 auto;display:flex;flex-direction:column;gap:60px}
-.alt-row{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-.alt-row.alt-left .alt-content{order:1}
-.alt-row.alt-left .alt-image{order:2}
-.alt-row.alt-right .alt-image{order:1}
-.alt-row.alt-right .alt-content{order:2}
-.alt-content h3{font-size:1.6rem;margin-bottom:20px;color:#ccb083;font-weight:700}
-.alt-content p{font-size:1.05rem;line-height:1.7;color:white;margin-bottom:20px}
-.alt-link{display:inline-block;color:#ccb083;font-size:1.1rem;font-weight:700;text-decoration:underline}
-.alt-link:hover{color:white}
-.alt-image{border-radius:25px;overflow:hidden;box-shadow:0 8px 25px rgba(13,61,43,.35);min-height:300px}
-.alt-image img{width:100%;height:350px;object-fit:cover;display:block}
+.aktivnosti-title{font-size:2rem;text-align:center;margin-bottom:60px;color:#ffffff;font-weight:700}
+.obilazak-list{max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+.obilazak-item{background:rgba(255,255,255,.9);border-radius:20px;overflow:hidden;box-shadow:0 4px 15px rgba(13,61,43,.15)}
+.obilazak-item summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:15px;padding:20px 25px;font-size:1.25rem;font-weight:700;color:#0d3d2b;user-select:none}
+.obilazak-item summary::-webkit-details-marker{display:none}
+.obilazak-item summary::after{content:"▾";font-size:.9em;color:#73724f;transition:transform .3s ease}
+.obilazak-item[open] summary::after{transform:rotate(180deg)}
+.obilazak-body{padding:0 25px 25px 25px}
+.obilazak-slika{max-width:600px;margin:0 auto;border-radius:25px;overflow:hidden;box-shadow:0 8px 25px rgba(13,61,43,.35)}
+.obilazak-slika img{width:100%;height:350px;object-fit:cover;display:block}
+.obilazak-caption{background:#0d3d2b;color:#ffffff;padding:20px 25px;text-align:center;font-size:1.05rem;line-height:1.7}
+.obilazak-link{display:block;text-align:center;margin-top:20px;color:#0d3d2b;font-size:1.1rem;font-weight:700;text-decoration:underline}
+.obilazak-link:hover{color:#73724f}
+@media (max-width:950px){
+.section-aktivnosti{padding:50px 20px 60px 20px}
+.obilazak-item summary{padding:16px 18px;font-size:1.1rem}
+.obilazak-body{padding:0 18px 18px 18px}
+.obilazak-slika img{height:240px}
+}
 
 /* ===== HAMBURGER MENI (mobilni) ===== */
-.nav-toggle{display:none;background:transparent;border:2px solid #ccb083;color:#ccb083;font-size:1.5rem;line-height:1;border-radius:12px;padding:7px 14px;cursor:pointer}
-.nav-toggle:hover{background:#73724f;color:white}
+.nav-toggle{display:none;background:transparent;border:2px solid #ccb083;color:#ccb083;font-size:1.15rem;line-height:1;height:40px;width:48px;border-radius:25px;cursor:pointer;transition:all .3s ease}
+.nav-toggle:hover{background:#ccb083;color:#0d3d2b}
 
 @media (max-width:950px){
     .nav-toggle{display:block}
+    .lang-btn{order:2;margin-left:auto}
+    .nav-toggle{order:3}
     /* header ostaje u jednom redu: logo | dugmad */
     .site-header{flex-direction:row !important;flex-wrap:nowrap;padding:10px 15px;gap:10px}
     .main-logo{width:60px}
@@ -361,7 +368,7 @@ h1{font-size:1.8rem}.slogan{font-size:1.05rem}
 .hero-heading .slogan{font-size:1rem;color:#fff;line-height:1.45;margin:0;max-width:560px;text-shadow:0 2px 8px rgba(0,0,0,.45)}
 
 /* kartica preko desnih ~30% slike, vertikalno centrirana */
-.hero-cta-box{position:absolute;top:50%;right:2.5%;transform:translateY(-50%);width:26%;min-width:300px;max-width:400px;z-index:6;background:rgba(255,255,255,.94);border-radius:25px;padding:16px 18px;box-shadow:0 10px 35px rgba(0,0,0,.35);display:flex;flex-direction:column;gap:8px}
+.hero-cta-box{position:absolute;top:auto;bottom:3.5%;right:2.5%;width:26%;min-width:300px;max-width:400px;z-index:6;background:rgba(255,255,255,.94);border-radius:25px;padding:16px 18px;box-shadow:0 10px 35px rgba(0,0,0,.35);display:flex;flex-direction:column;gap:8px}
 .hero-cta-title{font-size:1.05rem;font-weight:700;color:#0d3d2b;text-align:center;letter-spacing:.5px}
 .hero-cta-sub{font-size:.9rem;font-weight:700;color:#0d3d2b;text-align:center;margin:3px 0 0 0}
 .hero-cta-box .phone-row{margin:0;padding:6px 14px}
@@ -375,14 +382,14 @@ h1{font-size:1.8rem}.slogan{font-size:1.05rem}
 .hero-cta-socials{display:flex;gap:12px;justify-content:center}
 .hero-cta-address{font-size:.75rem;color:#0d3d2b;text-align:center;margin:3px 0 0 0;opacity:.85}
 .hero{border-radius:25px}
-@media (min-width:951px){.hero{margin:0 20px}}
+@media (min-width:951px){.hero{margin:25px 20px 0 20px}}
 
 /* uzi kartica na sirim ekranima da ne prekriva previse slike */
 @media (min-width:1400px){.hero-cta-box{width:22%;right:3%}}
 
 /* ===== HERO: mobilni — slika gore, pa naslov, pa kartica (prirodan redosled) ===== */
 @media (max-width:950px){
-.hero{min-height:0;overflow:visible}
+.hero{min-height:0;overflow:visible;margin:25px 0 0 0}
 .hero .hero-photo{position:relative;height:42vh;width:100%;object-position:center 70%}
 .hero-shade{display:none}
 .hero-heading{position:static;width:auto;padding:18px 30px 0 30px;text-align:center}
@@ -458,13 +465,18 @@ h1{font-size:1.8rem}.slogan{font-size:1.05rem}
             </div>
         </div>
 
-        <div class="phone-row">
+                <div class="phone-row">
             <div class="phone-left">
                 <span class="ime">Aleksandar</span>
                 <a class="tel-link" href="tel:+381658196260">📞 +381 65 819 6260</a>
             </div>
             <div class="phone-right">
-                <a class="msg-icon viber" href="viber://chat?number=%2B381658196260" aria-label="Viber Aleksandar" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M11.4.8C6.5 1.2 4.4 3 3.7 7.7c-.2 1.5-.3 5.5 0 7 .6 3.6 2.4 5.4 5.8 5.9 1 .1 6.8.1 7.9 0 3.2-.4 5-2 5.6-5.2.2-1.2.2-6.6 0-7.7-.4-2.4-1.4-3.9-3.2-4.8C18.2.9 17 .8 12.5.8h-1.1zM8.2 4.5c.3-.1.6-.1.7.1.2.3 1.6 2.8 1.6 3 0 .2-.1.4-.3.6l-.6.7c-.2.2-.2.3-.1.5.5 1.2 2.4 3.1 3.6 3.6.2.1.4.1.5-.1l.7-.7c.2-.2.4-.2.6-.1.3.1 2.9 1.5 3 1.7.2.3 0 1-.4 1.5-.6.7-1.6 1.1-2.7 1-.9-.1-2.6-.8-4.2-1.7-2-1.1-3.6-2.7-4.7-4.6-.6-1-.9-2.1-.9-2.8 0-.8.3-1.6.9-2 .3-.3 1-.6 1.3-.6v-.3zM15.3 7.5c.4.2.4.6.1.9-.3.3-.7.2-.9-.1-.1-.2 0-.6.2-.7.2-.1.4-.1.6-.1zm.5-1.4c.9.2 1.6.9 1.7 1.8.1.6 0 1-.1 1.2-.1.4-.6.5-.9.3-.2-.2-.3-.5-.2-1 0-.5-.3-1-.8-1.1-.4-.1-.8-.1-1-.2-.3-.1-.4-.6-.2-.9.1-.2.3-.2.5-.2.3 0 .7 0 1 .1z"/></svg></a>
+                <a class="msg-icon viber" href="viber://chat?number=%2B381658196260" aria-label="Viber Aleksandar" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24"><path d="M11.4.8C6.5 1.2 4.4 3 3.7 7.7c-.2 1.5-.3 5.5 0 7 .6 3.6 2.4 5.4 5.8 5.9 1 .1 6.8.1 7.9 0 3.2-.4 5-2 5.6-5.2.2-1.2.2-6.6 0-7.7-.4-2.4-1.4-3.9-3.2-4.8C18.2.9 17 .8 12.5.8h-1.1zM8.2 4.5c.3-.1.6-.1.7.1.2.3 1.6 2.8 1.6 3 0 .2-.1.4-.3.6l-.6.7c-.2.2-.2.3-.1.5.5 1.2 2.4 3.1 3.6 3.6.2.1.4.1.5-.1l.7-.7c.2-.2.4-.2.6-.1.3.1 2.9 1.5 3 1.7.2.3 0 1-.4 1.5-.6.7-1.6 1.1-2.7 1-.9-.1-2.6-.8-4.2-1.7-2-1.1-3.6-2.7-4.7-4.6-.6-1-.9-2.1-.9-2.8 0-.8.3-1.6.9-2 .3-.3 1-.6 1.3-.6v-.3zM15.3 7.5c.4.2.4.6.1.9-.3.3-.7.2-.9-.1-.1-.2 0-.6.2-.7.2-.1.4-.1.6-.1zm.5-1.4c.9.2 1.6.9 1.7 1.8.1.6 0 1-.1 1.2-.1.4-.6.5-.9.3-.2-.2-.3-.5-.2-1 0-.5-.3-1-.8-1.1-.4-.1-.8-.1-1-.2-.3-.1-.4-.6-.2-.9.1-.2.3-.2.5-.2.3 0 .7 0 1 .1z"/></svg>
+                </a>
+                <a class="msg-icon whatsapp" href="https://wa.me/381658196260" aria-label="WhatsApp Aleksandar" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.2-1.3A10 10 0 1 0 12 2zm5.6 14.2c-.2.7-1.2 1.3-1.7 1.4-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.8-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.4.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.1.2-.1.3-.3.5l-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.3.7-.2.3.1 1.8.9 2.1 1 .3.2.5.2.6.4.1.1.1.7-.1 1.4z"/></svg>
+                </a>
             </div>
         </div>
 
@@ -514,18 +526,37 @@ h1{font-size:1.8rem}.slogan{font-size:1.05rem}
 
     <div class="capacity-block">
     <h2 class="capacity-title">Kapaciteti</h2>
-    <div class="capacity-grid">
+            <div class="capacity-grid">
         <div class="capacity-card">
             <h3>Glavni apartman</h3>
-            <p>2 spavaće sobe,<br>prostrana dnevna soba,<br>trpezarija sa dodatnim smeštajnim kapacitetima<br>1 kupatilo<br>1 potpuno opremljena kuhinja<br><br>Savremena funkcionalnost usred seoske idile.</p>
+            <ul>
+                <li>2 spavaće sobe</li>
+                <li>prostrana dnevna soba</li>
+                <li>trpezarija sa dodatnim smeštajnim kapacitetima</li>
+                <li>1 kupatilo</li>
+                <li>1 potpuno opremljena kuhinja</li>
+            </ul>
+            <p>Savremena funkcionalnost usred seoske idile.</p>
         </div>
         <div class="capacity-card">
             <h3>Trem i dvorište</h3>
-            <p>3000 m² dvorišta<br>50 sedećih mesta za veća okupljanja ili proslave<br>Zaštita od sunca i kiše<br>Kompletna priprema za spremanje i skladištenje hrane i pića<br><br>    Savršeno za porodice s decom, proslave, firme, obuke, photoshoot i snimanje videa.</p>
+            <ul>
+                <li>3000 m² dvorišta</li>
+                <li>50 sedećih mesta za veća okupljanja ili proslave</li>
+                <li>Zaštita od sunca i kiše</li>
+                <li>Kompletna priprema za spremanje i skladištenje hrane i pića</li>
+            </ul>
+            <p>Savršeno za porodice s decom, proslave, firme, obuke, photoshoot i snimanje videa.</p>
         </div>
         <div class="capacity-card">
             <h3>Pomoćni apartmani</h3>
-            <p>2 dvokrevetne sobe<br>1 trokrevetna soba<br>1 kupatilo<br>1 letnja kuhinja<br><br>Povoljan smeštaj za parove i manje grupe, idealan za vrele letnje dane.</p>
+            <ul>
+                <li>2 dvokrevetne sobe</li>
+                <li>1 trokrevetna soba</li>
+                <li>1 kupatilo</li>
+                <li>1 letnja kuhinja</li>
+            </ul>
+            <p>Povoljan smeštaj za parove i manje grupe, idealan za vrele letnje dane.</p>
         </div>     
     </div>
 </div>    
@@ -618,7 +649,7 @@ h1{font-size:1.8rem}.slogan{font-size:1.05rem}
     <div class="mediji-grid">
         <!-- VIDEO 1 -->
         <div class="media-item">
-            <p class="mediji-sub">(emisija "Lepše od Pariza", AgroTV)</p>
+            <p class="mediji-sub">("Lepše od Pariza", AgroTV)</p>
             <div class="video-wrapper" id="ytFacade" onclick="loadYT()">
                 <img src="https://img.youtube.com/vi/Oy4tCBl-C-0/maxresdefault.jpg" alt="Video o Apartmanima Petrović Semče" loading="lazy">
                 <button class="play-btn" aria-label="Pusti video"></button>
@@ -629,7 +660,7 @@ h1{font-size:1.8rem}.slogan{font-size:1.05rem}
         <div class="media-item">
             <p class="mediji-sub">("Vreme ljudi", RTS)</p>
             <div class="video-wrapper" id="ytFacade2" onclick="loadYT2()">
-                <img src="https://img.youtube.com/vi/flyKEgFs3SM/maxresdefault.jpg" alt="Suva pla u emisiji Vreme ljudi" loading="lazy">
+                <img src="https://img.youtube.com/vi/flyKEgFs3SM/maxresdefault.jpg" alt="Suva planina u emisiji Vreme ljudi" loading="lazy">
                 <button class="play-btn" aria-label="Pusti video"></button>
             </div>
         </div>
@@ -640,77 +671,72 @@ h1{font-size:1.8rem}.slogan{font-size:1.05rem}
 <!-- ====== SECTION 4: IDEJE ZA OBILASKE ====== -->
 <section class="section-aktivnosti" id="section-3">
     <h2 class="aktivnosti-title">Ideje za obilaske i aktivnosti:</h2>
+   
+       <div class="obilazak-list">
 
-    <div class="alternating-grid">
-        <!-- Tim bilding - tekst LEVO, slika DESNO -->
-        <div class="alt-row alt-left">
-            <div class="alt-content">
-                <h3>Tim bilding i proslave</h3>
-                <p>Opremljeni smo za sve vrste okupljanja na otvorenom.</p>
-                <a href="tim-bilding.html" class="alt-link">Saznaj više →</a>
+        <details class="obilazak-item">
+            <summary>Tim bilding i proslave</summary>
+            <div class="obilazak-body">
+                <div class="obilazak-slika">
+                    <img src="Timske aktivnosti i proslave.jpg" alt="Tim bilding i proslave – organizacija događaja" loading="lazy">
+                    <div class="obilazak-caption">Opremljeni smo za sve vrste okupljanja na otvorenom.</div>
+                </div>
+                <a href="tim-bilding.html" class="obilazak-link">Saznaj više →</a>
             </div>
-            <div class="alt-image">
-                <img src="Timske aktivnosti i proslave.jpg" alt="Tim bilding i proslave – organizacija događaja" loading="lazy">
-            </div>
-        </div>
+        </details>
 
-        <!-- Chill and Grill - slika LEVO, tekst DESNO -->
-        <div class="alt-row alt-right">
-            <div class="alt-image">
-                <img src="Kulinarstvo.jpg" alt="Chill and grill – roštiljanje na svežem vazduhu" loading="lazy">
+        <details class="obilazak-item">
+            <summary>Chill and Grill</summary>
+            <div class="obilazak-body">
+                <div class="obilazak-slika">
+                    <img src="Kulinarstvo.jpg" alt="Chill and grill – roštiljanje na svežem vazduhu" loading="lazy">
+                    <div class="obilazak-caption">Beg iz grada, kafa u vrtu, i roštiljanje na svežem vazduhu.</div>
+                </div>
             </div>
-            <div class="alt-content">
-                <h3>Chill and Grill</h3>
-                <p>Beg iz grada, kafa u vrtu, i roštiljanje na svežem vazduhu.</p>
-            </div>
-        </div>
+        </details>
 
-        <!-- Avanture u prirodi - tekst LEVO, slika DESNO -->
-        <div class="alt-row alt-left">
-            <div class="alt-content">
-                <h3>Avanture u prirodi</h3>
-                <p>Misteriozne kamene formacije, uređena izletišta, i prijateljski nastrojeni slobodni konji: Suva planina ima sve!</p>
+        <details class="obilazak-item">
+            <summary>Avanture u prirodi</summary>
+            <div class="obilazak-body">
+                <div class="obilazak-slika">
+                    <img src="Avanture u prirodi.jpg" alt="Avanture u prirodi Suve planine" loading="lazy">
+                    <div class="obilazak-caption">Misteriozne kamene formacije, uređena izletišta, i prijateljski nastrojeni slobodni konji: Suva planina ima sve!</div>
+                </div>
             </div>
-            <div class="alt-image">
-                <img src="Avanture u prirodi.jpg" alt="Avanture u prirodi Suve planine" loading="lazy">
-            </div>
-        </div>
+        </details>
 
-        <!-- Na biciklu - slika LEVO, tekst DESNO -->
-        <div class="alt-row alt-right">
-            <div class="alt-image">
-                <img src="bicikl.jpg" alt="Biciklom, krosericom, kvadom ili džipom po Suvoj planini" loading="lazy">
+        <details class="obilazak-item">
+            <summary>Na biciklu ili motoru, kvadom ili džipom</summary>
+            <div class="obilazak-body">
+                <div class="obilazak-slika">
+                    <img src="bicikl.jpg" alt="Biciklom, krosericom, kvadom ili džipom po Suvoj planini" loading="lazy">
+                    <div class="obilazak-caption">Staza Suva planina prati greben Suve planine duž 28 km, sa atraktivnim lokacijama za odmor i fotografisanje.</div>
+                </div>
             </div>
-            <div class="alt-content">
-                <h3>Na biciklu ili motoru, kvadom ili džipom</h3>
-                <p>Staza Suva planina prati greben Suve planine duž 28 km, sa atraktivnim lokacijama za odmor i fotografisanje.</p>
-            </div>
-        </div>
+        </details>
 
-        <!-- Planinarski usponi - tekst LEVO, slika DESNO -->
-        <div class="alt-row alt-left">
-            <div class="alt-content">
-                <h3>Planinarski usponi</h3>
-                <p>Tri Kamena (1000 m), Litica (1683 m) i Golemo Stražište (1704 m) prave su poslastice za strastvene planinare.</p>
+        <details class="obilazak-item">
+            <summary>Planinarski usponi</summary>
+            <div class="obilazak-body">
+                <div class="obilazak-slika">
+                    <img src="Uspon.jpg" alt="Planinarenje i usponi na Suvoj planini" loading="lazy">
+                    <div class="obilazak-caption">Tri Kamena (1000 m), Litica (1683 m) i Golemo Stražište (1704 m) prave su poslastice za strastvene planinare.</div>
+                </div>
             </div>
-            <div class="alt-image">
-                <img src="Uspon.jpg" alt="Planinarenje i usponi na Suvoj planini" loading="lazy">
-            </div>
-        </div>
+        </details>
 
-        <!-- Istorija i kultura - slika LEVO, tekst DESNO -->
-        <div class="alt-row alt-right">
-            <div class="alt-image">
-                <img src="Kultura.jpg" alt="Istorija i kultura – znamenitosti okoline Niša i Leskovca" loading="lazy">
+        <details class="obilazak-item">
+            <summary>Istorija i kultura</summary>
+            <div class="obilazak-body">
+                <div class="obilazak-slika">
+                    <img src="Kultura.jpg" alt="Istorija i kultura – znamenitosti okoline Niša i Leskovca" loading="lazy">
+                    <div class="obilazak-caption">Tragom patrijarha Arsenija IV Čarnojevića i heroja Prvog Sv. rata.</div>
+                </div>
             </div>
-            <div class="alt-content">
-                <h3>Istorija i kultura</h3>
-                <p>Tragom patrijarha Arsenija IV Čarnojevića i heroja Prvog Sv. rata.</p>
-            </div>
-        </div>
+        </details>
+
     </div>
-</section>
-
+    </section>
 
 <!-- ====== SECTION 5: CENE ====== -->
 <section class="section-5" id="section-5">
@@ -892,7 +918,6 @@ var SR_EN_RAW={
 "O nama":"About Us",
 "Kapaciteti":"Accommodation",
 "Glavni apartman":"Main Building",
-"2 dvokrevetne sobe, 1 trokrevetna sobe, 1 kupatilo, 1 letnja kuhinja.":"2 twin rooms, 1 triple room, 1 bathroom, 1 outdoor kitchen.",
 "Trem i dvorište":"Porch and courtyard",
 
 // SECTION 2 - SADRŽAJ
@@ -910,7 +935,6 @@ var SR_EN_RAW={
 
 // SECTION 3 - AKTIVNOSTI
 "Ideje za obilaske i aktivnosti:":"Ideas for Trips and Activities:",
-"Chill & Grill":"Chill & Grill",
 "Avanture u prirodi":"Nature is calling",
 "Na biciklu ili motoru, kvadom ili džipom":"By bike or motorbike, quad or jeep",
 "Planinarski usponi":"Mountain hikes",
@@ -972,8 +996,8 @@ SR_EN[normKey("Saznaj više →")]="Learn more →";
 SR_EN[normKey("Apartmani Petrović Semče se nalaze na 550 m nadmorske visine i 3000+ m² površine, i lako su dostupni iz pravca Niša (40 km) i Leskovca (33 km). Pružaju pogled na neke od najlepših pejzaža Suve planine. Idealna lokacija za tim-bildinge, porodične proslave, početnu tačku avanture u prirodi, ili jednostavno — odmor.")]="Apartmani Petrović Semče is located at 550 m above sea level on a 3,000+ m² estate, easily accessible from Niš (40 km) and Leskovac (33 km). It offers views of some of the most beautiful landscapes of Suva Planina. An ideal location for team-building events, family celebrations, a starting point for outdoor adventures, or simply — a relaxing getaway.";
 
 /* Kapaciteti - Glavni apartman (po liniji, zbog <br>) */
-SR_EN[normKey("2 spavaće sobe,")]="2 bedrooms,";
-SR_EN[normKey("prostrana dnevna soba,")]="a spacious living room,";
+SR_EN[normKey("2 spavaće sobe")]="2 bedrooms";
+SR_EN[normKey("prostrana dnevna soba")]="a spacious living room";
 SR_EN[normKey("trpezarija sa dodatnim smeštajnim kapacitetima")]="a dining area with extra sleeping capacity";
 SR_EN[normKey("1 kupatilo")]="1 bathroom";
 SR_EN[normKey("1 potpuno opremljena kuhinja")]="1 fully equipped kitchen";
@@ -991,7 +1015,7 @@ SR_EN[normKey("3000 m² dvorišta")]="3,000 m² of an open courtyard";
 SR_EN[normKey("50 sedećih mesta za veća okupljanja ili proslave")]="50 seats for larger gatherings or celebrations";
 SR_EN[normKey("Zaštita od sunca i kiše")]="Protection from sun and rain";
 SR_EN[normKey("Kompletna priprema za spremanje i skladištenje hrane i pića")]="Complete equipment for preparing and storing food and drinks";
-SR_EN[normKey("Savršeno za porodice s decom, proslave, firme, obuke, photoshoot i snimanje videa.")]="Perfect for families with children, celebrations, companies, trainings, photoshoots and video shoots.";
+SR_EN[normKey("Savršeno za porodice s decom, proslave, firme, obuke, photoshoot i snimanje videa.")]="Perfect for families, celebrations, company trainings, photoshoots and video shoots.";
 
 /* Ideje za obilaske - opisi */
 SR_EN[normKey("Opremljeni smo za sve vrste okupljanja na otvorenom.")]="We are equipped for all kinds of outdoor gatherings.";

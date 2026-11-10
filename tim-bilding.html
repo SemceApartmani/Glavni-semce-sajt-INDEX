@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="sr">
+<html lang="sr-Latn">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,7 +25,7 @@
 <style>
 
 /* JEZIČKI PREKIDAČ */
-.lang-btn{background:transparent;border:2px solid #ccb083;color:#ccb083;padding:7px 16px;border-radius:25px;font-weight:700;font-size:.95rem;cursor:pointer;transition:all .3s ease;margin-left:10px}
+.lang-btn{background:transparent;border:2px solid #ccb083;color:#ccb083;padding:7px 16px;height:40px;border-radius:25px;font-weight:700;font-size:.95rem;cursor:pointer;transition:all .3s ease;margin-left:10px}
 .lang-btn:hover{background:#ccb083;color:#0d3d2b}
 
 /* BOJE */
@@ -33,8 +33,8 @@
 body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background-color:#ccb083;color:#0d3d2b;scroll-behavior:smooth}
 
 /* HEADER */
-.site-header{background:#0d3d2b;padding:12px 30px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px;position:sticky;top:0;z-index:1000}
-.main-logo{width:90px;height:auto;border-radius:50%;cursor:pointer}
+.site-header{background:#0d3d2b;padding:6px 30px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px;position:sticky;top:0;z-index:1000}
+.main-logo{width:90px;height:auto;border-radius:50%;margin-bottom:-40px;position:relative;z-index:2;cursor:pointer}
 .site-header nav{display:flex;flex-wrap:wrap;gap:5px;align-items:center}
 .site-header nav a{color:#ccb083;text-decoration:none;padding:8px 18px;border-radius:25px;font-weight:600;font-size:1rem;transition:all .3s ease}
 .site-header nav a:hover{background:#73724f;color:white}
@@ -55,7 +55,7 @@ body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background-color:#c
 .hero-content-side .slogan{font-size:1.15rem;margin-bottom:35px;line-height:1.6;max-width:460px}
 .hero-contact{display:flex;flex-direction:column;align-items:stretch;gap:16px;width:100%;max-width:400px;margin:5px auto 0 auto;text-align:left}
 .phone-row{display:flex;align-items:center;justify-content:space-between;gap:15px;width:100%;background:#0d3d2b;border-radius:50px;padding:10px 20px;transition:all .3s ease}
-.phone-row:hover{background:#123f2c}
+.phone-row:hover{background:#73724f}
 .phone-left{display:flex;flex-direction:column;line-height:1.3}
 .phone-row .ime{color:#ccb083;font-weight:700;font-size:1.05rem}
 .phone-row .tel-link{color:white;font-weight:600;font-size:1.05rem;white-space:nowrap;text-decoration:none}
@@ -75,29 +75,31 @@ body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background-color:#c
 .zasto-card h3{font-size:1.3rem;margin-bottom:15px;color:#73724f;font-weight:700}
 .zasto-card p{font-size:1.05rem;line-height:1.7}
 
-/* AKTIVNOSTI */
+/* AKTIVNOSTI - EXPAND LISTA (harmonika) */
 .aktivnosti{background:#ccb083;padding:70px 40px 80px 40px;scroll-margin-top:100px}
-.aktivnosti-title{font-size:2rem;text-align:center;margin-bottom:50px;font-weight:700}
-.aktivnosti-carousel{position:relative;max-width:550px;margin:0 auto;overflow:hidden;border-radius:25px;box-shadow:0 8px 30px rgba(13,61,43,.3);background:white}
-.aktivnosti-slides{display:flex;transition:transform .5s ease-in-out}
-.aktivnosti-slide{min-width:100%;display:flex;flex-direction:column}
-.aktivnosti-slide img{width:100%;height:640px;object-fit:cover;display:block}
-.aktivnosti-slide-content{flex:1;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(to bottom,rgba(13,61,43,.85),rgba(13,61,43,1));padding:12px 40px;text-align:center}
-.aktivnosti-slide-content h3{font-size:1.4rem;color:#ccb083;font-weight:700;margin-bottom:8px}
-.aktivnosti-slide-content p{font-size:.95rem;line-height:1.5;color:white;max-width:640px;margin:0 auto}
-.aktivnosti-nav{position:absolute;top:295px;transform:translateY(-50%);width:55px;height:55px;background:rgba(13,61,43,.9);border:3px solid #ccb083;border-radius:50%;color:white;font-size:26px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s ease;z-index:10}
-.aktivnosti-nav:hover{background:rgba(13,61,43,1);transform:translateY(-50%) scale(1.15)}
-.aktivnosti-prev{left:25px}.aktivnosti-next{right:25px}
-.aktivnosti-indicators{position:absolute;top:592px;left:50%;transform:translateX(-50%);display:flex;gap:12px;z-index:10}
-.aktivnosti-dot{width:14px;height:14px;border-radius:50%;background:rgba(255,255,255,.4);cursor:pointer;transition:all .3s ease;border:2px solid #ccb083}
-.aktivnosti-dot.active{background:#ccb083;transform:scale(1.3)
+.aktivnosti-title{font-size:2rem;text-align:center;margin-bottom:50px;color:#0d3d2b;font-weight:700}
+.obilazak-list{max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+.obilazak-item{background:rgba(255,255,255,.9);border-radius:20px;overflow:hidden;box-shadow:0 4px 15px rgba(13,61,43,.15)}
+.obilazak-item summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:15px;padding:20px 25px;font-size:1.25rem;font-weight:700;color:#0d3d2b;user-select:none}
+.obilazak-item summary::-webkit-details-marker{display:none}
+.obilazak-item summary::after{content:"▾";font-size:.9em;color:#73724f;transition:transform .3s ease}
+.obilazak-item[open] summary::after{transform:rotate(180deg)}
+.obilazak-body{padding:0 25px 25px 25px}
+.obilazak-slika{max-width:600px;margin:0 auto;border-radius:25px;overflow:hidden;box-shadow:0 8px 25px rgba(13,61,43,.35)}
+.obilazak-slika img{width:100%;height:350px;object-fit:cover;display:block}
+.obilazak-caption{background:#0d3d2b;color:#ffffff;padding:20px 25px;text-align:center;font-size:1.05rem;line-height:1.7}
+@media (max-width:950px){
+.aktivnosti{padding:50px 20px 60px 20px}
+.obilazak-item summary{padding:16px 18px;font-size:1.1rem}
+.obilazak-body{padding:0 18px 18px 18px}
+.obilazak-slika img{height:240px}
 }
 
 /* GALERIJE */
 .galerije{background:#73724f;padding:70px 40px 80px 40px;scroll-margin-top:100px}
-.gal-title{font-size:2rem;text-align:center;margin-bottom:50px;color:#ccb083;font-weight:700}
+.gal-title{font-size:2rem;text-align:center;margin-bottom:50px;color:#ffffff;font-weight:700}
 .gal-block{max-width:1000px;margin:0 auto 70px auto}
-.gal-block h3{font-size:1.4rem;text-align:center;margin-bottom:30px;color:#0d3d2b;font-weight:700}
+.gal-block h3{font-size:1.4rem;text-align:center;margin-bottom:30px;color:#ffffff;font-weight:700}
 .gal-carousel{position:relative;overflow:hidden;border-radius:25px;box-shadow:0 8px 30px rgba(13,61,43,.3);background:white}
 .gal-slides{display:flex;transition:transform .5s ease-in-out}
 .gal-slide{min-width:100%;aspect-ratio:16/10;position:relative}
@@ -125,13 +127,13 @@ body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background-color:#c
 
 /* CENA */
 .cena{background:#73724f;padding:70px 40px 80px 40px;scroll-margin-top:100px}
-.cena-title{font-size:2rem;text-align:center;margin-bottom:50px;color:#ccb083;font-weight:700}
+.cena-title{font-size:2rem;text-align:center;margin-bottom:50px;color:#ffffff;font-weight:700}
 
 /* KONTAKT */
 .kontakt{background:#0d3d2b;padding:70px 40px 90px 40px;scroll-margin-top:100px}
 .kontakt-list{display:flex;flex-direction:column;align-items:center;gap:16px;max-width:400px;margin:0 auto}
 .contact-note{text-align:center;font-size:1.05rem;line-height:1.6;margin:30px 0;color:white;max-width:550px}
-.back-home{display:inline-block;color:#ccb083;font-size:1.15rem;font-weight:700;text-decoration:underline;margin-top:30px}
+.back-home{display:inline-block;color:#ffffff;font-size:1.15rem;font-weight:700;text-decoration:underline;margin-top:30px}
 
 /* FOOTER */
 footer{background:#0d3d2b;color:#ccb083;padding:45px 40px;text-align:center}
@@ -146,7 +148,7 @@ footer{background:#0d3d2b;color:#ccb083;padding:45px 40px;text-align:center}
 @media (max-width:950px){
 /* HEADER */
 .site-header{flex-direction:column;padding:12px 15px}
-.main-logo{width:75px}
+.main-logo{width:60px}
 .dropdown-menu{position:static;transform:none;opacity:1;visibility:visible;background:transparent;border:none;box-shadow:none;padding:0;min-width:0}
 .dropdown-menu a{color:#73724f;font-size:.95rem;padding:8px 18px}
 
@@ -159,14 +161,6 @@ footer{background:#0d3d2b;color:#ccb083;padding:45px 40px;text-align:center}
 
 /* ZASTO MI */
 .zasto-grid{grid-template-columns:1fr}
-
-/* AKTIVNOSTI */
-.aktivnosti-slide img{height:280px}
-.aktivnosti-slide-content{padding:14px 20px}
-.aktivnosti-slide-content h3{font-size:1.4rem}
-.aktivnosti-slide-content p{font-size:.95rem}
-.aktivnosti-indicators{top:235px}
-.aktivnosti-nav{width:45px;height:45px;font-size:22px}
 
 /* KAPACITETI */
 .kapaciteti-grid,.capacity-grid{grid-template-columns:1fr}
@@ -195,7 +189,7 @@ footer{background:#0d3d2b;color:#ccb083;padding:45px 40px;text-align:center}
 .gal-indicators{position:absolute;bottom:15px;left:50%;transform:translateX(-50%);display:flex;gap:10px;z-index:10}
 .gal-dot{width:12px;height:12px;border-radius:50%;background:rgba(255,255,255,.5);cursor:pointer;transition:all .3s ease;border:2px solid white}
 .gal-dot.active{background:white;transform:scale(1.2)}
-.galerija-subtitle{font-size:1.4rem;text-align:center;margin-bottom:30px;color:#0d3d2b;font-weight:700}
+.galerija-subtitle{font-size:1.4rem;text-align:center;margin-bottom:30px;color:#ffffff;font-weight:700}
 .galerija-video{max-width:400px;padding:0;background:transparent;border-radius:10px;box-shadow:none}
 .galerija-video video{max-width:100%;border-radius:15px}
 .galerija-fb-video{text-align:center;margin:30px auto;display:block}
@@ -212,7 +206,7 @@ footer{background:#0d3d2b;color:#ccb083;padding:45px 40px;text-align:center}
 
 /* Cena/Kontakt dodaci */
 .cena-poruka{text-align:center;font-size:1.35rem;line-height:1.7;max-width:850px;margin:0 auto 40px auto;color:white;font-weight:600}
-.kontakt-podnaslov{font-size:1.5rem;text-align:center;margin:40px 0 30px 0;color:#ccb083;font-weight:700}
+.kontakt-podnaslov{font-size:1.5rem;text-align:center;margin:40px 0 30px 0;color:#ffffff;font-weight:700}
 .contact-note{text-align:center;font-size:1.05rem;line-height:1.6;margin:30px auto;color:white;max-width:550px}
 .kontakt-napomena{text-align:center;font-size:1.05rem;line-height:1.6;margin:30px auto;color:white;max-width:550px}
 .kontakt-social{display:flex;gap:15px;justify-content:center;margin-top:25px}
@@ -220,8 +214,8 @@ footer{background:#0d3d2b;color:#ccb083;padding:45px 40px;text-align:center}
 .social-btn.fb{background:#1877f2}
 .social-btn.ig{background:linear-gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)}
 .social-btn:hover{transform:translateX(-4px)}
-.back-home a{color:#ccb083;font-size:1.15rem;font-weight:700;text-decoration:underline}
-.back-home a:hover{color:white}
+.back-home a{color:#ffffff;font-size:1.15rem;font-weight:700;text-decoration:underline}
+.back-home a:hover{color:#ccb083}
 
 /* Footer */
 .footer-contact{display:flex;flex-direction:column;gap:12px;margin-bottom:25px;font-size:1.05rem}
@@ -306,11 +300,13 @@ body{overflow-x:hidden}
 .galerija-video video{width:100%;height:auto;border-radius:10px;display:block}
 
 /* ===== HAMBURGER MENI (mobilni) ===== */
-.nav-toggle{display:none;background:transparent;border:2px solid #ccb083;color:#ccb083;font-size:1.5rem;line-height:1;border-radius:12px;padding:7px 14px;cursor:pointer}
-.nav-toggle:hover{background:#73724f;color:white}
+.nav-toggle{display:none;background:transparent;border:2px solid #ccb083;color:#ccb083;font-size:1.15rem;line-height:1;height:40px;width:48px;border-radius:25px;cursor:pointer;transition:all .3s ease}
+.nav-toggle:hover{background:#ccb083;color:#0d3d2b}
 
 @media (max-width:950px){
     .nav-toggle{display:block}
+    .lang-btn{order:2;margin-left:auto}
+    .nav-toggle{order:3}
     /* header ostaje u jednom redu: logo | dugmad */
     .site-header{flex-direction:row !important;flex-wrap:nowrap;padding:10px 15px;gap:10px}
     .main-logo{width:60px}
@@ -469,56 +465,91 @@ body{overflow-x:hidden}
 
 <section class="aktivnosti" id="aktivnosti">
     <h2 class="aktivnosti-title">Aktivnosti za vaš tim</h2>
-    <div class="aktivnosti-carousel">
-        <div class="aktivnosti-slides">
 
-            <div class="aktivnosti-slide">
-                <img src="terasa-zalazak.jpg" alt="Relaksacija – zalazak sunca na Suvoj planini" loading="lazy">
-                <div class="aktivnosti-slide-content"><h3>Relaksacija</h3><p>Naše prostrano dvorište s baštenskim nameštajem, ležaljkama i bazenom, i pogled na planinu pobrinuće se da svaki dan vašeg boravka počne i završi se uz ozbiljnu dozu serotonina.</p></div>
+    <div class="obilazak-list">
+
+        <details class="obilazak-item">
+            <summary>Relaksacija</summary>
+            <div class="obilazak-body">
+                <div class="obilazak-slika">
+                    <img src="terasa-zalazak.jpg" alt="Relaksacija – zalazak sunca na Suvoj planini" loading="lazy">
+                    <div class="obilazak-caption">Naše prostrano dvorište s baštenskim nameštajem, ležaljkama i bazenom, i pogled na planinu pobrinuće se da svaki dan vašeg boravka počne i završi se uz ozbiljnu dozu serotonina.</div>
+                </div>
             </div>
+        </details>
 
-            <div class="aktivnosti-slide">
-                <img src="Kulinarstvo.jpg" alt="Hedonizam – roštilj, kotlić i kuhinje na tim bildingu" loading="lazy">
-                <div class="aktivnosti-slide-content"><h3>Hedonizam</h3><p>Pokažite svoje kulinarske veštine na roštilju, kotliću, tanjirači ili u naše dve potpuno opremljene kuhinje. Garantujemo da sve ima bolji ukus kada se jede na planinskom vazduhu.</p></div>
+        <details class="obilazak-item">
+            <summary>Hedonizam</summary>
+            <div class="obilazak-body">
+                <div class="obilazak-slika">
+                    <img src="Kulinarstvo.jpg" alt="Hedonizam – roštilj, kotlić i kuhinje na tim bildingu" loading="lazy">
+                    <div class="obilazak-caption">Pokažite svoje kulinarske veštine na roštilju, kotliću, tanjirači ili u naše dve potpuno opremljene kuhinje. Garantujemo da sve ima bolji ukus kada se jede na planinskom vazduhu.</div>
+                </div>
             </div>
+        </details>
 
-            <div class="aktivnosti-slide">
-                <img src="Spoljne klupe.jpg" alt="Baštenski nameštaj – veći događaji i seminari na Suvoj planini" loading="lazy">
-                <div class="aktivnosti-slide-content"><h3>Veći događaji</h3><p>Baštenski nameštaj za do 50 ljudi omogućava organizaciju većih događaja bilo da su u pitanju proslave ili seminari.</p></div>
+        <details class="obilazak-item">
+            <summary>Veći događaji</summary>
+            <div class="obilazak-body">
+                <div class="obilazak-slika">
+                    <img src="Spoljne klupe.jpg" alt="Baštenski nameštaj – veći događaji i seminari na Suvoj planini" loading="lazy">
+                    <div class="obilazak-caption">Baštenski nameštaj za do 50 ljudi omogućava organizaciju većih događaja bilo da su u pitanju proslave ili seminari.</div>
+                </div>
             </div>
+        </details>
 
-            <div class="aktivnosti-slide">
-                <img src="Selfiji.jpg" alt="Najlepši selfiji – cvetna bašta Apartmana Petrović" loading="lazy">
-                <div class="aktivnosti-slide-content"><h3>Najlepši selfiji</h3><p>U bašti imamo i puno cveća koje s ljubavlju održavamo, kao što vidite – na fotografijama fale samo vaša nasmejana lica. A tu su i domaće jabuke, kruške i dunje.</p></div>
+        <details class="obilazak-item">
+            <summary>Najlepši selfiji</summary>
+            <div class="obilazak-body">
+                <div class="obilazak-slika">
+                    <img src="Selfiji.jpg" alt="Najlepši selfiji – cvetna bašta Apartmana Petrović" loading="lazy">
+                    <div class="obilazak-caption">U bašti imamo i puno cveća koje s ljubavlju održavamo, kao što vidite – na fotografijama fale samo vaša nasmejana lica. A tu su i domaće jabuke, kruške i dunje.</div>
+                </div>
             </div>
+        </details>
 
-            <div class="aktivnosti-slide">
-                <img src="Avanture u prirodi.jpg" alt="Avanture u prirodi Suve planine" loading="lazy">
-                <div class="aktivnosti-slide-content"><h3>Avanture u prirodi</h3><p>U zavisnosti od fizičke spremnosti preporučujemo laganu šetnju stazom zdravlja Kladanci, piknik na Gradištu, druženje s poludivljim konjima dublje u planini, ili uspon do Tri Kamena.</p></div>
+        <details class="obilazak-item">
+            <summary>Avanture u prirodi</summary>
+            <div class="obilazak-body">
+                <div class="obilazak-slika">
+                    <img src="Avanture u prirodi.jpg" alt="Avanture u prirodi Suve planine" loading="lazy">
+                    <div class="obilazak-caption">U zavisnosti od fizičke spremnosti preporučujemo laganu šetnju stazom zdravlja Kladanci, piknik na Gradištu, druženje s poludivljim konjima dublje u planini, ili uspon do Tri Kamena.</div>
+                </div>
             </div>
+        </details>
 
-            <div class="aktivnosti-slide">
-                <img src="bicikl.jpg" alt="Safari – staza Suva planina za mauntin bajk, kvad i džip" loading="lazy">
-                <div class="aktivnosti-slide-content"><h3>Safari</h3><p>Za strastvene mauntin bajkere, fanove motokrosa, kvada ili džipova, tu je staza Suva planina koja prati greben planine i duga je oko 28 km.</p></div>
+        <details class="obilazak-item">
+            <summary>Safari</summary>
+            <div class="obilazak-body">
+                <div class="obilazak-slika">
+                    <img src="bicikl.jpg" alt="Safari – staza Suva planina za mauntin bajk, kvad i džip" loading="lazy">
+                    <div class="obilazak-caption">Za strastvene mauntin bajkere, fanove motokrosa, kvada ili džipova, tu je staza Suva planina koja prati greben planine i duga je oko 28 km.</div>
+                </div>
             </div>
+        </details>
 
-            <div class="aktivnosti-slide">
-                <img src="Uspon.jpg" alt="Planinarenje na Suvoj planini – Alpe Južne Srbije" loading="lazy">
-                <div class="aktivnosti-slide-content"><h3>Planinarenje</h3><p>Jovan Cvijić je Suvu planinu nazivao Alpima Južne Srbije. Saznajte i zašto.</p></div>
+        <details class="obilazak-item">
+            <summary>Planinarenje</summary>
+            <div class="obilazak-body">
+                <div class="obilazak-slika">
+                    <img src="Uspon.jpg" alt="Planinarenje na Suvoj planini – Alpe Južne Srbije" loading="lazy">
+                    <div class="obilazak-caption">Jovan Cvijić je Suvu planinu nazivao Alpima Južne Srbije. Saznajte i zašto.</div>
+                </div>
             </div>
+        </details>
 
-            <div class="aktivnosti-slide">
-                <img src="Kultura.jpg" alt="Kultura i istorija – znamenitosti Zaplanja" loading="lazy">
-                <div class="aktivnosti-slide-content"><h3>Kultura i istorija</h3><p>Zaplanje ima zadužbinu Mrnjavčevića i rodnu kuću najprepoznatljivijeg heroja Prvog Sv. rata, kao i još nekoliko zanimljivih lokaliteta.</p></div>
+        <details class="obilazak-item">
+            <summary>Kultura i istorija</summary>
+            <div class="obilazak-body">
+                <div class="obilazak-slika">
+                    <img src="Kultura.jpg" alt="Kultura i istorija – znamenitosti Zaplanja" loading="lazy">
+                    <div class="obilazak-caption">Zaplanje ima zadužbinu Mrnjavčevića i rodnu kuću najprepoznatljivijeg heroja Prvog Sv. rata, kao i još nekoliko zanimljivih lokaliteta.</div>
+                </div>
             </div>
+        </details>
 
-        </div>
-        <button class="aktivnosti-nav aktivnosti-prev" onclick="moveActSlide(-1)">❮</button>
-        <button class="aktivnosti-nav aktivnosti-next" onclick="moveActSlide(1)">❯</button>
-        <div class="aktivnosti-indicators"></div>
     </div>
 </section>
-
 <section class="kapaciteti" id="kapaciteti">
     <h2 class="kapaciteti-title">Kapaciteti</h2>
 
@@ -580,6 +611,7 @@ body{overflow-x:hidden}
 </section>
 
 <footer>
+    <p class="footer-text">Apartmani Petrović Semče su porodično gazdinstvo. Ponosni smo na svoje zaplanjsko poreklo, a seoskim turizmom se bavimo od 2022. Radimo na ostvarenju potencijala našeg rodnog kraja na održiv način, bez narušavanja njegovog integriteta i svega onog što ga čini posebnim.</p>
     <div class="footer-contact">
         <a href="tel:+381649346911">📞 Miloš: +381 64 934 6911</a>
         <a href="mailto:apartmanipetrovicsuvaplanina@gmail.com">✉️ apartmanipetrovicsuvaplanina@gmail.com</a>
@@ -589,20 +621,7 @@ body{overflow-x:hidden}
 </footer>
 
 <script>
-var actIndex=0;
-var actWrap=document.querySelector('.aktivnosti-slides');
-var actSlides=document.querySelectorAll('.aktivnosti-slide');
-var actIndWrap=document.querySelector('.aktivnosti-indicators');
-actSlides.forEach(function(_,i){var d=document.createElement('div');d.className='aktivnosti-dot'+(i===0?' active':'');d.onclick=function(){actIndex=i;updAct();};actIndWrap.appendChild(d);});
-var actDots=document.querySelectorAll('.aktivnosti-dot');
-function updAct(){actWrap.style.transform='translateX(-'+actIndex*100+'%)';actDots.forEach(function(el,i){el.classList.toggle('active',i===actIndex);});}
-function moveActSlide(dir){actIndex+=dir;if(actIndex>=actSlides.length)actIndex=0;if(actIndex<0)actIndex=actSlides.length-1;updAct();}
-var actAuto=setInterval(function(){moveActSlide(1);},6000);
-document.querySelector('.aktivnosti-carousel').addEventListener('mouseenter',function(){clearInterval(actAuto);});
-document.querySelector('.aktivnosti-carousel').addEventListener('mouseleave',function(){actAuto=setInterval(function(){moveActSlide(1);},6000);});
-var atsX=0,ateX=0;
-document.querySelector('.aktivnosti-carousel').addEventListener('touchstart',function(e){atsX=e.changedTouches[0].screenX;});
-document.querySelector('.aktivnosti-carousel').addEventListener('touchend',function(e){ateX=e.changedTouches[0].screenX;if(atsX-ateX>50)moveActSlide(1);else if(ateX-atsX>50)moveActSlide(-1);});
+
 
 document.querySelectorAll('.gal-carousel').forEach(function(carousel){
     var idx=0;
@@ -716,6 +735,7 @@ var SR_EN_RAW={
 "← Vrati se na početnu":"← Back to Home",
 
 // FOOTER
+"Apartmani Petrović Semče su porodično gazdinstvo. Ponosni smo na svoje zaplanjsko poreklo, a seoskim turizmom se bavimo od 2022. Radimo na ostvarenju potencijala našeg rodnog kraja na održiv način, bez narušavanja njegovog integriteta i svega onog što ga čini posebnim.":"Apartmani Petrović Semče is a family-run estate in the Zaplanje region. We are proud of our heritage and have been involved in rural tourism since 2022. We strive to realise the potential of our home sustainably, without compromising its integrity or the qualities that make it special.",
 "© 2026 Apartmani Petrović Semče. Sva prava zadržana.":"© 2026 Apartmani Petrović Semče. All rights reserved."
 };
 
@@ -777,9 +797,11 @@ function toggleNav(){
     document.getElementById('mainNav').classList.toggle('nav-open');
 }
 /* zatvori meni kad se klikne bilo koji link u njemu */
-document.querySelectorAll('#mainNav a').forEach(function(a){
-    a.addEventListener('click',function(){
-        document.getElementById('mainNav').classList.remove('nav-open');
+document.addEventListener('DOMContentLoaded',function(){
+    document.querySelectorAll('#mainNav a').forEach(function(a){
+        a.addEventListener('click',function(){
+            document.getElementById('mainNav').classList.remove('nav-open');
+        });
     });
 });
 </script>
