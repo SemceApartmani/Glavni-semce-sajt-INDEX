@@ -89,26 +89,26 @@ document.querySelectorAll('#mainNav a').forEach(function(a){
 .lang-btn{background:transparent;border:2px solid #ccb083;color:#ccb083;padding:7px 16px;border-radius:25px;font-weight:700;font-size:.95rem;cursor:pointer;transition:all .3s ease;margin-left:10px}
 .lang-btn:hover{background:#ccb083;color:#0d3d2b}
 
-/* BOJE: #ccb083 (žućkasto) | #7c7b33 (zelenkasto) | #0d3d2b (tamnozelena tekst) */
+/* BOJE: #ccb083 (žućkasto) | #73724f (zelenkasto) | #0d3d2b (tamnozelena tekst) */
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background-color:#ccb083;color:#0d3d2b;scroll-behavior:smooth}
 
 /* HEADER */
-.site-header{background:#0d3d2b;padding:12px 30px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px;position:sticky;top:0;z-index:1000}
-.main-logo{width:90px;height:auto;border-radius:50%}
+.site-header{background:#0d3d2b;padding:6px 30px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px;position:sticky;top:0;z-index:1000}
+.main-logo{width:90px;height:auto;border-radius:50%;margin-bottom:-40px;position:relative;z-index:2}
 .site-header nav{display:flex;flex-wrap:wrap;gap:5px}
 .site-header nav a{color:#ccb083;text-decoration:none;padding:8px 18px;border-radius:25px;font-weight:600;font-size:1rem;transition:all .3s ease}
-.site-header nav a:hover{background:#7c7b33;color:white}
+.site-header nav a:hover{background:#73724f;color:white}
 
 /* DROPDOWN MENI */
 .nav-dropdown{position:relative;display:flex;align-items:center}
 .nav-dropdown > a::after{content:"▾";font-size:.8em;line-height:1;display:inline-block;vertical-align:middle;margin-left:6px}
-.dropdown-menu{position:absolute;top:calc(100% + 8px);left:50%;transform:translate(-50%,8px);background:#0d3d2b;border:2px solid #7c7b33;border-radius:15px;padding:8px;min-width:230px;display:flex;flex-direction:column;gap:2px;opacity:0;visibility:hidden;transition:opacity .25s ease,transform .25s ease,visibility .25s;z-index:1001;box-shadow:0 8px 25px rgba(0,0,0,.4)}
+.dropdown-menu{position:absolute;top:calc(100% + 8px);left:50%;transform:translate(-50%,8px);background:#0d3d2b;border:2px solid #73724f;border-radius:15px;padding:8px;min-width:230px;display:flex;flex-direction:column;gap:2px;opacity:0;visibility:hidden;transition:opacity .25s ease,transform .25s ease,visibility .25s;z-index:1001;box-shadow:0 8px 25px rgba(0,0,0,.4)}
 .nav-dropdown:hover .dropdown-menu,.nav-dropdown:focus-within .dropdown-menu{opacity:1;visibility:visible;transform:translate(-50%,0)}
 .dropdown-menu a{white-space:nowrap;text-align:center}
 
 /* HERO */
-.hero{display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh - 120px);background:#ccb083;padding:25px 0}
+.hero{display:grid;grid-template-columns:1fr 1fr;background:#ccb083;padding:25px 0}
 .hero-image-side{position:relative;overflow:hidden;border-radius:40px;margin-left:30px;margin-right:15px;box-shadow:0 8px 25px rgba(13,61,43,.35);min-height:420px}
 .hero-photo{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block}
 .hero-content-side{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:40px 35px}
@@ -116,7 +116,7 @@ h1{font-size:2.2rem;margin-bottom:15px;color:#0d3d2b}
 .slogan{font-size:1.15rem;margin-bottom:35px;line-height:1.6;max-width:460px}
 .phone-links{display:flex;gap:15px;justify-content:center;flex-wrap:wrap;margin-bottom:30px}
 .phone-btn{background:#0d3d2b;color:#ccb083;padding:10px 20px;border-radius:50px;text-decoration:none;font-weight:bold;font-size:1.1rem;transition:all .3s ease}
-.phone-btn:hover{background:#7c7b33;color:white;transform:translateY(-3px)}
+.phone-btn:hover{background:#73724f;color:white;transform:translateY(-3px)}
 .qr-buttons-row{display:flex;align-items:center;gap:35px}
 .qr-block{display:flex;flex-direction:column;align-items:center}
 .qr-code{width:140px;height:140px;background:white;padding:10px;border-radius:25px;box-shadow:0 4px 15px rgba(13,61,43,.25)}
@@ -138,7 +138,7 @@ h1{font-size:2.2rem;margin-bottom:15px;color:#0d3d2b}
 .section-intro{font-size:1.1rem;line-height:1.8;text-align:left}
 .map-container{width:100%;max-width:330px;margin-left:auto;border-radius:20px;overflow:hidden;box-shadow:0 6px 20px rgba(13,61,43,.25);background:white}
 .map-container iframe{width:100%;height:290px;border:none;display:block}
-.carousel-container{position:relative;max-width:850px;margin:0 auto 70px auto;overflow:hidden;border-radius:25px;box-shadow:0 8px 30px rgba(13,61,43,.3)}
+.carousel-container{position:relative;max-width:1080px;margin:0 auto 70px auto;overflow:hidden;border-radius:25px;box-shadow:0 8px 30px rgba(13,61,43,.3)}
 .carousel-slides{display:flex;transition:transform .5s ease-in-out}
 .carousel-slide{min-width:100%;aspect-ratio:16/10;position:relative}
 .carousel-slide img{width:100%;height:100%;object-fit:cover;display:block}
@@ -148,18 +148,18 @@ h1{font-size:2.2rem;margin-bottom:15px;color:#0d3d2b}
 .carousel-indicators{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);display:flex;gap:10px;z-index:10}
 .indicator{width:12px;height:12px;border-radius:50%;background:rgba(255,255,255,.5);cursor:pointer;transition:all .3s ease;border:2px solid white}
 .indicator.active{background:white;transform:scale(1.2)}
-.capacity-block{max-width:1280px;margin:0 auto}
+.capacity-block{max-width:1080px;margin:0 auto}
 .capacity-title{font-size:1.8rem;text-align:center;margin-bottom:40px;font-weight:700}
 .capacity-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
 .capacity-card{background:rgba(255,255,255,.6);border-radius:20px;padding:30px 25px;box-shadow:0 4px 15px rgba(13,61,43,.15);transition:transform .3s ease}
 .capacity-card:hover{transform:translateY(-5px)}
-.capacity-card h3{font-size:1.2rem;margin-bottom:15px;color:#7c7b33;font-weight:700}
+.capacity-card h3{font-size:1.2rem;margin-bottom:15px;color:#73724f;font-weight:700}
 .capacity-card p{font-size:1rem;line-height:1.7}
 
 /* SECTION 2: SADRŽAJ */
-.section-2{background:#7c7b33;padding:70px 40px 80px 40px;scroll-margin-top:100px}
+.section-2{background:#73724f;padding:70px 40px 80px 40px;scroll-margin-top:100px}
 .sadrazaj-title{font-size:2rem;text-align:center;margin-bottom:50px;color:#ccb083;font-weight:700}
-.sadrazaj-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:20px;max-width:1400px;margin:0 auto}
+.sadrazaj-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:20px;max-width:1080px;margin:0 auto}
 .amenity-box{background:rgba(255,255,255,.9);border-radius:20px;padding:25px 15px;text-align:center;box-shadow:0 4px 15px rgba(13,61,43,.2);transition:transform .3s ease;display:flex;flex-direction:column;align-items:center}
 .amenity-box:hover{transform:translateY(-5px)}
 .amenity-icon{width:52px;height:52px;color:#0d3d2b;margin-bottom:15px}
@@ -212,7 +212,7 @@ h1{font-size:2.2rem;margin-bottom:15px;color:#0d3d2b}
 .cene-column{display:flex;flex-direction:column;gap:30px}
 .cene-column .cene-card{flex:1;padding:25px 20px;display:flex;flex-direction:column;justify-content:center}
 .cene-card{background:rgba(255,255,255,.75);border-radius:25px;padding:35px 30px;box-shadow:0 6px 20px rgba(13,61,43,.18)}
-.cene-card h3{font-size:1.4rem;margin-bottom:25px;color:#7c7b33;text-align:center;font-weight:700}
+.cene-card h3{font-size:1.4rem;margin-bottom:25px;color:#73724f;text-align:center;font-weight:700}
 .cene-card.winter h3{color:#0d3d2b}
 .cene-row{display:flex;justify-content:space-between;align-items:baseline;gap:15px;padding:12px 0;border-bottom:1px dashed rgba(13,61,43,.25)}
 .cene-row:last-of-type{border-bottom:none}
@@ -225,7 +225,7 @@ h1{font-size:2.2rem;margin-bottom:15px;color:#0d3d2b}
 @media (max-width:950px){.section-5{padding:50px 20px 60px 20px}.cene-grid,.dogovor-grid{grid-template-columns:1fr}}
 
 /* SECTION 6: KONTAKT */
-.section-6{background:#7c7b33;padding:70px 40px 90px 40px;scroll-margin-top:100px}
+.section-6{background:#73724f;padding:70px 40px 90px 40px;scroll-margin-top:100px}
 .kontakt-title{font-size:2rem;text-align:center;margin-bottom:60px;color:#ccb083;font-weight:700}
 .kontakt-list{display:flex;flex-direction:column;align-items:center;gap:16px;max-width:400px;margin:0 auto}
 .phone-row{display:flex;align-items:center;justify-content:space-between;gap:15px;width:100%;background:#0d3d2b;border-radius:50px;padding:10px 20px;transition:all .3s ease}
@@ -242,7 +242,7 @@ h1{font-size:2.2rem;margin-bottom:15px;color:#0d3d2b}
 .selo-btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;background:#3d6b35;color:white;padding:12px 25px;border-radius:50px;text-decoration:none;font-size:1.1rem;font-weight:bold;transition:all .3s ease;width:100%}
 .selo-btn:hover{background:#2e5228;transform:translateY(-3px)}
 .kontakt-list .booking-btn{width:100%}
-.dm-caption{font-size:1.15rem;font-weight:700;color:#0d3d2b;text-align:center}
+.dm-caption{font-size:1.15rem;font-weight:700;color:#ffffff;text-align:center}
 .kontakt-social{display:flex;gap:15px;justify-content:center;margin-top:25px}
 .kontakt-social .social-btn{padding:11px 30px}
 @media (max-width:950px){.section-6{padding:50px 20px 70px 20px}.kontakt-list{max-width:100%}}
@@ -259,7 +259,7 @@ footer{background:#0d3d2b;color:#ccb083;padding:45px 40px;text-align:center}
 /* PLACEHOLDER SEKCIJE */
 .placeholder-section{min-height:400px;display:flex;justify-content:center;align-items:center;font-size:1.5rem;font-weight:bold;letter-spacing:1px;scroll-margin-top:100px}
 .placeholder-section.bg-yellow{background:#ccb083}
-.placeholder-section.bg-green{background:#7c7b33}
+.placeholder-section.bg-green{background:#73724f}
 
 /* RESPONSIVE */
 @media (max-width:1200px){.sadrazaj-grid{grid-template-columns:repeat(3,1fr)}}
@@ -286,11 +286,11 @@ h1{font-size:1.8rem}.slogan{font-size:1.05rem}
 .alt-row.alt-left .alt-image,.alt-row.alt-right .alt-content{order:2}
 .alt-image img{height:250px}
 .dropdown-menu{position:static;transform:none;opacity:1;visibility:visible;background:transparent;border:none;box-shadow:none;padding:0;min-width:0}
-.dropdown-menu a{color:#7c7b33;font-size:.95rem;padding:8px 18px}
+.dropdown-menu a{color:#73724f;font-size:.95rem;padding:8px 18px}
 }
 
 /* ===== AKTIVNOSTI - ALTERNATING LIST ===== */
-.section-aktivnosti{background:#7c7b33;padding:70px 40px 80px 40px;scroll-margin-top:100px}
+.section-aktivnosti{background:#73724f;padding:70px 40px 80px 40px;scroll-margin-top:100px}
 .aktivnosti-title{font-size:2rem;text-align:center;margin-bottom:60px;color:#ccb083;font-weight:700}
 .alternating-grid{max-width:1080px;margin:0 auto;display:flex;flex-direction:column;gap:60px}
 .alt-row{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
@@ -307,7 +307,7 @@ h1{font-size:1.8rem}.slogan{font-size:1.05rem}
 
 /* ===== HAMBURGER MENI (mobilni) ===== */
 .nav-toggle{display:none;background:transparent;border:2px solid #ccb083;color:#ccb083;font-size:1.5rem;line-height:1;border-radius:12px;padding:7px 14px;cursor:pointer}
-.nav-toggle:hover{background:#7c7b33;color:white}
+.nav-toggle:hover{background:#73724f;color:white}
 
 @media (max-width:950px){
     .nav-toggle{display:block}
@@ -318,7 +318,7 @@ h1{font-size:1.8rem}.slogan{font-size:1.05rem}
     .site-header nav{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:#0d3d2b;box-shadow:0 12px 25px rgba(0,0,0,.4);max-height:0;overflow:hidden;padding:0 15px;transition:max-height .3s ease,padding .3s ease}
     .site-header nav.nav-open{max-height:75vh;overflow-y:auto;padding:8px 15px 15px 15px}
     .site-header nav a{padding:13px 18px;border-bottom:1px solid rgba(204,176,131,.15);border-radius:0}
-    .site-header nav a:hover{background:#7c7b33;border-radius:8px}
+    .site-header nav a:hover{background:#73724f;border-radius:8px}
     /* dropdown linkovi se prikazuju odmah, bez hovera */
     .nav-dropdown{flex-direction:column;align-items:stretch}
     .dropdown-menu{position:static;opacity:1;visibility:visible;transform:none;background:transparent;border:none;box-shadow:none;padding:0;min-width:0}
@@ -350,6 +350,48 @@ h1{font-size:1.8rem}.slogan{font-size:1.05rem}
 .hero-cta-address{font-size:.9rem;color:#0d3d2b;text-align:center;margin:8px 0 0 0;opacity:.85}
 @media (max-width:950px){.hero-cta-box{max-width:100%}}
 
+/* ===== HERO: slika preko cele sirine, kartica preko desnog dela slike ===== */
+.hero{position:relative;display:block;min-height:calc(100vh - 90px);background:#ccb083;padding:0;overflow:hidden}
+.hero .hero-photo{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.hero-shade{position:absolute;bottom:0;left:0;right:0;height:40%;background:linear-gradient(to top,rgba(13,61,43,.8),rgba(13,61,43,0));pointer-events:none}
+
+/* naslov + slogan u donjih 15% slike */
+.hero-heading{position:absolute;bottom:3.5%;left:3%;width:60%;z-index:5}
+.hero-heading h1{font-size:1.7rem;color:#fff;margin-bottom:8px;text-shadow:0 2px 10px rgba(0,0,0,.45)}
+.hero-heading .slogan{font-size:1rem;color:#fff;line-height:1.45;margin:0;max-width:560px;text-shadow:0 2px 8px rgba(0,0,0,.45)}
+
+/* kartica preko desnih ~30% slike, vertikalno centrirana */
+.hero-cta-box{position:absolute;top:50%;right:2.5%;transform:translateY(-50%);width:26%;min-width:300px;max-width:400px;z-index:6;background:rgba(255,255,255,.94);border-radius:25px;padding:16px 18px;box-shadow:0 10px 35px rgba(0,0,0,.35);display:flex;flex-direction:column;gap:8px}
+.hero-cta-title{font-size:1.05rem;font-weight:700;color:#0d3d2b;text-align:center;letter-spacing:.5px}
+.hero-cta-sub{font-size:.9rem;font-weight:700;color:#0d3d2b;text-align:center;margin:3px 0 0 0}
+.hero-cta-box .phone-row{margin:0;padding:6px 14px}
+.hero-cta-box .phone-row .ime{font-size:.9rem}
+.hero-cta-box .phone-row .tel-link{font-size:.9rem}
+.hero-cta-box .msg-icon{width:30px;height:30px}
+.hero-cta-box .msg-icon svg{width:16px;height:16px}
+.hero-cta-box .booking-btn{width:100%;padding:8px 18px;font-size:.95rem}
+.hero-cta-box .booking-icon{width:22px;height:22px}
+.hero-cta-box .social-btn{padding:8px 16px;font-size:.9rem}
+.hero-cta-socials{display:flex;gap:12px;justify-content:center}
+.hero-cta-address{font-size:.75rem;color:#0d3d2b;text-align:center;margin:3px 0 0 0;opacity:.85}
+.hero{border-radius:25px}
+@media (min-width:951px){.hero{margin:0 20px}}
+
+/* uzi kartica na sirim ekranima da ne prekriva previse slike */
+@media (min-width:1400px){.hero-cta-box{width:22%;right:3%}}
+
+/* ===== HERO: mobilni — slika gore, pa naslov, pa kartica (prirodan redosled) ===== */
+@media (max-width:950px){
+.hero{min-height:0;overflow:visible}
+.hero .hero-photo{position:relative;height:42vh;width:100%;object-position:center 70%}
+.hero-shade{display:none}
+.hero-heading{position:static;width:auto;padding:18px 30px 0 30px;text-align:center}
+.hero-heading h1{font-size:1.5rem;color:#0d3d2b;text-shadow:none;margin-bottom:8px}
+.hero-heading .slogan{font-size:1rem;color:#0d3d2b;text-shadow:none;margin-bottom:14px}
+.hero-cta-box{position:static;transform:none;width:calc(100% - 30px);max-width:none;margin:0 auto 20px auto}
+.hero .hero-photo{margin:0 15px;width:calc(100% - 30px);border-radius:25px}
+}
+
 </style>
 </head>
 <body>
@@ -377,64 +419,68 @@ h1{font-size:1.8rem}.slogan{font-size:1.05rem}
     <button id="langBtn" class="lang-btn" onclick="toggleLang()">EN</button>
 </header>
 <!-- ====== HERO ====== -->
-<section class="hero">
-        <div class="hero-image-side">
-        <img src="Hero leti.jpg" id="seasonal-hero-img" class="hero-photo"
-             alt="Apartmani Petrović Semče – pogled na Suvu planinu, odmor u prirodi jugoistočne Srbije"
-             fetchpriority="high">
-    </div>    
 
-        <div class="hero-content-side">
+<section class="hero">
+    <img src="Hero leti.jpg" id="seasonal-hero-img" class="hero-photo"
+         alt="Apartmani Petrović Semče – pogled na Suvu planinu, odmor u prirodi jugoistočne Srbije"
+         fetchpriority="high">
+
+    <!-- tamni gradijent na dnu slike da tekst bude čitljiv -->
+    <div class="hero-shade"></div>
+
+    <!-- naslov + slogan u donjih 15% slike -->
+    <div class="hero-heading">
         <h1>Apartmani Petrović Semče – odmor na Suvoj planini</h1>
         <p class="slogan">Sve pogodnosti modernog smeštaja + čist vazduh, mir i tišina, i najlepši pogled jugoistočne Srbije.</p>
+    </div>
 
-        <div class="hero-cta-box">
-            <h3 class="hero-cta-title">POZOVI i REZERVIŠI</h3>
+    <!-- kartica za rezervacije preko desnog ~30% slike -->
+    <div class="hero-cta-box">
+        <h3 class="hero-cta-title">POZOVI i REZERVIŠI</h3>
 
-            <div class="phone-row">
-                <div class="phone-left">
-                    <span class="ime">Miloš</span>
-                    <a class="tel-link" href="tel:+381649346911">📞 +381 64 934 6911</a>
-                </div>
-                <div class="phone-right">
-                    <a class="msg-icon viber" href="viber://chat?number=%2B381649346911" aria-label="Viber Miloš" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M11.4.8C6.5 1.2 4.4 3 3.7 7.7c-.2 1.5-.3 5.5 0 7 .6 3.6 2.4 5.4 5.8 5.9 1 .1 6.8.1 7.9 0 3.2-.4 5-2 5.6-5.2.2-1.2.2-6.6 0-7.7-.4-2.4-1.4-3.9-3.2-4.8C18.2.9 17 .8 12.5.8h-1.1zM8.2 4.5c.3-.1.6-.1.7.1.2.3 1.6 2.8 1.6 3 0 .2-.1.4-.3.6l-.6.7c-.2.2-.2.3-.1.5.5 1.2 2.4 3.1 3.6 3.6.2.1.4.1.5-.1l.7-.7c.2-.2.4-.2.6-.1.3.1 2.9 1.5 3 1.7.2.3 0 1-.4 1.5-.6.7-1.6 1.1-2.7 1-.9-.1-2.6-.8-4.2-1.7-2-1.1-3.6-2.7-4.7-4.6-.6-1-.9-2.1-.9-2.8 0-.8.3-1.6.9-2 .3-.3 1-.6 1.3-.6v-.3zM15.3 7.5c.4.2.4.6.1.9-.3.3-.7.2-.9-.1-.1-.2 0-.6.2-.7.2-.1.4-.1.6-.1zm.5-1.4c.9.2 1.6.9 1.7 1.8.1.6 0 1-.1 1.2-.1.4-.6.5-.9.3-.2-.2-.3-.5-.2-1 0-.5-.3-1-.8-1.1-.4-.1-.8-.1-1-.2-.3-.1-.4-.6-.2-.9.1-.2.3-.2.5-.2.3 0 .7 0 1 .1z"/></svg></a>
-                </div>
+        <div class="phone-row">
+            <div class="phone-left">
+                <span class="ime">Miloš</span>
+                <a class="tel-link" href="tel:+381649346911">📞 +381 64 934 6911</a>
             </div>
-
-            <div class="phone-row">
-                <div class="phone-left">
-                    <span class="ime">Miodrag</span>
-                    <a class="tel-link" href="tel:+381612205602">📞 +381 61 220 5602</a>
-                </div>
-                <div class="phone-right">
-                    <a class="msg-icon viber" href="viber://chat?number=%2B381612205602" aria-label="Viber Miodrag" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M11.4.8C6.5 1.2 4.4 3 3.7 7.7c-.2 1.5-.3 5.5 0 7 .6 3.6 2.4 5.4 5.8 5.9 1 .1 6.8.1 7.9 0 3.2-.4 5-2 5.6-5.2.2-1.2.2-6.6 0-7.7-.4-2.4-1.4-3.9-3.2-4.8C18.2.9 17 .8 12.5.8h-1.1zM8.2 4.5c.3-.1.6-.1.7.1.2.3 1.6 2.8 1.6 3 0 .2-.1.4-.3.6l-.6.7c-.2.2-.2.3-.1.5.5 1.2 2.4 3.1 3.6 3.6.2.1.4.1.5-.1l.7-.7c.2-.2.4-.2.6-.1.3.1 2.9 1.5 3 1.7.2.3 0 1-.4 1.5-.6.7-1.6 1.1-2.7 1-.9-.1-2.6-.8-4.2-1.7-2-1.1-3.6-2.7-4.7-4.6-.6-1-.9-2.1-.9-2.8 0-.8.3-1.6.9-2 .3-.3 1-.6 1.3-.6v-.3zM15.3 7.5c.4.2.4.6.1.9-.3.3-.7.2-.9-.1-.1-.2 0-.6.2-.7.2-.1.4-.1.6-.1zm.5-1.4c.9.2 1.6.9 1.7 1.8.1.6 0 1-.1 1.2-.1.4-.6.5-.9.3-.2-.2-.3-.5-.2-1 0-.5-.3-1-.8-1.1-.4-.1-.8-.1-1-.2-.3-.1-.4-.6-.2-.9.1-.2.3-.2.5-.2.3 0 .7 0 1 .1z"/></svg></a>
-                </div>
+            <div class="phone-right">
+                <a class="msg-icon viber" href="viber://chat?number=%2B381649346911" aria-label="Viber Miloš" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M11.4.8C6.5 1.2 4.4 3 3.7 7.7c-.2 1.5-.3 5.5 0 7 .6 3.6 2.4 5.4 5.8 5.9 1 .1 6.8.1 7.9 0 3.2-.4 5-2 5.6-5.2.2-1.2.2-6.6 0-7.7-.4-2.4-1.4-3.9-3.2-4.8C18.2.9 17 .8 12.5.8h-1.1zM8.2 4.5c.3-.1.6-.1.7.1.2.3 1.6 2.8 1.6 3 0 .2-.1.4-.3.6l-.6.7c-.2.2-.2.3-.1.5.5 1.2 2.4 3.1 3.6 3.6.2.1.4.1.5-.1l.7-.7c.2-.2.4-.2.6-.1.3.1 2.9 1.5 3 1.7.2.3 0 1-.4 1.5-.6.7-1.6 1.1-2.7 1-.9-.1-2.6-.8-4.2-1.7-2-1.1-3.6-2.7-4.7-4.6-.6-1-.9-2.1-.9-2.8 0-.8.3-1.6.9-2 .3-.3 1-.6 1.3-.6v-.3zM15.3 7.5c.4.2.4.6.1.9-.3.3-.7.2-.9-.1-.1-.2 0-.6.2-.7.2-.1.4-.1.6-.1zm.5-1.4c.9.2 1.6.9 1.7 1.8.1.6 0 1-.1 1.2-.1.4-.6.5-.9.3-.2-.2-.3-.5-.2-1 0-.5-.3-1-.8-1.1-.4-.1-.8-.1-1-.2-.3-.1-.4-.6-.2-.9.1-.2.3-.2.5-.2.3 0 .7 0 1 .1z"/></svg></a>
             </div>
-
-            <div class="phone-row">
-                <div class="phone-left">
-                    <span class="ime">Aleksandar</span>
-                    <a class="tel-link" href="tel:+381658196260">📞 +381 65 819 6260</a>
-                </div>
-                <div class="phone-right">
-                    <a class="msg-icon viber" href="viber://chat?number=%2B381658196260" aria-label="Viber Aleksandar" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M11.4.8C6.5 1.2 4.4 3 3.7 7.7c-.2 1.5-.3 5.5 0 7 .6 3.6 2.4 5.4 5.8 5.9 1 .1 6.8.1 7.9 0 3.2-.4 5-2 5.6-5.2.2-1.2.2-6.6 0-7.7-.4-2.4-1.4-3.9-3.2-4.8C18.2.9 17 .8 12.5.8h-1.1zM8.2 4.5c.3-.1.6-.1.7.1.2.3 1.6 2.8 1.6 3 0 .2-.1.4-.3.6l-.6.7c-.2.2-.2.3-.1.5.5 1.2 2.4 3.1 3.6 3.6.2.1.4.1.5-.1l.7-.7c.2-.2.4-.2.6-.1.3.1 2.9 1.5 3 1.7.2.3 0 1-.4 1.5-.6.7-1.6 1.1-2.7 1-.9-.1-2.6-.8-4.2-1.7-2-1.1-3.6-2.7-4.7-4.6-.6-1-.9-2.1-.9-2.8 0-.8.3-1.6.9-2 .3-.3 1-.6 1.3-.6v-.3zM15.3 7.5c.4.2.4.6.1.9-.3.3-.7.2-.9-.1-.1-.2 0-.6.2-.7.2-.1.4-.1.6-.1zm.5-1.4c.9.2 1.6.9 1.7 1.8.1.6 0 1-.1 1.2-.1.4-.6.5-.9.3-.2-.2-.3-.5-.2-1 0-.5-.3-1-.8-1.1-.4-.1-.8-.1-1-.2-.3-.1-.4-.6-.2-.9.1-.2.3-.2.5-.2.3 0 .7 0 1 .1z"/></svg></a>
-                </div>
-            </div>
-
-            <p class="hero-cta-sub">Rezerviši preko Booking.com</p>
-            <a href="https://www.booking.com/hotel/rs/apartmani-petrovic-semce-semce12.en-gb.html" target="_blank" rel="noopener" class="booking-btn">
-                <svg class="booking-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="24" fill="#ffffff"/><text x="24" y="30" font-size="24" font-weight="bold" text-anchor="middle" fill="#003580" font-family="Arial,sans-serif">B</text></svg>
-                Booking.com
-            </a>
-
-            <p class="hero-cta-sub">Rezerviši preko mreža</p>
-            <div class="hero-cta-socials">
-                <a href="https://www.facebook.com/people/Apartmani-Petrovi%C4%87-Sem%C4%8De/100083496813255/" target="_blank" rel="noopener" class="social-btn fb">Facebook</a>
-                <a href="https://www.instagram.com/apartmani_petrovic_semce/" target="_blank" rel="noopener" class="social-btn ig">Instagram</a>
-            </div>
-       <p class="hero-cta-address"> Miloša Obilića 16, selo Semče, 18245 Gadžin Han</p>
         </div>
-     
+
+        <div class="phone-row">
+            <div class="phone-left">
+                <span class="ime">Miodrag</span>
+                <a class="tel-link" href="tel:+381612205602">📞 +381 61 220 5602</a>
+            </div>
+            <div class="phone-right">
+                <a class="msg-icon viber" href="viber://chat?number=%2B381612205602" aria-label="Viber Miodrag" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M11.4.8C6.5 1.2 4.4 3 3.7 7.7c-.2 1.5-.3 5.5 0 7 .6 3.6 2.4 5.4 5.8 5.9 1 .1 6.8.1 7.9 0 3.2-.4 5-2 5.6-5.2.2-1.2.2-6.6 0-7.7-.4-2.4-1.4-3.9-3.2-4.8C18.2.9 17 .8 12.5.8h-1.1zM8.2 4.5c.3-.1.6-.1.7.1.2.3 1.6 2.8 1.6 3 0 .2-.1.4-.3.6l-.6.7c-.2.2-.2.3-.1.5.5 1.2 2.4 3.1 3.6 3.6.2.1.4.1.5-.1l.7-.7c.2-.2.4-.2.6-.1.3.1 2.9 1.5 3 1.7.2.3 0 1-.4 1.5-.6.7-1.6 1.1-2.7 1-.9-.1-2.6-.8-4.2-1.7-2-1.1-3.6-2.7-4.7-4.6-.6-1-.9-2.1-.9-2.8 0-.8.3-1.6.9-2 .3-.3 1-.6 1.3-.6v-.3zM15.3 7.5c.4.2.4.6.1.9-.3.3-.7.2-.9-.1-.1-.2 0-.6.2-.7.2-.1.4-.1.6-.1zm.5-1.4c.9.2 1.6.9 1.7 1.8.1.6 0 1-.1 1.2-.1.4-.6.5-.9.3-.2-.2-.3-.5-.2-1 0-.5-.3-1-.8-1.1-.4-.1-.8-.1-1-.2-.3-.1-.4-.6-.2-.9.1-.2.3-.2.5-.2.3 0 .7 0 1 .1z"/></svg></a>
+            </div>
+        </div>
+
+        <div class="phone-row">
+            <div class="phone-left">
+                <span class="ime">Aleksandar</span>
+                <a class="tel-link" href="tel:+381658196260">📞 +381 65 819 6260</a>
+            </div>
+            <div class="phone-right">
+                <a class="msg-icon viber" href="viber://chat?number=%2B381658196260" aria-label="Viber Aleksandar" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M11.4.8C6.5 1.2 4.4 3 3.7 7.7c-.2 1.5-.3 5.5 0 7 .6 3.6 2.4 5.4 5.8 5.9 1 .1 6.8.1 7.9 0 3.2-.4 5-2 5.6-5.2.2-1.2.2-6.6 0-7.7-.4-2.4-1.4-3.9-3.2-4.8C18.2.9 17 .8 12.5.8h-1.1zM8.2 4.5c.3-.1.6-.1.7.1.2.3 1.6 2.8 1.6 3 0 .2-.1.4-.3.6l-.6.7c-.2.2-.2.3-.1.5.5 1.2 2.4 3.1 3.6 3.6.2.1.4.1.5-.1l.7-.7c.2-.2.4-.2.6-.1.3.1 2.9 1.5 3 1.7.2.3 0 1-.4 1.5-.6.7-1.6 1.1-2.7 1-.9-.1-2.6-.8-4.2-1.7-2-1.1-3.6-2.7-4.7-4.6-.6-1-.9-2.1-.9-2.8 0-.8.3-1.6.9-2 .3-.3 1-.6 1.3-.6v-.3zM15.3 7.5c.4.2.4.6.1.9-.3.3-.7.2-.9-.1-.1-.2 0-.6.2-.7.2-.1.4-.1.6-.1zm.5-1.4c.9.2 1.6.9 1.7 1.8.1.6 0 1-.1 1.2-.1.4-.6.5-.9.3-.2-.2-.3-.5-.2-1 0-.5-.3-1-.8-1.1-.4-.1-.8-.1-1-.2-.3-.1-.4-.6-.2-.9.1-.2.3-.2.5-.2.3 0 .7 0 1 .1z"/></svg></a>
+            </div>
+        </div>
+
+        <p class="hero-cta-sub">Rezerviši preko Booking.com</p>
+        <a href="https://www.booking.com/hotel/rs/apartmani-petrovic-semce-semce12.en-gb.html" target="_blank" rel="noopener" class="booking-btn">
+            <svg class="booking-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="24" fill="#ffffff"/><text x="24" y="30" font-size="24" font-weight="bold" text-anchor="middle" fill="#003580" font-family="Arial,sans-serif">B</text></svg>
+            Booking.com
+        </a>
+
+        <p class="hero-cta-sub">Rezerviši preko mreža</p>
+        <div class="hero-cta-socials">
+            <a href="https://www.facebook.com/people/Apartmani-Petrovi%C4%87-Sem%C4%8De/100083496813255/" target="_blank" rel="noopener" class="social-btn fb">Facebook</a>
+            <a href="https://www.instagram.com/apartmani_petrovic_semce/" target="_blank" rel="noopener" class="social-btn ig">Instagram</a>
+        </div>
+
+        <p class="hero-cta-address">📍 Miloša Obilića 16, selo Semče, 18245 Gadžin Han</p>
     </div>
 </section>
 <!-- ====== SECTION 1 ====== -->
@@ -560,8 +606,7 @@ h1{font-size:1.8rem}.slogan{font-size:1.05rem}
 
     <!-- Google Reviews -->
     <div class="widget-block">
-        <h3>Utisci sa Google-a</h3>.mediji-title{font-size:1.8rem;text-align:center;margin:80px 0 30px 0;color:#0d3d2b;font-weight:700}
-.mediji-sub{text-align:center;font-size:1.05rem;font-style:italic;color:#0d3d2b;margin:0;opacity:.9}
+        <h3>Utisci sa Google-a</h3>
         <!-- Elfsight Google Reviews -->
         <script src="https://elfsightcdn.com/platform.js" async></script>
         <div class="elfsight-app-ff16fe18-f598-48d5-bdf1-4351254b27ac" data-elfsight-app-lazy></div>
